@@ -29,6 +29,7 @@ body{
  width: 100%;
 }
 
+// 各viewのコンテナーの高さを指定
 .container{
  min-height: 73vh;
 }
@@ -88,10 +89,12 @@ body{
  color: #EE827d;
 }
 
+// ヘッダー部分
 .navbar{
  background-color: white;
  width: 100%;
 }
+// ヘッダーリンク先
 .nav-link{
  color: #EE827d!important;
  letter-spacing: .08em;
