@@ -26,7 +26,7 @@
 
 // デバイスエラーメッセージ
 #error_explanation{
- color: red;
+ color: #F44336;
 }
 
 // 新規登録ログイン画面のボタン
@@ -67,4 +67,23 @@
  border: 1px solid black;
 }
 
+.footer{
+ height: 200px;
+}
+
+
+.header-search-btn{
+ border: 1px solid #EE827d;
+ background-color: #EE827d;
+ color: white;
+}
+.header-search-btn:hover{
+ border: 1px solid #EE827d;
+ background-color: white;
+ color: #EE827d;
+}
+
+.nav-name{
+ color: #EE827d;
+}
 
