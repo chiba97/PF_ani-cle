@@ -16,3 +16,55 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+
+// ブラウザ特有のCSSを解除するためリセットCSS
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// デバイスエラーメッセージ
+#error_explanation{
+ color: red;
+}
+
+// 新規登録ログイン画面のボタン
+.new-btn{
+ border: 1px solid #EE827d;
+ border-radius: 100px;
+ background-color: #EE827d;
+ color: white;
+ width: 100%;
+ height: 50px;
+}
+.new-btn:hover{
+ background-color: white;
+ color: #EE827d;
+ border: 1px solid black;
+}
+
+// 新規登録ログイン画面の画面遷移リンク
+.new-link{
+ color: #EE827d;
+}
+.new-link:hover{
+ color: #EE827d;
+}
+
+// 新規登録ログイン画面のタイトル
+.new-title{
+ border-bottom:3px solid black;
+}
+
+// 新規登録ログイン画面の入力欄
+.new-field{
+ border-radius: 5px;
+ height: 40px;
+ border: 1px solid gray;
+}
+.new-field:hover{
+ border: 1px solid black;
+}
+
+
