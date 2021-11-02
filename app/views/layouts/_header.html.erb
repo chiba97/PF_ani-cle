@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  
+  <%= link_to image_tag("logo.png", size: "100x100"), root_path, class: "mt-2 ml-5 navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+    <% if admin_signed_in? %>
+      <li class="nav-item active mr-4">
+        <%= link_to "会員一覧", admin_users_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item active mr-4">
+        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link" %>
+      </li>
+    <% elsif user_signed_in? %>
+      <li class="nav-item active mr-4">
+        <%= link_to "マイページ", user_path(current_user.id), class: "nav-link" %>
+      </li>
+      <li class="nav-item active mr-4">
+        <%= link_to "新規投稿", new_post_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item active mr-4">
+        <%= link_to "投稿一覧", posts_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item active mr-4">
+        <%= link_to "通知", notifications_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item active mr-4">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>
+    <% else %>
+      <li class="nav-item active mr-4">
+        <%= link_to "About ANI-CLE", about_path, class: "nav-link"%>
+      </li>
+      <li class="nav-item active mr-4">
+        <%= link_to "投稿一覧", posts_path, class: "nav-link" %>
+      </li>
+    <% end %>
+    </ul>
+    
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn my-2 my-sm-0 header-search-btn" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+    </form>
+    
+  </div>
+</nav>
