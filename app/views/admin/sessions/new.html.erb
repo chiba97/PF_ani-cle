@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div>
+    <div class="col-sm-7">
 
-      <h4 class="mt-5 new-title pb-3 mb-4">管理者ログイン</h4>
+      <h4 class="mt-3 new-title pb-3 mb-4">管理者ログイン</h4>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field mb-3">
           <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", size: "70", :placeholder => "example@gmail.com", class: "new-field pl-2" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "example@gmail.com", class: "col-sm-12 new-field pl-2" %>
         </div>
 
         <div class="field mb-4">
           <%= f.label :password, "パスワード" %><br />
-          <%= f.password_field :password, autocomplete: "current-password", size: "70", class: "new-field" %>
+          <%= f.password_field :password, autocomplete: "current-password", class: "col-sm-12 new-field" %>
         </div>
 
         <div class="actions text-center">
