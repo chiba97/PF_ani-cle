@@ -1,0 +1,210 @@
+.top-title{
+  color: white!important;
+  font-size: 170px;
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
+}
+.top-text{
+  color: white;
+  font-size: 20px;
+}
+
+// トップページスライド画像設定
+.top-img{
+  width: 100%;
+  height: 600px;
+}
+// トップページのスライドショーの画像全７枚
+.image1 {
+  background-image: image-url('top-img1.jpg');
+  background-size: cover;
+	background-position: center;
+	position: relative;
+  z-index: 0;
+}
+.image2 {
+  background-image: image-url('top-img2.jpg');
+  background-size: cover;
+	background-position: center;
+	position: relative;
+  z-index: 0;
+}
+.image3 {
+  background-image: image-url('top-img3.jpg');
+  background-size: cover;
+	background-position: center;
+	position: relative;
+  z-index: 0;
+}
+.image4 {
+  background-image: image-url('top-img4.jpg');
+  background-size: cover;
+	background-position: center;
+	position: relative;
+  z-index: 0;
+}
+.image5 {
+  background-image: image-url('top-img5.jpg');
+  background-size: cover;
+	background-position: center;
+	position: relative;
+  z-index: 0;
+}
+.image6 {
+  background-image: image-url('top-img6.jpg');
+  background-size: cover;
+	background-position: center;
+	position: relative;
+  z-index: 0;
+}
+.image7 {
+  background-image: image-url('top-img7.jpg');
+  background-size: cover;
+	background-position: center;
+	position: relative;
+  z-index: 0;
+}
+
+// スライドショー画像をテキストが見やすくなるようにぼやかす
+.image1::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  // blurで指定したpxと同じ値を指定する
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  background: inherit;
+  filter: blur(1px);
+}
+.image2::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  // blurで指定したpxと同じ値を指定する
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  background: inherit;
+  filter: blur(1px);
+}
+.image3::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  // blurで指定したpxと同じ値を指定する
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  background: inherit;
+  filter: blur(1px);
+}
+.image4::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  // blurで指定したpxと同じ値を指定する
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  background: inherit;
+  filter: blur(1px);
+}
+.image5::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  // blurで指定したpxと同じ値を指定する
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  background: inherit;
+  filter: blur(1px);
+}
+.image6::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  // blurで指定したpxと同じ値を指定する
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  background: inherit;
+  filter: blur(1px);
+}
+.image7::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  // blurで指定したpxと同じ値を指定する
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  background: inherit;
+  filter: blur(1px);
+}
+
+// トップページの新規登録ログインボタン
+.top-new-btn{
+  border: 1px solid #EE827d!important;
+  border-radius: 100px!important;
+  background-color: #EE827d!important;
+  color: white!important;
+}
+.top-new-btn:hover{
+  background-color: white!important;
+  color: #EE827d!important;
+  border: 1px solid #EE827d!important;
+}
+
+// アバウトページの画像の設定全２枚
+.about-image{
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+	background-position: center;
+}
+
+// アバウトページ１段目
+.about-top-content{
+  height: 400px;
+}
+.about-top-left{
+  background-color: #EE827d;
+  color: white;
+}
+
+// アバウトページ２段目
+.about-second-content{
+  background-color: #c8976f;
+  height: 400px;
+  color: black;
+}
+
+// アバウトページ３段目
+.about-third-content{
+  height: 400px;
+}
+.about-third-right{
+  background-color: #ffe3b8;
+}
+
+// アバウトページの新規登録ログインボタン
+.about-new-btn{
+ border: 1px solid black!important;
+ border-radius: 100px!important;
+ background-color: yellow!important;
+ color: black!important;
+ width: 50%;
+ height: 40px;
+}
+.about-new-btn:hover{
+background-color: #FFFE96!important;
+}
