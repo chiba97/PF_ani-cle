@@ -1,16 +1,25 @@
-<div class="container">
-  <h3>投稿一覧 全<%= @posts.count %>件</h3>
+<div class="container post-index-page">
+  <div class="text-center pt-4">
+    <h3 class="post-title"><i class="fas fa-dog"></i>投稿された記事 全<%= @posts.count %>件<i class="fas fa-cat"></i></h3>
+  </div>
   <div class="row">
     <% @posts.each do |post| %>
       <div class="col-sm-3">
         <div class="card">
             <%= attachment_image_tag post, :post_image %>
             <div class="card-body">
-              <%= attachment_image_tag post.user, :profile_image_id, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-              <%= post.user.name %>
-              <h5 class="card-title"><%= post.pet %></h5>
-              <p class="card-text"><%= post.body %></p>
-              <%= link_to "詳細", post_path(post.id), class: "btn btn-primary" %>
+              <div class="row">
+                <%= attachment_image_tag post.user, :profile_image_id, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image" %>
+              </div>
+              <div class="row">
+                <p>投稿者<br><i class="fas fa-paw"></i><%= post.user.name %>さん<i class="fas fa-paw"></i></p>
+              </div>
+              <div class="row">
+                <p>種類<br><i class="fas fa-paw"></i><%= post.pet %><i class="fas fa-paw"></i></p>
+              </div>
+              <div class="row mt-2">
+              <%= link_to "詳細へ", post_path(post.id), class: "btn post-index-btn" %>
+              </div>
             </div>
           </div>
       </div>

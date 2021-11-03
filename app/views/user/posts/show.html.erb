@@ -1,45 +1,40 @@
-<div class="container">
-<h3>投稿記事の詳細</h3>
-  <div class="row">
+<div class="container post-page">
+  <div class="text-center pt-4">
+    <h3 class="post-show-title"><i class="fas fa-paw"></i>投稿内容の詳細<i class="fas fa-paw"></i></h3>
+  </div>
+  <div class="row mt-5">
     <div class="col-sm-6">
       <div>
-        <p>投稿写真</p>
-        <%= attachment_image_tag @post, :post_image, class: "post-show-image"%>
+        <%= attachment_image_tag @post, :post_image, class: "post-show-image" %>
       </div>
     </div>
     <div class="col-sm-6">
-      <div>
-        <%= @post.pet %>
-        <%= @post.body %>
-        <%= attachment_image_tag @post.user, :profile_image_id, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile_image" %>
+      <div class="row mt-2">
+        <%= attachment_image_tag @post.user, :profile_image_id, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image" %>
+      </div>
+      <div class="row mt-3">
         <% if @post.user == current_user %>
-        投稿者 自分
+          ＜投稿者＞<br>
+          あなたが<%= @post.created_at.to_s(:datetime_jp) %>に投稿
         <% else %>
-        投稿者 <%= @post.user.name %>さん
+          ＜投稿者＞<br>
+          <%= @post.user.name %>さんが<%= @post.created_at.to_s(:datetime_jp) %>に投稿
         <% end %>
-        <%= link_to "編集", edit_post_path(@post.id), class: "btn btn-primary" %>
-        <%= link_to "削除", post_path(@post.id),method: :delete, class: "btn btn-primary" %>
+      </div>
+      <div class="row mt-3">
+        ＜ペットの種類＞<br>
+        <%= @post.pet %>
+      </div>
+      <div class="row mt-3">
+        ＜投稿内容＞<br>
+        <%= @post.body %>
+      </div>
+      <div class="row mt-4">
+        <% if @post.user.id == current_user.id %>
+          <%= link_to "編集する", edit_post_path(@post.id), class: "btn post-show-btn" %>
+          <%= link_to "削除する", post_path(@post.id),method: :delete, class: "btn post-show-btn ml-3", data: { confirm: '本当に削除しますか？' } %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-
-
-<!--<div class="col-sm-6">-->
-<!--      <h3>投稿記事の詳細</h3>-->
-<!--        <div class="card mt-4">-->
-<!--          <=%= attachment_image_tag @post, :post_image %>-->
-<!--          <div class="card-body">-->
-<!--            <h5 class="card-title"><=%= @post.pet %></h5>-->
-<!--            <p class="card-text"><=%= @post.body %></p>-->
-<!--            <=%= attachment_image_tag @post.user, :profile_image_id, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile_image" %>-->
-<!--            <=% if @post.user == current_user %>-->
-<!--              投稿者 自分-->
-<!--            <=% else %>-->
-<!--              投稿者 <=%= @post.user.name %>さん-->
-<!--            <=% end %>-->
-<!--            <=%= link_to "編集", edit_post_path(@post.id), class: "btn btn-primary" %>-->
-<!--            <=%= link_to "削除", post_path(@post.id),method: :delete, class: "btn btn-primary" %>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--    </div>-->

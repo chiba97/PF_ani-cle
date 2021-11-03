@@ -4,18 +4,20 @@
 
 // 新規投稿ページの投稿ボタン
 .post-btn{
-  border: 1px solid black!important;
+  border: 1px solid white!important;
   border-radius: 100px!important;
-  background-color: yellow!important;
-  color: black!important;
+  background-color: white!important;
+  color: #EE827d!important;
   width: 100%;
 }
 .post-btn:hover{
-  background-color: #FFFE96!important;
+  background-color: #EE827d!important;
+  color: white!important;
 }
 
-// 新規投稿ページ全体
-.post-new-page{
+// 投稿関連ページ全体
+.post-page{
+  border-radius: 20px;
   color: white;
   background-color: #EE827d;
 }
@@ -25,10 +27,44 @@
   font-family: 'Shippori Mincho B1', serif;
 }
 
+
+// 投稿詳細ページの画像
 .post-show-image{
   width: 100%;
+  border-radius:20px;
 }
-// ポスト詳細ページ全体
-// .post-show-page{
-//   background-color: #EE827d;
-// }
+.post-show-title{
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
+}
+
+// 投稿詳細画面の編集削除ボタン
+.post-show-btn{
+  border: 1px solid white!important;
+  border-radius: 100px!important;
+  background-color: white!important;
+  color: #EE827d!important;
+}
+.post-show-btn:hover{
+  background-color: #EE827d!important;
+  color: white!important;
+}
+
+// 投稿一覧ページ
+.post-index-page{
+  border-radius: 20px;
+  color: #EE827d;
+  background-color: #EE827d;
+}
+
+// 投稿一覧ボタン
+.post-index-btn{
+  border: 1px solid #EE827d!important;
+  border-radius: 100px!important;
+  background-color: #EE827d!important;
+  color: white!important;
+}
+.post-index-btn:hover{
+  background-color: white!important;
+  color: #EE827d!important;
+}
