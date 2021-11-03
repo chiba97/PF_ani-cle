@@ -1,0 +1,24 @@
+<div class="container post-page">
+  <div class="row justify-content-center">
+    <div class="col-sm-6 mt-5">
+      <h3 class="post-title">ペットへ愛を届けよう<i class="fas fa-envelope"></i></h3>
+      <%= form_with model: @post, local:true do |f| %>
+        <div class="form-group mt-5">
+          <i class="fas fa-paw"></i> <%= f.label :post_image, "ペットの写真を選択してください" %> <i class="fas fa-paw"></i>
+          <%= f.attachment_field :post_image, class: "d-block"%>
+        </div>
+        <div class="form-group mt-5">
+          <i class="fas fa-paw"></i> <%= f.label :pet, "ペットの種類を教えてください" %> <i class="fas fa-paw"></i>
+          <%= f.text_field :pet, class: "form-control", :placeholder => "犬 ゴールデンレトリバー" %>
+        </div>
+        <div class="form-group mt-5">
+          <i class="fas fa-paw"></i> <%= f.label :body, "投稿内容を記載してください" %> <i class="fas fa-paw"></i>
+          <%= f.text_area :body, class: "form-control", :placeholder => "今日は天気が良かったので、愛犬のぐりこと公園に行ってきました！　帰りは疲れて車でぐっすり眠っていました。" %>
+        </div>
+        <div class="form-group mt-5">
+          <%= f.submit "投稿する", class: "btn post-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
