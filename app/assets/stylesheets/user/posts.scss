@@ -1,0 +1,34 @@
+// Place all the styles related to the user/posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 新規投稿ページの投稿ボタン
+.post-btn{
+  border: 1px solid black!important;
+  border-radius: 100px!important;
+  background-color: yellow!important;
+  color: black!important;
+  width: 100%;
+}
+.post-btn:hover{
+  background-color: #FFFE96!important;
+}
+
+// 新規投稿ページ全体
+.post-new-page{
+  color: white;
+  background-color: #EE827d;
+}
+.post-title{
+  color: white;
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
+}
+
+.post-show-image{
+  width: 100%;
+}
+// ポスト詳細ページ全体
+// .post-show-page{
+//   background-color: #EE827d;
+// }

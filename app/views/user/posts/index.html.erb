@@ -1,0 +1,22 @@
+<div class="container">
+  <h3>投稿一覧 全<%= @posts.count %>件</h3>
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col-sm-3">
+        <div class="card">
+            <%= attachment_image_tag post, :post_image %>
+            <div class="card-body">
+              <%= attachment_image_tag post.user, :profile_image_id, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+              <%= post.user.name %>
+              <h5 class="card-title"><%= post.pet %></h5>
+              <p class="card-text"><%= post.body %></p>
+              <%= link_to "詳細", post_path(post.id), class: "btn btn-primary" %>
+            </div>
+          </div>
+      </div>
+    <% end %>
+    <div>
+      <%= paginate @posts %>
+    </div>
+  </div>
+</div>
