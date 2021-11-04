@@ -1,2 +1,33 @@
-<h1>User::Users#unsubscribe</h1>
-<p>Find me in app/views/user/users/unsubscribe.html.erb</p>
+<div class="container user-page">
+  <div class="row pt-5">
+    <div class="col-sm-12 text-center">
+      <h1><strong>本当に退会しますか？</strong></h1>
+    </div>
+  </div>
+  
+  <div class="row mt-5">
+    <div class="col-sm-12 text-center">
+      <h4>
+        <i class="fas fa-exclamation-triangle"></i> 
+          退会すると新たに投稿することや、投稿した記事が消えてしまいます 
+        <i class="fas fa-exclamation-triangle"></i>
+      <h4/>
+    </div>
+  </div>
+  
+  <div class="row mt-5">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-2">
+      <%= link_to user_path(@user.id), class: "btn user-show-btn ml-3" do %>
+        退会しない <i class="fas fa-undo-alt"></i>
+      <% end %>
+    </div>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-2">
+      <%= link_to withdraw_user_path(@user.id), method: :patch, class: "btn user-show-btn ml-3" do %>
+        退会する <i class="fas fa-exclamation-triangle"></i>
+      <% end %>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

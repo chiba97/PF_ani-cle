@@ -51,11 +51,10 @@ Rails.application.routes.draw do
       get  "follows"
       get "followers"
       get "favorites"
-    end
-    collection do
       get "unsubscribe"
       patch "withdraw"
     end
+
   end
 
   resources :notifications, only: [:index] do

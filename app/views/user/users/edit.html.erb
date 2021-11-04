@@ -1,2 +1,46 @@
-<h1>User::Users#edit</h1>
-<p>Find me in app/views/user/users/edit.html.erb</p>
+<div class="container user-page">
+  <% if @user.errors.any? %>
+    <div class="text-center pt-3">
+      <h4><%= @user.errors.count %>つの欄が未入力です</h4>
+      <% @user.errors.full_messages.each do |message| %>
+        <ul>
+          <li>
+            <%= message %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="row justify-content-center">
+    <div class="col-sm-6 mt-4">
+      <h3 class="post-title text-center"><i class="fas fa-paw"></i>マイページの編集<i class="fas fa-paw"></i></h3>
+      <%= form_with model: @user, local:true do |f| %>
+      <div class="form-group mt-5">
+        <i class="fas fa-paw"></i> <%= f.label :profile_image, "アイコン" %> <i class="fas fa-paw"></i>
+        <%= f.attachment_field :profile_image, class: "d-block"%>
+      </div>
+      <div class="form-group mt-4">
+        <i class="fas fa-paw"></i> <%= f.label :name, "ニックネーム" %> <i class="fas fa-paw"></i>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="form-group mt-4">
+        <i class="fas fa-paw"></i> <%= f.label :pet, "飼っているペット" %> <i class="fas fa-paw"></i>
+        <%= f.text_field :pet, class: "form-control" %>
+      </div>
+      <div class="form-group mt-4">
+        <i class="fas fa-paw"></i> <%= f.label :introduction, "自己紹介" %> <i class="fas fa-paw"></i>
+        <%= f.text_area :introduction, class: "form-control" %>
+      </div>
+      <div class="form-group mt-4">
+        <%= f.submit "変更を保存する", class: "btn user-show-btn" %>
+        <%= link_to user_path(@user.id), class: "btn user-show-btn ml-3" do %>
+        戻る <i class="fas fa-undo-alt"></i>
+        <% end %>
+        <%= link_to unsubscribe_user_path(@user.id), class: "btn user-show-btn ml-3" do %>
+        退会する <i class="fas fa-exclamation-triangle"></i>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
