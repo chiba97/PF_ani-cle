@@ -1,0 +1,123 @@
+<div class="container user-page">
+  <p class="text-center pt-1"><%= notice %></p>
+
+  <div class="text-center user-show-title pt-4">
+    <% if @user == current_user %>
+      <h2><i class="fas fa-paw"></i> マイページ <i class="fas fa-paw"></i></h2>
+    <% else %>
+      <h2><i class="fas fa-paw"></i> <%= @user.name %>さんのマイページ <i class="fas fa-paw"></i></h2>
+    <% end %>
+  </div>
+
+  <div class="row justify-content-center text-center pt-4">
+    <div class="col-sm-6">
+      <%= attachment_image_tag @user, :profile_image_id, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image" %>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="user-show-th user-th-1">ニックネーム <i class="far fa-user-circle"></i></th>
+            <th class="user-show-th user-th-1"><%= @user.name %></th>
+          </tr>
+          <tr>
+            <th class="user-show-th user-th-1">飼っているペット <i class="fas fa-dog"></i></th>
+            <th class="user-show-th user-th-1">
+              <% if @user.pet.present? %>
+                <%= @user.pet %>
+              <% else %>
+              未設定
+              <% end %>
+            </th>
+          </tr>
+          <tr>
+            <th class="user-show-th user-th-1">自己紹介 <i class="far fa-address-book"></i></th>
+            <th class="user-show-th user-th-1">
+              <% if @user.introduction.present? %>
+                <%= @user.introduction %>
+              <% else %>
+              未設定
+              <% end %>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="user-show-th">
+              <%= link_to follows_user_path(@user.id), class: "user-show-link" do %>
+              フォロー　人
+              <% end %>
+            </th>
+            <th class="user-show-th">
+              <%= link_to followers_user_path(@user.id), class: "user-show-link" do %>
+              フォロワー　人
+              <% end %>
+            </th>
+            <th class="user-show-th">
+              <%= link_to favorites_user_path(@user.id), class: "user-show-link" do %>
+              お気に入りの投稿　個
+              <% end %>
+            </th>
+          </tr>
+          <tr>
+            <th class="user-show-th">
+              <% if @user.id == current_user.id %>
+                <%= link_to  edit_user_path(@user.id), class: "btn user-show-btn" do %>
+                編集 <i class="fas fa-user-cog"></i>
+                <% end %>
+              <% end %>
+            </th>
+            <th class="user-show-th">
+              <%= link_to edit_user_path(@user.id), class: "btn user-show-btn" do %>
+              フォロー<i class="fas fa-user-plus"></i><i class="fas fa-user-minus"></i>
+              <% end %>
+            </th>
+            <th class="user-show-th">
+              <%= link_to edit_user_path(@user.id), class: "btn user-show-btn" do %>
+              DM <i class="far fa-comments"></i>
+              <% end %>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h2 class="text-center mt-5 user-show-title"><i class="fas fa-paw"></i> 投稿した記事一覧 <i class="fas fa-paw"></i></h2>
+  <% if @user.posts.present? %>
+  <div class="row">
+    <% @user.posts.each do |post| %>
+      <div class="col-sm-3 mt-5">
+        <div class="card index-card">
+            <%= attachment_image_tag post, :post_image, class: "post-index-img" %>
+            <div class="card-body">
+              <div class="row">
+                <%= link_to user_path(post.user.id) do %>
+                <%= attachment_image_tag post.user, :profile_image_id, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image" %>
+                <% end %>
+              </div>
+              <div class="row">
+                <%= link_to user_path(post.user.id),class: "profile-link" do %>
+                <p>投稿者<br><i class="fas fa-user"></i> <%= post.user.name %>さん <i class="fas fa-user"></i></p>
+                <% end %>
+              </div>
+              <div class="row user-show-index">
+                <p>ペットの種類<br><i class="fas fa-paw"></i> <%= post.pet %> <i class="fas fa-paw"></i></p>
+              </div>
+              <div class="row mt-2">
+              <%= link_to  post_path(post.id), class: "btn post-index-btn" do %>
+              詳細 <i class="fas fa-info-circle"></i>
+              <% end %>
+              </div>
+            </div>
+          </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="pt-5 pb-3 pl-5">
+    <p><%= paginate @posts %></p>
+  </div>
+  <% else %>
+    <h3 class="text-center pt-3 pb-5">※まだ投稿していません</h3>
+  <% end %>
+</div>

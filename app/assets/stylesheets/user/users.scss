@@ -1,0 +1,45 @@
+// Place all the styles related to the user/users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-page{
+  border-radius: 20px;
+  color: white;
+  background-color: #99c8b0;
+}
+
+.user-show-title{
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
+}
+
+.user-show-th{
+  font-size: 18px;
+  border-top: none!important;
+  color: white!important;
+}
+.user-th-1{
+  width: 50px;
+}
+
+.user-show-link{
+  color: white;
+}
+.user-show-link:hover{
+  color: #EE827d;
+}
+
+.user-show-btn{
+  border: 1px solid #EE827d!important;
+  border-radius: 100px!important;
+  background-color: #EE827d!important;
+  color: white!important;
+}
+.user-show-btn:hover{
+  background-color: white!important;
+  color: #EE827d!important;
+}
+
+.user-show-index{
+  color: #EE827d;
+}
