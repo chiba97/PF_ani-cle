@@ -115,3 +115,32 @@ footer{
 .profile-image{
  border-radius: 50%;
 }
+
+// kaminariを用いたページネーションカスタマイズ
+.pagination{
+  margin: auto;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+.pagination span{
+  background-color: white;
+  text-align: center;
+  width: 50px;
+  border: solid 1px #344963;
+  border-radius: 5px;
+  color: #EE827d;
+  transition: .3s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.pagination span:hover{
+  transition: .3s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.pagination span a:hover{
+  transition: .3s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

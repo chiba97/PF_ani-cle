@@ -1,4 +1,3 @@
----
 ja:
   activerecord:
     errors:
@@ -7,6 +6,22 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+
+    attributes:
+      user:
+        name: ニックネーム
+        profile_image: プロフィール画像
+        pet: 飼っているペット
+        introduction: 自己紹介
+
+      post:
+        pet: ペットの種類
+        post_image: ペットの画像
+        body: 投稿内容
+
+      comment:
+        comment: コメント
+
   date:
     abbr_day_names:
     - 日
@@ -205,18 +220,3 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-
-    attributes:
-        users:
-          name: "ニックネーム"
-          profile_image_id: "プロフィール画像"
-          pet: "飼っているペット"
-          introduction: "自己紹介"
-
-        posts:
-          pet: "ペットの種類"
-          post_image_id: "ペットの画像"
-          body: "投稿内容"
-
-        comments:
-          comment: "コメント"

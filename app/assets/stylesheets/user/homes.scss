@@ -9,6 +9,10 @@
   font-size: 20px;
 }
 
+#theTarget{
+  border-radius: 20px;
+}
+
 // トップページスライド画像設定
 .top-img{
   width: 100%;
@@ -162,6 +166,11 @@
   background-color: white!important;
   color: #EE827d!important;
   border: 1px solid #EE827d!important;
+}
+
+// アバウトページテキストブロック
+.about-content{
+  border-radius: 30px;
 }
 
 // アバウトページの画像の設定全２枚
