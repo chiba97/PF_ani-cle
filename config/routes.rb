@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
   namespace :user do
+    get 'users/show'
+    get 'users/edit'
+    get 'users/unsubscribe'
+  end
+  namespace :user do
     get 'posts/new'
     get 'posts/index'
     get 'posts/show'
@@ -46,11 +51,10 @@ Rails.application.routes.draw do
       get  "follows"
       get "followers"
       get "favorites"
-    end
-    collection do
       get "unsubscribe"
       patch "withdraw"
     end
+
   end
 
   resources :notifications, only: [:index] do

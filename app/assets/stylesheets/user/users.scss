@@ -1,0 +1,51 @@
+// Place all the styles related to the user/users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// マイページ画面設定
+.user-page{
+  border-radius: 20px;
+  color: white;
+  background-color: #99c8b0;
+}
+
+// マイページタイトル
+.user-show-title{
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
+}
+
+// マイページtable設定
+.user-show-th{
+  font-size: 18px;
+  border-top: none!important;
+  color: white!important;
+}
+.user-th-1{
+  width: 50px;
+}
+
+// マイページ画面遷移先リンク
+.user-show-link{
+  color: white;
+}
+.user-show-link:hover{
+  color: #EE827d;
+}
+
+// マイページ画面ボタン
+.user-show-btn{
+  border: 1px solid #EE827d!important;
+  border-radius: 100px!important;
+  background-color: #EE827d!important;
+  color: white!important;
+}
+.user-show-btn:hover{
+  background-color: white!important;
+  color: #EE827d!important;
+}
+
+// マイページ投稿一覧文字色
+.user-show-index{
+  color: #EE827d;
+}
