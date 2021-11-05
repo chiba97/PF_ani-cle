@@ -98,7 +98,13 @@
                 </div>
                 <div class="row">
                   <%= link_to user_path(post.user.id),class: "profile-link" do %>
-                    <p>投稿者<br><i class="fas fa-user"></i> <%= post.user.name %>さん <i class="fas fa-user"></i></p>
+                    <p>投稿者<br><i class="fas fa-user"></i>
+                      <% if post.user.id == current_user.id %>
+                        あなた
+                      <% else %>
+                        <%= post.user.name %>さん
+                      <% end %>
+                    <i class="fas fa-user"></i></p>
                   <% end %>
                 </div>
                 <div class="row user-show-index">
