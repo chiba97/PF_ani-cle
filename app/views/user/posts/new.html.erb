@@ -28,7 +28,9 @@
           <%= f.text_area :body, class: "form-control", :placeholder => "今日は天気が良かったので、愛犬のぐりこと公園に行ってきました！　帰りは疲れて車でぐっすり眠っていました。" %>
         </div>
         <div class="form-group mt-5">
-          <%= f.submit "投稿する", class: "btn post-btn" %>
+          <%= button_tag type: "submit", class: "btn post-btn" do %>
+          投稿する <i class="far fa-paper-plane"></i>
+          <% end %>
         </div>
       <% end %>
     </div>

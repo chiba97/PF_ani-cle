@@ -1,0 +1,21 @@
+.comment-form {
+  width: 100%;
+  border-radius: 20px !important; }
+
+.comment-btn {
+  border: 1px solid white !important;
+  border-radius: 100px !important;
+  background-color: white !important;
+  color: #EE827d !important; }
+
+.comment-btn:hover {
+  background-color: #EE827d !important;
+  color: white !important; }
+
+.comment-delete-btn {
+  border: 1px solid #EE827d !important;
+  border-radius: 100px !important;
+  background-color: #EE827d !important;
+  color: white !important; }
+
+/*# sourceMappingURL=comments.css.map */
