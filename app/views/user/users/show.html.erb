@@ -44,18 +44,18 @@
         <tbody>
           <tr>
             <th class="user-show-th">
-              <%= link_to follows_user_path(@user.id), class: "user-show-link" do %>
+              <%= link_to follows_user_path(@user.id), class: "btn user-show-btn" do %>
                 フォロー　人
               <% end %>
             </th>
             <th class="user-show-th">
-              <%= link_to followers_user_path(@user.id), class: "user-show-link" do %>
+              <%= link_to followers_user_path(@user.id), class: "btn user-show-btn" do %>
                 フォロワー　人
               <% end %>
             </th>
             <th class="user-show-th">
-              <%= link_to favorites_user_path(@user.id), class: "user-show-link" do %>
-                お気に入りの投稿　個
+              <%= link_to favorites_user_path(@user.id), class: "btn user-show-btn" do %>
+              お気に入りした投稿 <%= @user.favorites.count %>件
               <% end %>
             </th>
           </tr>
@@ -86,42 +86,7 @@
   <h2 class="text-center mt-5 user-show-title"><i class="fas fa-paw"></i> 投稿した記事一覧 <i class="fas fa-paw"></i></h2>
   <% if @user.posts.present? %>
     <div class="row">
-      <% @posts.each do |post| %>
-        <div class="col-sm-3 mt-5">
-          <div class="card index-card">
-              <%= attachment_image_tag post, :post_image, class: "post-index-img" %>
-              <div class="card-body">
-                <div class="row">
-                  <%= link_to user_path(post.user.id) do %>
-                    <%= attachment_image_tag post.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image" %>
-                  <% end %>
-                </div>
-                <div class="row">
-                  <%= link_to user_path(post.user.id),class: "profile-link" do %>
-                    <p>投稿者<br><i class="fas fa-user"></i>
-                      <% if post.user.id == current_user.id %>
-                        あなた
-                      <% else %>
-                        <%= post.user.name %>さん
-                      <% end %>
-                    <i class="fas fa-user"></i></p>
-                  <% end %>
-                </div>
-                <div class="row user-show-index">
-                  <p>ペットの種類<br><i class="fas fa-paw"></i> <%= post.pet %> <i class="fas fa-paw"></i></p>
-                </div>
-                <div class="row user-show-index">
-                  <p><i class="far fa-comment"></i> <%= post.comments.count %> </p>
-                </div>
-                <div class="row mt-2">
-                  <%= link_to  post_path(post.id), class: "btn post-index-btn" do %>
-                    詳細 <i class="fas fa-info-circle"></i>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-        </div>
-      <% end %>
+      <%= render "user/posts/post-index", posts: @posts %>
     </div>
     <div class="pt-5 pb-3 pl-5">
       <p><%= paginate @posts %></p>

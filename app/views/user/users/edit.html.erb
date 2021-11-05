@@ -1,16 +1,5 @@
 <div class="container user-page">
-  <% if @user.errors.any? %>
-    <div class="text-center pt-3">
-      <h4><%= @user.errors.count %>つの欄が未入力です</h4>
-      <% @user.errors.full_messages.each do |message| %>
-        <ul>
-          <li>
-            <%= message %>
-          </li>
-        </ul>
-      <% end %>
-    </div>
-  <% end %>
+  <%= render "user/posts/error", user: @user %>
   <div class="row justify-content-center">
     <div class="col-sm-6 mt-4">
       <h3 class="post-title text-center"><i class="fas fa-paw"></i>マイページの編集<i class="fas fa-paw"></i></h3>
