@@ -1,0 +1,40 @@
+<div class="container admin-page">
+  <div class="row justify-content-center">
+    <div class="col-sm-9">
+      <h2 class="admin-title text-center pt-4 mb-5" ><i class="fas fa-users"></i> 会員一覧 <i class="fas fa-users"></i></h2>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="admin-th">会員ID</th>
+              <th class="admin-th">ニックネーム</th>
+              <th class="admin-th">メールアドレス</th>
+              <th class="admin-th">退会ステータス</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+                <tr>
+                  <td class="admin-th"><%= user.id %></td>
+                  <td class="admin-th">
+                    <%= link_to admin_user_path(user.id), class: "admin-link" do %>
+                      <%= user.name %>さん
+                    <% end %>
+                  </td>
+                  <td class="admin-th"><%= user.email %></td>
+                  <td class="admin-th">
+                    <% if user.is_deleted == false %>
+                      有効
+                    <% else %>
+                      退会
+                    <% end %>
+                  </td>
+                </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+  </div>
+  <div class="pt-3 pb-3 pl-5">
+    <p><%= paginate @users %></p>
+  </div>
+</div>

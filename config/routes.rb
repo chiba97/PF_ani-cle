@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'users/index'
+    get 'users/show'
+    get 'users/edit'
+  end
   namespace :user do
     get 'users/show'
     get 'users/edit'
@@ -54,7 +59,6 @@ Rails.application.routes.draw do
       get "unsubscribe"
       patch "withdraw"
     end
-
   end
 
   resources :notifications, only: [:index] do

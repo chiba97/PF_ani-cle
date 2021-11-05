@@ -1,0 +1,27 @@
+// Place all the styles related to the admin/users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 管理者側ページ設定
+.admin-page{
+  border-radius: 20px;
+  color: white;
+  background-color: #99c8b0;
+}
+// 管理者側タイトル
+.admin-title{
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
+}
+
+// 以下管理者側テーブル設定
+.admin-th{
+  font-size: 18px;
+  color: white;
+}
+.admin-link{
+  color: #EE827d;
+}
+.admin-link:hover{
+  color: #EE827d;
+}
