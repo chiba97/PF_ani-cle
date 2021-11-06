@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :user do
+    get 'relationships/create'
+    get 'relationships/destroy'
+  end
   namespace :admin do
     get 'users/index'
     get 'users/show'

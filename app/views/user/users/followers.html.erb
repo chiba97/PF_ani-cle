@@ -1,0 +1,19 @@
+<div class="container favorites-page">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 mb-5">
+      <h2 class="text-center mt-5 user-show-title">
+        <i class="fas fa-users"></i>
+          <%= @user.name %>さんをフォローしているユーザー
+        <i class="fas fa-users"></i>
+      </h2>
+      </h2>
+        <% if @users.present? %>
+          <div class="row">
+          </div>
+        <% else %>
+          <h3 class="text-center pt-3 pb-5">※まだフォローされていません</h3>
+        <% end %>
+    </div>
+    </div>
+  </div>
+</div>
