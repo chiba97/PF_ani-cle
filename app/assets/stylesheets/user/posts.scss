@@ -102,3 +102,32 @@
 .post-index-img{
  border-radius: 20px;
 }
+
+// コメントの欄設定
+.comment-form{
+  border-radius: 20px;
+}
+
+// コメント削除ボタン
+.comment-delete-btn{
+  border: 1px solid #EE827d!important;
+  background-color: #EE827d!important;
+  color: white!important;
+}
+.comment-delete-btn:hover{
+  background-color: white!important;
+  color: #EE827d!important;
+}
+
+// 投稿されたコメント
+.comment-card{
+  color: #EE827d;
+}
+// コメントカード内の名前リンク
+.comment-link{
+  color: #EE827d;
+}
+.comment-link:hover{
+  color: #EE827d;
+}
+

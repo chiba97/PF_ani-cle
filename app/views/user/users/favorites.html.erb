@@ -1,0 +1,18 @@
+<div class="container favorites-page">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 mb-5">
+      <h2 class="text-center mt-5 user-show-title">
+        <i class="far fa-bookmark"></i>
+          <%= @user.name %>さんがお気に入りした投稿
+        <i class="far fa-bookmark"></i>
+      </h2>
+        <% if @favorite_posts.present? %>
+          <div class="row">
+            <%= render "user/posts/post-index", posts: @favorite_posts %>
+          </div>
+        <% else %>
+          <h3 class="text-center pt-3 pb-5">※まだお気に入り登録していません</h3>
+        <% end %>
+    </div>
+  </div>
+</div>

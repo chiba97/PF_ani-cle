@@ -1,16 +1,5 @@
 <div class="container post-page">
-  <% if @post.errors.any? %>
-    <div class="text-center pt-3">
-      <h4><%= @post.errors.count %>つの欄が未入力です</h4>
-      <% @post.errors.full_messages.each do |message| %>
-        <ul>
-          <li>
-            <%= message %>
-          </li>
-        </ul>
-      <% end %>
-    </div>
-  <% end %>
+  <%= render "user/posts/error", user: @post %>
   <div class="row justify-content-center">
     <div class="col-sm-6 mt-5">
       <h3 class="post-title text-center"><i class="fas fa-paw"></i>投稿内容の編集<i class="fas fa-paw"></i></h3>
@@ -28,7 +17,9 @@
         <%= f.text_area :body, class: "form-control" %>
       </div>
       <div class="form-group mt-4">
-        <%= f.submit "変更を保存する", class: "btn post-show-btn" %>
+        <%= button_tag type: "submit", class: "btn post-show-btn" do %>
+        保存する <i class="fas fa-save"></i>
+        <% end %>
         <%= link_to post_path(@post), class: "btn post-show-btn ml-3" do %>
         戻る <i class="fas fa-undo-alt"></i>
         <% end %>

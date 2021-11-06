@@ -1,179 +1,25 @@
 <div class="container top-img">
     <div id="theTarget">
       <div class="image1 text-center pt-5">
-        <div class="mt-5">
-          <h1 class="top-title">ANI-CLE</h1>
-          <p class="top-text">大切なペットへの『愛』を投稿して輪を広げよう</p>
-        </div>
-        <% if user_signed_in? %>
-          <div class="mt-5">
-            <%= link_to user_path(current_user.id), class: "btn top-new-btn" do%>
-            ようこそ、<%= current_user.name %>さん
-            <% end %>
-          </div>
-        <% elsif admin_signed_in? %>
-          <div class="mt-5">
-            <%= link_to admin_users_path, class: "btn top-new-btn" do%>
-            管理者ページです
-            <% end %>
-          </div>
-        <% else %>
-          <div class="mt-5">
-            <%= link_to "新規会員登録", new_user_registration_path, class: "btn top-new-btn mb-2" %>
-          <p class="top-text">or</p>
-            <%= link_to "ログイン", new_user_session_path, class: "btn top-new-btn" %>
-          </div>
-        <% end %>
+        <%= render "user/homes/top" %>
       </div>
       <div class="image2 text-center pt-5">
-        <div class="mt-5">
-          <h1 class="top-title">ANI-CLE</h1>
-          <p class="top-text">大切なペットへの『愛』を投稿して輪を広げよう</p>
-        </div>
-        <% if user_signed_in? %>
-          <div class="mt-5">
-            <%= link_to user_path(current_user.id), class: "btn top-new-btn" do%>
-            ようこそ、<%= current_user.name %>さん
-            <% end %>
-          </div>
-        <% elsif admin_signed_in? %>
-          <div class="mt-5">
-            <%= link_to admin_users_path, class: "btn top-new-btn" do%>
-            管理者ページです
-            <% end %>
-          </div>
-        <% else %>
-          <div class="mt-5">
-            <%= link_to "新規会員登録", new_user_registration_path, class: "btn top-new-btn mb-2" %>
-          <p class="top-text" >or</p>
-            <%= link_to "ログイン", new_user_session_path, class: "btn top-new-btn" %>
-          </div>
-        <% end %>
+        <%= render "user/homes/top" %>
       </div>
       <div class="image3 text-center pt-5">
-        <div class="mt-5">
-          <h1 class="top-title">ANI-CLE</h1>
-          <p class="top-text">大切なペットへの『愛』を投稿して輪を広げよう</p>
-        </div>
-        <% if user_signed_in? %>
-          <div class="mt-5">
-            <%= link_to user_path(current_user.id), class: "btn top-new-btn" do%>
-            ようこそ、<%= current_user.name %>さん
-            <% end %>
-          </div>
-        <% elsif admin_signed_in? %>
-          <div class="mt-5">
-            <%= link_to admin_users_path, class: "btn top-new-btn" do%>
-            管理者ページです
-            <% end %>
-          </div>
-        <% else %>
-          <div class="mt-5">
-            <%= link_to "新規会員登録", new_user_registration_path, class: "btn top-new-btn mb-2" %>
-          <p class="top-text" >or</p>
-            <%= link_to "ログイン", new_user_session_path, class: "btn top-new-btn" %>
-          </div>
-        <% end %>
+        <%= render "user/homes/top" %>
       </div>
       <div class="image4 text-center pt-5">
-        <div class="mt-5">
-          <h1 class="top-title">ANI-CLE</h1>
-          <p class="top-text">大切なペットへの『愛』を投稿して輪を広げよう</p>
-        </div>
-        <% if user_signed_in? %>
-          <div class="mt-5">
-            <%= link_to user_path(current_user.id), class: "btn top-new-btn" do%>
-            ようこそ、<%= current_user.name %>さん
-            <% end %>
-          </div>
-        <% elsif admin_signed_in? %>
-          <div class="mt-5">
-            <%= link_to admin_users_path, class: "btn top-new-btn" do%>
-            管理者ページです
-            <% end %>
-          </div>
-        <% else %>
-          <div class="mt-5">
-            <%= link_to "新規会員登録", new_user_registration_path, class: "btn top-new-btn mb-2" %>
-          <p class="top-text" >or</p>
-            <%= link_to "ログイン", new_user_session_path, class: "btn top-new-btn" %>
-          </div>
-        <% end %>
+        <%= render "user/homes/top" %>
       </div>
       <div class="image5 text-center pt-5">
-        <div class="mt-5">
-          <h1 class="top-title">ANI-CLE</h1>
-          <p class="top-text">大切なペットへの『愛』を投稿して輪を広げよう</p>
-        </div>
-        <% if user_signed_in? %>
-          <div class="mt-5">
-            <%= link_to user_path(current_user.id), class: "btn top-new-btn" do%>
-            ようこそ、<%= current_user.name %>さん
-            <% end %>
-          </div>
-        <% elsif admin_signed_in? %>
-          <div class="mt-5">
-            <%= link_to admin_users_path, class: "btn top-new-btn" do%>
-            管理者ページです
-            <% end %>
-          </div>
-        <% else %>
-          <div class="mt-5">
-            <%= link_to "新規会員登録", new_user_registration_path, class: "btn top-new-btn mb-2" %>
-          <p class="top-text" >or</p>
-            <%= link_to "ログイン", new_user_session_path, class: "btn top-new-btn" %>
-          </div>
-        <% end %>
+        <%= render "user/homes/top" %>
       </div>
       <div class="image6 text-center pt-5">
-        <div class="mt-5">
-          <h1 class="top-title">ANI-CLE</h1>
-          <p class="top-text">大切なペットへの『愛』を投稿して輪を広げよう</p>
-        </div>
-        <% if user_signed_in? %>
-          <div class="mt-5">
-            <%= link_to user_path(current_user.id), class: "btn top-new-btn" do%>
-            ようこそ、<%= current_user.name %>さん
-            <% end %>
-          </div>
-        <% elsif admin_signed_in? %>
-          <div class="mt-5">
-            <%= link_to admin_users_path, class: "btn top-new-btn" do%>
-            管理者ページです
-            <% end %>
-          </div>
-        <% else %>
-          <div class="mt-5">
-            <%= link_to "新規会員登録", new_user_registration_path, class: "btn top-new-btn mb-2" %>
-          <p class="top-text" >or</p>
-            <%= link_to "ログイン", new_user_session_path, class: "btn top-new-btn" %>
-          </div>
-        <% end %>
+        <%= render "user/homes/top" %>
       </div>
       <div class="image7 text-center pt-5">
-        <div class="mt-5">
-          <h1 class="top-title">ANI-CLE</h1>
-          <p class="top-text">大切なペットへの『愛』を投稿して輪を広げよう</p>
-        </div>
-        <% if user_signed_in? %>
-          <div class="mt-5">
-            <%= link_to user_path(current_user.id), class: "btn top-new-btn" do%>
-            ようこそ、<%= current_user.name %>さん
-            <% end %>
-          </div>
-        <% elsif admin_signed_in? %>
-          <div class="mt-5">
-            <%= link_to admin_users_path, class: "btn top-new-btn" do%>
-            管理者ページです
-            <% end %>
-          </div>
-        <% else %>
-          <div class="mt-5">
-            <%= link_to "新規会員登録", new_user_registration_path, class: "btn top-new-btn mb-2" %>
-          <p class="top-text" >or</p>
-            <%= link_to "ログイン", new_user_session_path, class: "btn top-new-btn" %>
-          </div>
-        <% end %>
+        <%= render "user/homes/top" %>
       </div>
     </div>
 </div>
