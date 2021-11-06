@@ -1,0 +1,42 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th class="follow-th"></th>
+      <th class="follow-th">ニックネーム</th>
+      <th class="follow-th">飼っているペット</th>
+      <th class="follow-th">自己紹介</th>
+      <th class="follow-th"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.each do |user| %>
+      <tr>
+        <td class="follow-th">
+          <%= link_to user_path(user.id) do %>
+            <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image" %>
+          <% end %>
+        </td>
+        <td class="follow-th">
+          <%= link_to user_path(user.id), class: "follow-link" do %>
+            <%= user.name %>さん
+          <% end %>
+        </td>
+        <td class="follow-th"><%= user.pet %></td>
+        <td class="follow-th"><%= user.introduction %></td>
+        <td class="follow-th">
+          <% if user != current_user %>
+            <% if user.followed_by?(current_user) %>
+              <%= link_to user_relationships_path(user.id), method: :delete, class: "btn user-show-btn mr-3" do %>
+                フォロー解除 <i class="fas fa-user-minus"></i>
+              <% end %>
+            <% else %>
+              <%= link_to user_relationships_path(user.id), method: :post, class: "btn user-show-btn mr-3" do %>
+                フォローする <i class="fas fa-user-plus"></i>
+              <% end %>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

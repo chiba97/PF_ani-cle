@@ -1,15 +1,14 @@
-<div class="container favorites-page">
+<div class="container user-page">
   <div class="row justify-content-center">
     <div class="col-sm-12 mb-5">
-      <h2 class="text-center mt-5 user-show-title">
+      <h2 class="text-center mt-4 mb-5 user-show-title">
         <i class="fas fa-users"></i>
           <%= @user.name %>さんがフォローしているユーザー
         <i class="fas fa-users"></i>
       </h2>
       </h2>
         <% if @users.present? %>
-          <div class="row">
-          </div>
+          <%= render "user/users/follow_index", users: @users, user: @user %>
         <% else %>
           <h3 class="text-center pt-3 pb-5">※まだフォローしていません</h3>
         <% end %>
