@@ -1,0 +1,39 @@
+<% posts.each do |post| %>
+  <div class="col-sm-3 mt-5">
+    <div class="card index-card">
+      <%= attachment_image_tag post, :post_image, class: "post-index-img" %>
+      <div class="card-body">
+        <div class="row">
+          <%= link_to user_path(post.user.id) do %>
+            <%= attachment_image_tag post.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image" %>
+          <% end %>
+        </div>
+        <div class="row">
+          <%= link_to user_path(post.user.id),class: "profile-link mt-3" do %>
+            <p>投稿者<br><i class="fas fa-user"></i>
+              <% if post.user.id == current_user.id %>
+                あなた
+              <% else %>
+                <%= post.user.name %>さん
+              <% end %>
+            <i class="fas fa-user"></i></p>
+          <% end %>
+        </div>
+        <div class="row user-show-index">
+          <p>ペットの種類<br><i class="fas fa-paw"></i> <%= post.pet %> <i class="fas fa-paw"></i></p>
+        </div>
+        <div class="row user-show-index">
+          <p>
+            <i class="far fa-heart"></i> <%= post.favorites.count %>
+            <i class="far fa-comment"></i> <%= post.comments.count %>
+          </p>
+        </div>
+        <div class="row mt-2">
+          <%= link_to  post_path(post.id), class: "btn post-index-btn" do %>
+            詳細 <i class="fas fa-info-circle"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
