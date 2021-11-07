@@ -3,12 +3,18 @@
   <%= link_to image_tag("logo.png", size: "100x100"), root_path, class: "mt-2 ml-5 navbar-brand" %>
   
   <% if user_signed_in? %>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2 ml-3" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn my-2 my-sm-0 header-search-btn" type="submit">
-          <i class="fas fa-search"></i>
-        </button>
-    </form>
+    <%= form_with url: searches_path, local: true, method: :get do |f| %>
+      <%= f.text_field :word, :placeholder => "Search" %>
+      <%= f.select :range, options_for_select([["ユーザー", "User"],["投稿記事", "Post"]])%>
+      <%= f.select :search, options_for_select([["完全一致", "perfect_match"],["部分一致", "partial_match"]])%>
+      <%= button_tag type: "submit", class: "btn header-search-btn" do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+      <!--<input class="form-control mr-sm-2 ml-3" type="search" placeholder="Search" aria-label="Search">-->
+      <!--  <button class="btn my-2 my-sm-0 header-search-btn" type="submit">-->
+      <!--    <i class="fas fa-search"></i>-->
+      <!--  </button>-->
+    <% end %>
   <% end %>
       
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

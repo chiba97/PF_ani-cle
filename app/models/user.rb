@@ -23,8 +23,20 @@ class User < ApplicationRecord
   
   attachment :profile_image
   
+  # 現時点で自分がフォローしようとしているユーザーを自分が既にフォローしているか判断する
   def followed_by?(user)
-    # 現時点で自分がフォローしようとしているユーザーを自分が既にフォローしているか判断する
     passive_relationships.find_by(following_id: user.id).present?
   end
+  
+  # ユーザー検索機能分岐
+  def self.looks(search, word)
+    if search == "perfect_match"
+      @user = User.where("name LIKE?", "#{word}")
+    elsif search == "partial_match"
+      @user = User.where("name LIKE?", "%#{word}%")
+    else
+      @user = User.all
+    end
+  end
+  
 end
