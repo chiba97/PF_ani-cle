@@ -149,3 +149,18 @@ footer{
 .navbar-toggler{
  border-color: #EE827d!important;
 }
+
+// 検索窓のデザイン
+#word{
+ border-color: #EE827d;
+ border-radius: 5px;
+}
+select{
+ border-color: #EE827d;
+ border-radius: 5px;
+ color: #EE827d;
+}
+select:hover{
+ background-color: #EE827d;
+ color: white;
+}
