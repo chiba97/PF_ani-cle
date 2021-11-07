@@ -1,0 +1,33 @@
+// Place all the styles related to the user/searches controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ユーザー検索一覧ページ
+.user-search-page{
+  border-radius: 20px;
+  color: white;
+  background-color: #99c8b0;
+}
+.user-search-title{
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
+}
+
+// 投稿検索一覧ページ
+.post-search-page{
+  border-radius: 20px;
+  color: #EE827d;
+  background-color: #EE827d;
+}
+.post-search-title{
+  color: white;
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
+}
+
+// 検索結果なしタイトル
+.not-search-title{
+  text-align: center;
+  color: white;
+}
+

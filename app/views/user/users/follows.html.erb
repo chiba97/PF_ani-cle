@@ -6,7 +6,6 @@
           <%= @user.name %>さんがフォローしているユーザー
         <i class="fas fa-users"></i>
       </h2>
-      </h2>
         <% if @users.present? %>
           <%= render "user/users/follow_index", users: @users, user: @user %>
         <% else %>
