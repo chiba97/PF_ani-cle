@@ -7,7 +7,7 @@
         <i class="far fa-bookmark"></i>
       </h2>
         <% if @favorite_posts.present? %>
-          <div class="row">
+          <div class="row justify-content-center">
             <%= render "user/posts/post_index", posts: @favorite_posts %>
           </div>
         <% else %>
