@@ -176,3 +176,29 @@ footer{
  background-color: #EE827d;
  color: white;
 }
+
+// 画像アップロードボタンデザイン
+// 記事投稿側
+.image-input-btn{
+ display: block;
+  background-color: white;
+  width: 180px;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding-top: 2px;
+  color: #EE827d;
+  text-align: center;
+}
+// アイコン側
+.user-image-input-btn{
+ display: block;
+  background-color: #EE827d;
+  width: 180px;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding-top: 2px;
+  color: white;
+  text-align: center;
+}
