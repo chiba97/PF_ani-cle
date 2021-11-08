@@ -76,6 +76,10 @@ body{
 .new-field:hover{
  border: 1px solid black;
 }
+.new-field:focus{
+ border: 2px solid #EE827d;
+ outline: 0;
+}
 
 // ヘッダー検索ボタン
 .header-search-btn{
@@ -152,15 +156,23 @@ footer{
 
 // 検索窓のデザイン
 #word{
- border-color: #EE827d;
+ padding: 2px 5px;
  border-radius: 5px;
+ border: 1px #EE827d solid;
 }
-select{
+#word:focus{
+ outline: 0;
+}
+#range, #search{
  border-color: #EE827d;
  border-radius: 5px;
  color: #EE827d;
 }
-select:hover{
+#search:hover{
+ background-color: #EE827d;
+ color: white;
+}
+#range:hover{
  background-color: #EE827d;
  color: white;
 }
