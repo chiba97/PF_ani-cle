@@ -5,7 +5,14 @@ class User::MessagesController < ApplicationController
       @message = Message.create(message_params)
     end
     @room = Room.find(params[:message][:room_id])
-    @messages = @room.messages
+    @messages = Message.where(room_id: @room.id)
+  end
+
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+    @room = Room.find(@message.room_id)
+    @messages = Message.where(room_id: @room.id)
   end
 
   private

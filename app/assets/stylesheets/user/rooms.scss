@@ -36,6 +36,14 @@
   width: 30%;
 }
 
+// メッセージ削除ボタン
+.message-delete-btn{
+  color: white;
+}
+.message-delete-btn:hover{
+  color: #99c8b0;
+}
+
 // メッセージ全体
 .message {
   padding: 20px 10px;

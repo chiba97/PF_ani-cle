@@ -50,7 +50,7 @@ Rails.application.routes.draw do
   get "/about" => "homes#about"
   get "searches" => "searches#search"
   resources :rooms, only: [:show, :create]
-  resources :messages, only: [:create]
+  resources :messages, only: [:create, :destroy]
 
   resources :posts do
     resources :comments, only: [:create, :destroy]
