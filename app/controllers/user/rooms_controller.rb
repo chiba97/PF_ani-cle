@@ -13,6 +13,7 @@ class User::RoomsController < ApplicationController
       @messages = @room.messages
       @message = Message.new
       @entries = @room.entries
+      @user = User.find(params[:user_id])
     else
       redirect_back(fallback_location: root_path)
     end

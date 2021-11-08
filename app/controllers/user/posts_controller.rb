@@ -23,6 +23,7 @@ before_action :authenticate_user!,except: [:index]
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
+    @comments = @post.comments.page(params[:page]).per(10)
   end
 
   def edit

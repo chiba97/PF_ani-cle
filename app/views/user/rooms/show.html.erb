@@ -4,12 +4,7 @@
       <div class="text-center user-room-title pt-5">
         <h2>
           <i class="far fa-comments"></i>
-            <% @entries.each do |e| %>
-              <% unless e.user.id == current_user.id %>
-                <%= e.user.name %>さんとのチャットルーム
-                <%= link_to "＜戻る＞", user_path(e.user.id), class: "back-link" %>
-              <% end %>
-            <% end %>
+            <%= @user.name %>さんとのチャットルーム
           <i class="far fa-comments"></i>
         </h2>
       </div>
@@ -37,6 +32,7 @@
       </div>
       <div class="form-group text-right">
         <%= f.submit "送信する", class: "btn message-btn" %>
+        <%= link_to "戻る", user_path(@user.id), class: "btn message-btn" %>
         </div>
       <% end %>
     </div>

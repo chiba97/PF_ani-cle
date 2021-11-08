@@ -1,32 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :user do
-    get 'rooms/show'
-  end
-  namespace :user do
-    get 'relationships/create'
-    get 'relationships/destroy'
-  end
-  namespace :admin do
-    get 'users/index'
-    get 'users/show'
-    get 'users/edit'
-  end
-  namespace :user do
-    get 'users/show'
-    get 'users/edit'
-    get 'users/unsubscribe'
-  end
-  namespace :user do
-    get 'posts/new'
-    get 'posts/index'
-    get 'posts/show'
-    get 'posts/edit'
-  end
-  namespace :user do
-    get 'homes/top'
-    get 'homes/about'
-  end
   # デバイスUser側
   devise_for :users,skip: [:passwords], controllers: {
     registrations: "user/registrations",

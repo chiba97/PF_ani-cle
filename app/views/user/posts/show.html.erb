@@ -66,7 +66,7 @@
   <div class="row justify-content-center">
     <div class="col-sm-10 mb-5">
       <div id="post_comment_<%= @post.id %>">
-        <%= render "user/comments/post_comment", post: @post %>
+        <%= render "user/comments/post_comment", post: @post, comments: @comments %>
       </div>
     </div>
   </div>
