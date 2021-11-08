@@ -1,0 +1,27 @@
+<% messages.each do |m| %>
+  <% if m.user.id != current_user.id %>
+    <div class="balloon6">
+      <div class="icon">
+        <%= attachment_image_tag m.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image" %>
+      </div>
+      <div class="chatting">
+        <div class="says">
+          <p>
+            <%= m.content %><br>
+           （<%= time_ago_in_words(m.created_at) %>前）
+          </p>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="mycomment">
+      <p>
+        <%= m.content %><br>
+       （<%= time_ago_in_words(m.created_at).upcase %>前）
+        <%= link_to  message_path(m.id),  method: :delete, remote: true, class: "message-delete-btn" do %>
+        <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
+<% end %>

@@ -1,5 +1,5 @@
 <p>コメント：<%= post.comments.count %> 件</p>
-<% post.comments.each do |comment| %>
+<% comments.each do |comment| %>
   <div class="card comment-card">
     <div class="card-body">
       <h6 class="card-title">
@@ -21,3 +21,6 @@
     </div>
   </div>
 <% end %>
+<div class="pt-3 pb-3 pl-5">
+  <p><%= paginate comments %></p>
+</div>

@@ -76,6 +76,10 @@ body{
 .new-field:hover{
  border: 1px solid black;
 }
+.new-field:focus{
+ border: 2px solid #EE827d;
+ outline: 0;
+}
 
 // ヘッダー検索ボタン
 .header-search-btn{
@@ -124,6 +128,7 @@ footer{
   justify-content: flex-start;
 }
 .pagination span{
+  margin-right: 10px;
   background-color: white;
   text-align: center;
   width: 50px;
@@ -148,4 +153,53 @@ footer{
 // ナビバーデザイン
 .navbar-toggler{
  border-color: #EE827d!important;
+}
+
+// 検索窓のデザイン
+#word{
+ padding: 2px 5px;
+ border-radius: 5px;
+ border: 1px #EE827d solid;
+}
+#word:focus{
+ outline: 0;
+}
+#range, #search{
+ border-color: #EE827d;
+ border-radius: 5px;
+ color: #EE827d;
+}
+#search:hover{
+ background-color: #EE827d;
+ color: white;
+}
+#range:hover{
+ background-color: #EE827d;
+ color: white;
+}
+
+// 画像アップロードボタンデザイン
+// 記事投稿側
+.image-input-btn{
+ display: block;
+  background-color: white;
+  width: 180px;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding-top: 2px;
+  color: #EE827d;
+  text-align: center;
+}
+// アイコン側
+.user-image-input-btn{
+ display: block;
+  background-color: #EE827d;
+  width: 180px;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding-top: 2px;
+  color: white;
+  text-align: center;
 }

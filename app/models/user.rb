@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :entries, dependent: :destroy
+  has_many :messages, dependent: :destroy
   
   # フォローする側のユーザーからみてフォローされる側のユーザーを集めるので、親はfollowing_id(フォローする側)を指定
   has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id

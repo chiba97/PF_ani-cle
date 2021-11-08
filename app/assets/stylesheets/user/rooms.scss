@@ -1,0 +1,122 @@
+// Place all the styles related to the user/rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// チャットルーム全体設定
+.room-page{
+  border-radius: 20px;
+  color: white;
+  background-color: #99c8b0;
+}
+.user-room-title{
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
+}
+
+// 戻るリンク
+.back-link{
+  color: white;
+}
+.back-link:hover{
+  color: #EE827d;
+}
+
+// メッセージ送信ボタン
+.message-btn{
+  border: 1px solid #EE827d!important;
+  border-radius: 100px!important;
+  background-color: white!important;
+  color: #EE827d!important;
+}
+.message-btn:hover{
+  background-color: #EE827d!important;
+  color: white!important;
+}
+.message-form{
+  width: 30%;
+}
+
+// メッセージ削除ボタン
+.message-delete-btn{
+  color: white;
+}
+.message-delete-btn:hover{
+  color: #99c8b0;
+}
+
+// メッセージ全体
+.message {
+  padding: 20px 10px;
+  margin: 15px auto;
+  text-align: right;
+}
+
+// 相手側のメッセージ
+.balloon6 {
+  width: 100%;
+  margin: 10px 10px;
+  overflow: hidden;
+}
+// 相手のアイコン
+.balloon6 .icon {
+  float: left;
+  margin-right: -50px;
+  width: 40px;
+}
+.balloon6 .icon img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.balloon6 .chatting {
+  width: 100%;
+  text-align: left;
+}
+.says {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 0 50px;
+  padding: 10px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #EE827d;
+}
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #EE827d;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+.says p {
+  margin: 0;
+  padding: 0;
+}
+
+// 自分のメッセージ
+.mycomment {
+  margin: 10px 10px;
+}
+.mycomment p {
+  display: inline-block;
+  position: relative;
+  margin: 0 10px 0 0;
+  padding: 8px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #EE827d;
+}
+.mycomment p:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #EE827d;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
