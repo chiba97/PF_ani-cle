@@ -1,0 +1,63 @@
+<div class="container room-page">
+  <div class="row justify-content-center">
+    <div class="col-sm-12">
+      <div class="text-center user-room-title pt-5">
+        <h2>
+          <i class="far fa-comments"></i>
+            <% @entries.each do |e| %>
+              <% if e.user.id != current_user.id %>
+                <%= e.user.name %>さんとのチャットルーム
+                <%= link_to "＜戻る＞", user_path(e.user.id), class: "back-link" %>
+              <% end %>
+            <% end %>
+          <i class="far fa-comments"></i>
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 message">
+      <% if @messages.present? %>
+        <% @messages.each do |m| %>
+          <% if m.user.id != current_user.id %>
+            <div class="balloon6">
+              <div class="icon">
+                <%= attachment_image_tag m.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image" %>
+              </div>
+              <div class="chatting">
+                <div class="says">
+                  <p>
+                    <%= m.content %><br>（<%= time_ago_in_words(m.created_at) %>前）
+                  </p>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <div class="mycomment">
+              <p>
+                <%= m.content %><br>（<%= time_ago_in_words(m.created_at).upcase %>前）
+              </p>
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <h3 class="text-center pt-3 pb-5">※まだメッセージはありません</h3>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row pt-3 pb-5">
+    <div class="col-sm-6 ml-auto">
+      <%= form_with model: @message, local: true do |f| %>
+      <div class="form-group">
+        <%= f.text_field :content, placeholder: "メッセージを入力してください", class: "form-control" %>
+        <%= f.hidden_field :room_id, value: @room.id %>
+      </div>
+      <div class="form-group text-right">
+        <%= f.submit "送信する", class: "btn message-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

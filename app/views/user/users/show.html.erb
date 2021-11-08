@@ -41,40 +41,64 @@
         </tbody>
       </table>
       <div class="row mb-4 justify-content-center">
-        <div class="col-sm-12">
-          <%= link_to follows_user_path(@user.id), class: "btn user-show-btn mr-3" do %>
+        <div class="col-sm-4">
+          <%= link_to follows_user_path(@user.id), class: "btn user-show-btn" do %>
             フォロー <%= @user.followings.count %>人
           <% end %>
-          <%= link_to followers_user_path(@user.id), class: "btn user-show-btn mr-3" do %>
+        </div>
+        <div class="col-sm-4">
+          <%= link_to followers_user_path(@user.id), class: "btn user-show-btn" do %>
             フォロワー <%= @user.followers.count %>人
           <% end %>
+        </div>
+        <div class="col-sm-4">
           <%= link_to favorites_user_path(@user.id), class: "btn user-show-btn" do %>
-            お気に入りした投稿 <%= @user.favorites.count %>件
+            お気に入り <%= @user.favorites.count %>件
           <% end %>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-sm-12">
           <% if @user.id == current_user.id %>
-            <%= link_to  edit_user_path(@user.id), class: "btn user-show-btn mr-3" do %>
-              編集 <i class="fas fa-user-cog"></i>
-            <% end %>
-          <% end %>
-          <% if @user != current_user %>
+            <div class="col-sm-6">
+              <%= link_to  edit_user_path(@user.id), class: "btn user-show-btn mr-3" do %>
+                編集 <i class="fas fa-user-cog"></i>
+              <% end %>
+            </div>
+          <% else %>
             <% if @user.followed_by?(current_user) %>
-              <%= link_to user_relationships_path(@user.id), method: :delete, class: "btn user-show-btn mr-3" do %>
-                フォロー解除 <i class="fas fa-user-minus"></i>
-              <% end %>
+              <div class="col-sm-6">
+                <%= link_to user_relationships_path(@user.id), method: :delete, class: "btn user-show-btn mr-3" do %>
+                  フォロー解除 <i class="fas fa-user-minus"></i>
+                <% end %>
+              </div>
             <% else %>
-              <%= link_to user_relationships_path(@user.id), method: :post, class: "btn user-show-btn mr-3" do %>
-                フォローする <i class="fas fa-user-plus"></i>
+              <div class="col-sm-6">
+                <%= link_to user_relationships_path(@user.id), method: :post, class: "btn user-show-btn mr-3" do %>
+                  フォローする <i class="fas fa-user-plus"></i>
+                <% end %>
+              </div>
+            <% end %>
+            <% if (current_user.followed_by? @user) && (@user.followed_by? current_user) %>
+              <% if @isRoom == true %>
+                <div class="col-sm-6">
+                  <%= link_to room_path(@roomId), class: "btn user-show-btn" do %>
+                    チャットを始める <i class="far fa-comments"></i>
+                  <% end %>
+                </div>
+              <% else %>
+                <div class="col-sm-6">
+                  <%= form_with model: @room, local: true do |f| %>
+                    <%= fields_for @entry do |e| %>
+                      <%= e.hidden_field :user_id, value: @user.id %>
+                    <% end %>
+                    <%= button_tag type: "submit", class: "btn user-show-btn" do %>
+                      チャットを始めよう <i class="far fa-comments"></i>
+                    <% end %>
+                  <% end %>
+                </div>
               <% end %>
             <% end %>
           <% end %>
-          <%= link_to edit_user_path(@user.id), class: "btn user-show-btn" do %>
-            DM <i class="far fa-comments"></i>
-          <% end %>
-        </div>
       </div>
     </div>
   </div>

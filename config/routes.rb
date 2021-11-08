@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   namespace :user do
+    get 'rooms/show'
+  end
+  namespace :user do
     get 'relationships/create'
     get 'relationships/destroy'
   end
