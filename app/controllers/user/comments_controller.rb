@@ -7,6 +7,8 @@ class User::CommentsController < ApplicationController
     comment = current_user.comments.new(comment_params)
     comment.post_id = @post.id
     comment.save
+    # コメントを通知する
+    @post.create_notification_comment!(current_user, comment.id)
   end
 
   def destroy

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  namespace :user do
+    get 'notifications/index'
+  end
   # デバイスUser側
   devise_for :users,skip: [:passwords], controllers: {
     registrations: "user/registrations",

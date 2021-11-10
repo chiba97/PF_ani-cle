@@ -13,7 +13,7 @@
       </p>
       <% if comment.user == current_user %>
         <div class="text-right">
-          <%= link_to post_comment_path(comment.post, comment), method: :delete, class: "btn comment-delete-btn", remote: true do %>
+          <%= link_to post_comment_path(comment.post, comment), method: :delete, class: "btn comment-delete-btn",data: { confirm: '本当に削除しますか？' }, remote: true do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
         </div>
@@ -21,6 +21,6 @@
     </div>
   </div>
 <% end %>
-<div class="pt-3 pb-3 pl-5">
-  <p><%= paginate comments %></p>
+<div class="pt-3 pb-3">
+   <p><%= paginate comments %></p>
 </div>
