@@ -9,12 +9,12 @@ class Post < ApplicationRecord
   validates :post_image, presence: true
 
   attachment :post_image
-  
+
   # 自分がお気に入りに登録しているか確認
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
-  
+
   # 投稿記事検索機能分岐
   def self.looks(search, word)
     if search == "perfect_match"
@@ -25,7 +25,7 @@ class Post < ApplicationRecord
       @post = Post.all
     end
   end
-  
+
   # いいね通知の作成メソッド
   def create_notification_like!(current_user)
     # 既にいいねをされているのかを検索
@@ -45,7 +45,7 @@ class Post < ApplicationRecord
     notification.save if notification.valid?
     end
   end
-  
+
   # コメント通知の作成メソッド
   def create_notification_comment!(current_user, comment_id)
     # 自分以外のコメントをしている人を全員取得して、全員に通知を送る
@@ -56,13 +56,13 @@ class Post < ApplicationRecord
     # まだ誰もコメントしていない場合は、投稿主に通知を送る
     save_notification_comment!(current_user, comment_id, user_id) if temp_ids.blank?
   end
-  
+
   def save_notification_comment!(current_user, comment_id, visited_id)
     # コメントは複数回することが考えられるので、１つの投稿に複数回通知する
     notification = current_user.active_notifications.new(
         post_id: id,
         comment_id: comment_id,
-        vsited_id: visited_id,
+        visited_id: visited_id,
         action: 'comment'
       )
     # 自分の投稿に対してのコメントの場合は、通知済みとする
@@ -71,5 +71,5 @@ class Post < ApplicationRecord
     end
     notification.save if notification.valid?
   end
-  
+
 end
