@@ -61,11 +61,13 @@ class User::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   protected
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
-  
+
   private
+
   # 新規登録後にマイページに飛ぶ処理
   def after_sign_up_path_for(resource)
     user_path(resource)

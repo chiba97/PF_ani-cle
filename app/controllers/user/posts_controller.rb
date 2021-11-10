@@ -1,5 +1,5 @@
 class User::PostsController < ApplicationController
-before_action :authenticate_user!,except: [:index]
+  before_action :authenticate_user!, except: [:index]
 
   def new
     @post = Post.new
@@ -46,8 +46,8 @@ before_action :authenticate_user!,except: [:index]
   end
 
   private
+
   def post_params
     params.require(:post).permit(:post_image, :pet, :body)
   end
-
 end
