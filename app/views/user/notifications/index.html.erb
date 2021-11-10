@@ -1,2 +1,27 @@
-<h1>User::Notifications#index</h1>
-<p>Find me in app/views/user/notifications/index.html.erb</p>
+<div class="container notification-page">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 pt-5 mb-5">
+      <h2 class="text-center mb-5 notification-title">
+        <i class="far fa-bell"></i>
+          通知一覧
+        <i class="far fa-bell"></i>
+      </h2>
+      <% @notifications = @notifications.where.not(visitor_id: current_user.id) %>
+      <% if @notifications.exists? %>
+        <% @notifications.each do |notification| %>
+          <%= render "user/notifications/notification", notification: notification %>
+        <% end %>
+        <div class="text-center mt-5">
+          <%= link_to destroy_all_notifications_path, method: :delete, class: "btn notification-btn", data: { confirm: '本当に削除しますか？' } do %>
+            全ての通知を削除 <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
+      <% else %>
+        <h3 class="notification-no-title text-center pt-3 pb-5">※現在通知はありません</h3>
+      <% end %>
+    </div>
+  </div>
+  <div class="pt-1 pb-5">
+    <p><%= paginate @notifications %></p>
+  </div>
+</div>

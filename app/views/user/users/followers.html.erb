@@ -6,7 +6,6 @@
           <%= @user.name %>さんをフォローしているユーザー
         <i class="fas fa-users"></i>
       </h2>
-      </h2>
         <% if @users.present? %>
           <%= render "user/users/follow_index", users: @users, user: @user %>
         <% else %>
@@ -15,7 +14,7 @@
     </div>
     </div>
   </div>
-  <div class="pt-3 pb-3 pl-5">
+  <div class="pt-3 pb-3">
     <p><%= paginate @users %></p>
   </div>
 </div>

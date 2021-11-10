@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+  <div class="col-sm-8">
+    <div class="card pt-5">
+        <% case notification.action %>
+          <% when "follow" then %>
+            <p class="text-center">
+              <%= link_to user_path(notification.visitor.id), class: "notification-link" do %>
+                <%= attachment_image_tag notification.visitor, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image mr-2" %>
+                <%= notification.visitor.name %>
+              <% end %>
+              さんがあなたをフォローしました。
+            </p>
+          <% when "like" then %>
+            <p class="text-center">
+              <%= link_to user_path(notification.visitor.id), class: "notification-link" do %>
+                <%= attachment_image_tag notification.visitor, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image mr-2" %>
+                <%= notification.visitor.name %>
+              <% end %>
+              さんが
+              <%= link_to "あなたの投稿", post_path(notification.post.id), class: "notification-link" %> にいいねしました。
+            </p>
+          <% when "comment" then %>
+            <p class="text-center">
+              <%= link_to user_path(notification.visitor.id), class: "notification-link" do %>
+                <%= attachment_image_tag notification.visitor, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image mr-2" %>
+                <%= notification.visitor.name %>
+              <% end %>
+              さんが
+              <% if notification.post.user_id == notification.visited.id %>
+                <%= link_to "あなたの投稿", post_path(notification.post.id), class: "notification-link" %>
+              <% else %>
+                <%= link_to  post_path(notification.post.id), class: "notification-link" do %>
+                  <%= notification.post.user.name %>さんの投稿
+                <% end %>
+              <% end %>
+              にコメントしました。
+            </p>
+            <p class="text-center">
+              『 <%= Comment.find_by(id: notification.comment_id)&.comment %> 』
+            </p>
+        <% end %>
+        <div class="text-right pr-4">
+          <%= time_ago_in_words(notification.created_at).upcase %>前
+        </div>
+    </div>
+  </div>
+</div>

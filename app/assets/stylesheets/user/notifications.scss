@@ -1,3 +1,43 @@
 // Place all the styles related to the user/notifications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 通知確認ページの設定
+.notification-page{
+  border-radius: 20px;
+  color: #EE827d;
+  background-color: #ffeb3fad;
+}
+.notification-title{
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
+}
+.notification-no-title{
+  letter-spacing: .2rem;
+}
+.notification-btn{
+  border: 1px solid #EE827d!important;
+  border-radius: 100px!important;
+  background-color: #EE827d!important;
+  color: white!important;
+}
+.notification-btn:hover{
+  background-color: white!important;
+  color: #EE827d!important;
+}
+// 通知一覧の各リンク
+.notification-link{
+  color: #3ead74;
+}
+.notification-link:hover{
+  color: #3ead74;
+}
+
+
+// 未確認の通知がある場合に表示されるマーク
+.n-circle{
+  position: absolute;
+  padding-left: 1rem;
+  padding-top: 0rem;
+  color: #ffe217;
+}
