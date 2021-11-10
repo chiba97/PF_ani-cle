@@ -2,8 +2,10 @@ class User::RelationshipsController < ApplicationController
   before_action :authenticate_user!
   
   def create
+    @user = User.find(params[:user_id])
     follow = current_user.active_relationships.build(follower_id: params[:user_id])
     follow.save
+    @user.create_notification_follow!(cu)
     redirect_to request.referer || root_path
   end
 
