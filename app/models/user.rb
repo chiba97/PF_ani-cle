@@ -10,6 +10,12 @@ class User < ApplicationRecord
   has_many :entries, dependent: :destroy
   has_many :messages, dependent: :destroy
   
+  # ユーザーと通知モデルの紐付け
+  # 自分からの通知
+  has_many :active_notifications, class_name: "Notification", foreign_key: "visitor_id", dependent: :destroy
+  # 相手からの通知
+  has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
+  
   # フォローする側のユーザーからみてフォローされる側のユーザーを集めるので、親はfollowing_id(フォローする側)を指定
   has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
   # 中間テーブルを用いてフォローされた側のユーザーを集めることを「followings」と定義
