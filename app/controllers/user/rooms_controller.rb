@@ -3,7 +3,7 @@ class User::RoomsController < ApplicationController
     @room = Room.create
     @entry1 = Entry.create(user_id: current_user.id, room_id: @room.id)
     @entry2 = Entry.create(room_params)
-    redirect_to room_path(@room.id)
+    redirect_to room_path(@room.id, user_id:  @entry2.user_id)
   end
 
   def show

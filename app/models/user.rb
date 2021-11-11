@@ -38,6 +38,29 @@ class User < ApplicationRecord
     passive_relationships.find_by(following_id: user.id).present?
   end
 
+  def exists_room_by?(user)
+    entries.each do |entry|
+      user.entries.each do |user_entry|
+        if entry.room_id == user_entry.room_id
+          return true
+        end
+      end
+    end
+    false
+  end
+
+  def room_by(user)
+    room = nil
+    entries.each do |entry|
+      user.entries.each do |user_entry|
+        if entry.room_id == user_entry.room_id
+          room = Room.find(entry.room_id)
+        end
+      end
+    end
+    room
+  end
+
   # ユーザー検索機能分岐
   def self.looks(search, word)
     if search == "perfect_match"
@@ -60,7 +83,7 @@ class User < ApplicationRecord
       notification.save if notification.valid?
     end
   end
-  
+
   # ゲストユーザーを探すor作成するメソッド
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
@@ -68,5 +91,4 @@ class User < ApplicationRecord
       user.name = 'ゲスト'
     end
   end
-  
 end

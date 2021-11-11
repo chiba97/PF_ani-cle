@@ -6,7 +6,6 @@ class User::MessagesController < ApplicationController
       @room.create_notification_dm!(current_user, @message.id)
     end
     @messages = Message.where(room_id: @room.id)
-
   end
 
   def destroy

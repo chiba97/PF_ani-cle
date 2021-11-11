@@ -1,8 +1,7 @@
 class Post < ApplicationRecord
-  
   # PV数計測impressionist設定
-  is_impressionable 
-  
+  is_impressionable
+
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
@@ -35,7 +34,13 @@ class Post < ApplicationRecord
   # いいね通知の作成メソッド
   def create_notification_like!(current_user)
     # 既にいいねをされているのかを検索
-    temp = Notification.where(["visitor_id = ? and visited_id = ? and post_id = ? and action = ?", current_user.id, user_id, id, 'like'])
+    temp = Notification.where([
+      "visitor_id = ? and visited_id = ? and post_id = ? and action = ?",
+      current_user.id,
+      user_id,
+      id,
+      'like'
+    ])
     # いいねされていなかったら、通知レコードを作成
     if temp.blank?
       notification = current_user.active_notifications.new(
@@ -55,7 +60,13 @@ class Post < ApplicationRecord
   # コメント通知の作成メソッド
   def create_notification_comment!(current_user, comment_id)
     # 自分以外のコメントをしている人を全員取得して、全員に通知を送る
-    temp_ids = Comment.select(:user_id).where(post_id: id).where.not(user_id: current_user.id).distinct
+    temp_ids = Comment.select(
+      :user_id
+    ).where(
+      post_id: id
+    ).where.not(
+      user_id: current_user.id
+    ).distinct
     temp_ids.each do |temp_id|
       save_notification_comment!(current_user, comment_id, temp_id['user_id'])
     end
@@ -77,5 +88,4 @@ class Post < ApplicationRecord
     end
     notification.save if notification.valid?
   end
-  
 end

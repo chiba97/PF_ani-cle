@@ -3,7 +3,7 @@
 class User::SessionsController < Devise::SessionsController
   # ユーザーがログインをする前に退会しているか確認をする
   before_action :user_state, only: [:create]
-  
+
   # ゲストとしてログインするメソッド、self.guestメソッドはUserモデルに記述
   def guest_sign_in
     user = User.guest
