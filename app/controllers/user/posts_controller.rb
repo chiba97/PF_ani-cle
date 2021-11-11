@@ -1,5 +1,7 @@
 class User::PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  # 投稿詳細にてPV数を計測したいのでshowを指定
+  impressionist :actions => [:show]
 
   def new
     @post = Post.new
@@ -26,6 +28,7 @@ class User::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments
+    impressionist(@post, nil, unique: [:session_hash.to_s])
   end
 
   def edit

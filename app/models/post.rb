@@ -1,4 +1,8 @@
 class Post < ApplicationRecord
+  
+  # PV数計測impressionist設定
+  is_impressionable 
+  
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
@@ -73,4 +77,5 @@ class Post < ApplicationRecord
     end
     notification.save if notification.valid?
   end
+  
 end

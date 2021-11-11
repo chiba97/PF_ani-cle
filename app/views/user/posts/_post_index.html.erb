@@ -30,6 +30,7 @@
           <p>
             <i class="far fa-heart"></i> <%= post.favorites.count %>
             <i class="far fa-comment"></i> <%= post.comments.count %>
+            <i class="far fa-eye"></i> <%= post.impressionist_count(:filter => :session_hash) %>
           </p>
         </div>
         <div class="text-center row justify-content-center mt-2">
