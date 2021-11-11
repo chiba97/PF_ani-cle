@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     registrations: "user/registrations",
     sessions: "user/sessions",
   }
+  # ゲストログイン用
+  devise_scope :user do
+    post 'user/guest_sign_in', to: 'user/sessions#guest_sign_in'
+  end
 
   # デバイスAdmin側
   devise_for :admin, skip: [:registrations, :passwords], controllers: {

@@ -27,6 +27,11 @@
         <%= link_to "こちら", new_user_registration_path , class: "new-link"%>
         から新規登録してください。
       </p>
+      <p>
+        また登録しなくとも、
+        <%= link_to "こちら", user_guest_sign_in_path, method: :post, class: "new-link"%>
+        からゲスト（閲覧用）としてログインできます。
+      </p>
 
     </div>
   </div>

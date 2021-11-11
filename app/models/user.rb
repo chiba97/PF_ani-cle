@@ -60,4 +60,13 @@ class User < ApplicationRecord
       notification.save if notification.valid?
     end
   end
+  
+  # ゲストユーザーを探すor作成するメソッド
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = 'ゲスト'
+    end
+  end
+  
 end

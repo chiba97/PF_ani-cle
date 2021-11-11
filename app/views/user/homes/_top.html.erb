@@ -1,4 +1,4 @@
-<div class="mt-5">
+<div>
   <h1 class="top-title">ANI-CLE</h1>
   <p class="top-text">大切なペットへの『愛』を投稿して輪を広げよう</p>
 </div>
@@ -15,9 +15,11 @@
     <% end %>
   </div>
 <% else %>
-  <div class="mt-5">
-    <%= link_to "新規会員登録", new_user_registration_path, class: "btn top-new-btn mb-2" %>
+  <div class="mt-1">
+    <%= link_to "新規会員登録", new_user_registration_path, class: "btn top-new-btn mb-1" %>
       <p class="top-text">or</p>
-    <%= link_to "ログイン", new_user_session_path, class: "btn top-new-btn" %>
+    <%= link_to "ログイン", new_user_session_path, class: "btn top-new-btn mb-1" %>
+      <p class="top-text">or</p>
+    <%= link_to 'ゲストログイン（閲覧用）', user_guest_sign_in_path, method: :post, class: "btn top-new-btn" %>
   </div>
 <% end %>
