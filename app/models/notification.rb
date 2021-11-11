@@ -4,6 +4,8 @@ class Notification < ApplicationRecord
   # nillを許可するためにoptinalをつける
   belongs_to :post, optional: true
   belongs_to :comment, optional: true
+  belongs_to :room, optional: true
+  belongs_to :message, optional: true
   belongs_to :visitor, class_name: "User", optional: true
   belongs_to :visited, class_name: "User", optional: true
 end
