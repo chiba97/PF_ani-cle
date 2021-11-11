@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :entries, dependent: :destroy
   has_many :messages, dependent: :destroy
+  # favoritesテーブルを通していいねをした投稿記事を探す
+  has_many :favorited_posts, through: :favorites, source: :post
 
   # ユーザーと通知モデルの紐付け
   # 自分からの通知

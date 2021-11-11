@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  # favoritesテーブルを通して、いいねしてくれたユーザーを
+  has_many :favorited_users, through: :favorites, source: :user
 
   validates :pet, presence: true
   validates :body, presence: true, length: { maximum: 200 }
