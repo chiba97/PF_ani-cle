@@ -4,26 +4,26 @@ class User::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.page(params[:page]).reverse_order
-    
-    # 以下DMチャット機能
-    @currentUserEntry = Entry.where(user_id: current_user.id)
-    @userEntry = Entry.where(user_id: @user.id)
-    
+
+    # 以下DMチャット機能ーStart
+    @current_user_entry = Entry.where(user_id: current_user.id)
+    @user_entry = Entry.where(user_id: @user.id)
+
     unless @user.id == current_user.id
-      @currentUserEntry.each do |cu|
-        @userEntry.each do |u|
+      @current_user_entry.each do |cu|
+        @user_entry.each do |u|
           if cu.room_id == u.room_id
-            @isRoom = true
-            @roomId = cu.room_id
+            @is_room = true
+            @room_id = cu.room_id
           end
         end
       end
-      unless @isRoom
+      unless @is_room
         @room = Room.new
         @entry = Entry.new
       end
     end
-
+    # ーFinish
   end
 
   def edit
@@ -57,20 +57,24 @@ class User::UsersController < ApplicationController
     posts = Post.find(favorites)
     @favorite_posts = Kaminari.paginate_array(posts).page(params[:page]).per(8)
   end
-  
+
   def follows
     @user = User.find(params[:id])
-    @users = @user.followings.page(params[:page]).per(10)
+    @users = @user.followings.page(params[:page]).per(8)
+    @room = Room.new
+    @entry = Entry.new
   end
-  
+
   def followers
     @user = User.find(params[:id])
-    @users = @user.followers.page(params[:page]).per(10)
+    @users = @user.followers.page(params[:page]).per(8)
+    @room = Room.new
+    @entry = Entry.new
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :pet, :introduction, :profile_image)
   end
-
 end

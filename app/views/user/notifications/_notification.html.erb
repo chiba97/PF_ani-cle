@@ -38,6 +38,19 @@
             <p class="text-center">
               『 <%= Comment.find_by(id: notification.comment_id)&.comment %> 』
             </p>
+          <% when "dm" then %>
+            <p class="text-center">
+              <%= link_to user_path(notification.visitor.id), class: "notification-link" do %>
+                <%= attachment_image_tag notification.visitor, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image mr-2" %>
+                <%= notification.visitor.name %>
+              <% end %>
+              さんから
+                <%= link_to "メッセージ", room_path(notification.room.id, user_id: notification.visitor.id), class: "notification-link" %>
+              が送られました。
+            </p>
+            <p class="text-center">
+              『 <%= Message.find_by(id: notification.message_id)&.content %> 』
+            </p>
         <% end %>
         <div class="text-right pr-4">
           <%= time_ago_in_words(notification.created_at).upcase %>前

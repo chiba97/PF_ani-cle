@@ -1,10 +1,9 @@
 class User::RoomsController < ApplicationController
-
   def create
     @room = Room.create
     @entry1 = Entry.create(user_id: current_user.id, room_id: @room.id)
     @entry2 = Entry.create(room_params)
-    redirect_to room_path(@room.id)
+    redirect_to room_path(@room.id, user_id: @entry2.user_id)
   end
 
   def show
@@ -20,8 +19,8 @@ class User::RoomsController < ApplicationController
   end
 
   private
+
   def room_params
     params.require(:entry).permit(:user_id, :room_id).merge(room_id: @room.id)
   end
-
 end

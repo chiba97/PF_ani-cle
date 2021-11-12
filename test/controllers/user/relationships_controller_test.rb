@@ -10,5 +10,4 @@ class User::RelationshipsControllerTest < ActionDispatch::IntegrationTest
     get user_relationships_destroy_url
     assert_response :success
   end
-
 end

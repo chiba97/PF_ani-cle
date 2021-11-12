@@ -1,5 +1,4 @@
 class User::SearchesController < ApplicationController
-
   def search
     @range = params[:range]
     if @range == "User"
@@ -12,5 +11,4 @@ class User::SearchesController < ApplicationController
       @word = params[:word]
     end
   end
-
 end

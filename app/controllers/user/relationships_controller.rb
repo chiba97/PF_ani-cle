@@ -14,5 +14,4 @@ class User::RelationshipsController < ApplicationController
     follow.destroy
     redirect_to request.referer || root_path
   end
-
 end

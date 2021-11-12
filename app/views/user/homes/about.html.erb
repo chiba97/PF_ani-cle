@@ -4,9 +4,11 @@
       <p><i class="fas fa-paw"></i> 大切なペットの為のアプリ <i class="fas fa-paw"></i></p>
       <h1 style="font-size: 80px; letter-spacing: .2rem; font-family: 'Shippori Mincho B1', serif;">ANI-CLE</h1>
       <div>
-        <%= link_to "新規会員登録", new_user_registration_path, class: "btn about-new-btn mb-3 mt-5" %>
+        <%= link_to "新規会員登録", new_user_registration_path, class: "btn about-new-btn mb-1 mt-1" %>
         <p>or</p>
-        <%= link_to "ログイン", new_user_session_path, class: "btn about-new-btn" %>
+        <%= link_to "ログイン", new_user_session_path, class: "btn about-new-btn mb-1" %>
+        <p>or</p>
+        <%= link_to 'ゲストログイン（閲覧用）', user_guest_sign_in_path, method: :post, class: "btn about-new-btn" %>
       </div>
     </div>
     <div class="col-sm-6">
