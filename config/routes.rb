@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  namespace :user do
-    get 'notifications/index'
-  end
+  
   # デバイスUser側
   devise_for :users, skip: [:passwords], controllers: {
     registrations: "user/registrations",
@@ -20,6 +18,7 @@ Rails.application.routes.draw do
   # Admin側ルーティング
   namespace :admin do
     resources :users, except: [:new, :create, :destroy]
+    resources :contacts, only: [:index, :edit, :update, :destroy]
     get "searches" => "searches#search"
   end
 
@@ -30,6 +29,7 @@ Rails.application.routes.draw do
     get "searches" => "searches#search"
     resources :rooms, only: [:show, :create]
     resources :messages, only: [:create, :destroy]
+    resources :contacts, only: [:new, :create]
 
     resources :posts do
       resources :comments, only: [:create, :destroy]
