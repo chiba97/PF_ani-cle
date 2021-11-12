@@ -39,7 +39,7 @@ class Post < ApplicationRecord
       current_user.id,
       user_id,
       id,
-      'like'
+      'like',
     ])
     # いいねされていなかったら、通知レコードを作成
     if temp.blank?

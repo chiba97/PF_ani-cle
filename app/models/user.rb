@@ -14,18 +14,32 @@ class User < ApplicationRecord
 
   # ユーザーと通知モデルの紐付け
   # 自分からの通知
-  has_many :active_notifications, class_name: "Notification", foreign_key: "visitor_id", dependent: :destroy
+  has_many :active_notifications,
+    class_name: "Notification",
+    foreign_key: "visitor_id",
+    dependent: :destroy
   # 相手からの通知
-  has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
+  has_many :passive_notifications,
+    class_name: "Notification",
+    foreign_key: "visited_id",
+    dependent: :destroy
 
   # フォローする側のユーザーからみてフォローされる側のユーザーを集めるので、親はfollowing_id(フォローする側)を指定
-  has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
+  has_many :active_relationships,
+    class_name: "Relationship",
+    foreign_key: :following_id
   # 中間テーブルを用いてフォローされた側のユーザーを集めることを「followings」と定義
-  has_many :followings, through: :active_relationships, source: :follower
+  has_many :followings,
+    through: :active_relationships,
+    source: :follower
   # フォローされる側のユーザーから見てフォローする側のユーザーを集めるので、親はfollower_id(フォローされる側)を指定
-  has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
+  has_many :passive_relationships,
+    class_name: "Relationship",
+    foreign_key: :follower_id
   # 中間テーブルを用いてフォローする側のユーザーを集めることを「followers」と定義
-  has_many :followers, through: :passive_relationships, source: :following
+  has_many :followers,
+    through: :passive_relationships,
+    source: :following
 
   validates :name, presence: true, uniqueness: true, length: { minimum: 2, maximum: 20 }
   validates :pet, length: { maximum: 20 }
@@ -38,6 +52,8 @@ class User < ApplicationRecord
     passive_relationships.find_by(following_id: user.id).present?
   end
 
+  # 以下フォローフォロワー一覧からDMルームへいく為のメソッドーStart
+  # もしも指定したユーザー同士が既にルームを作っていたらtrueを返す
   def exists_room_by?(user)
     entries.each do |entry|
       user.entries.each do |user_entry|
@@ -49,6 +65,7 @@ class User < ApplicationRecord
     false
   end
 
+  # 指定のユーザーが入っているルームを検索する
   def room_by(user)
     room = nil
     entries.each do |entry|
@@ -60,6 +77,7 @@ class User < ApplicationRecord
     end
     room
   end
+  # ーFinish
 
   # ユーザー検索機能分岐
   def self.looks(search, word)
@@ -74,7 +92,12 @@ class User < ApplicationRecord
 
   # フォロー通知の作成メソッド
   def create_notification_follow!(current_user)
-    temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ?", current_user.id, id, 'follow'])
+    temp = Notification.where([
+      "visitor_id = ? and visited_id = ? and action = ?",
+      current_user.id,
+      id,
+      'follow',
+    ])
     if temp.blank?
       notification = current_user.active_notifications.new(
         visited_id: id,

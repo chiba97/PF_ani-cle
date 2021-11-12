@@ -5,7 +5,7 @@ class User::UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.page(params[:page]).reverse_order
 
-    # 以下DMチャット機能
+    # 以下DMチャット機能ーStart
     @current_user_entry = Entry.where(user_id: current_user.id)
     @user_entry = Entry.where(user_id: @user.id)
 
@@ -23,6 +23,7 @@ class User::UsersController < ApplicationController
         @entry = Entry.new
       end
     end
+    # ーFinish
   end
 
   def edit
@@ -62,50 +63,13 @@ class User::UsersController < ApplicationController
     @users = @user.followings.page(params[:page]).per(8)
     @room = Room.new
     @entry = Entry.new
-
-    # Start
-    # @current_user_entry = Entry.where(user_id: current_user.id)
-    # @user_entry = Entry.where(user_id: @user.id)
-    # if @user.id == current_user.id
-    #   @current_user_entry.each do |cu|
-    #     @user_entry.each do |u|
-    #       if cu.room_id == u.room_id
-    #         @is_room = true
-    #         @room_id = cu.room_id
-    #       end
-    #     end
-    #   end
-    #   unless @is_room
-    #     @room = Room.new
-    #     @entry = Entry.new
-    #   end
-    # end
-    # End
-
   end
 
   def followers
     @user = User.find(params[:id])
     @users = @user.followers.page(params[:page]).per(8)
-
-    @current_user_entry = Entry.where(user_id: current_user.id)
-    @user_entry = Entry.where(user_id: @user.id)
-
-    unless @user.id == current_user.id
-      @current_user_entry.each do |cu|
-        @user_entry.each do |u|
-          if cu.room_id == u.room_id
-            @is_room = true
-            @room_id = cu.room_id
-          end
-        end
-      end
-      unless @is_room
-        @room = Room.new
-        @entry = Entry.new
-      end
-    end
-
+    @room = Room.new
+    @entry = Entry.new
   end
 
   private

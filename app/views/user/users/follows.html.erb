@@ -8,7 +8,6 @@
       </h2>
         <% if @users.present? %>
           <%= render "user/users/follow_index", users: @users, room: @room, entry: @entry %>
-          <%#= render "user/users/follow_index", users: @users, is_room: @is_room, room_id: @room_id, room: @room, entry: @entry %>
         <% else %>
           <h3 class="text-center pt-3 pb-5">※まだフォローしていません</h3>
         <% end %>
