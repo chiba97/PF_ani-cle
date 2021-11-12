@@ -203,3 +203,28 @@ footer{
   color: white;
   text-align: center;
 }
+
+// 新規投稿ページの投稿ボタン
+.post-btn{
+  border: 1px solid white!important;
+  border-radius: 100px!important;
+  background-color: white!important;
+  color: #EE827d!important;
+  width: 100%;
+}
+.post-btn:hover{
+  background-color: #EE827d!important;
+  color: white!important;
+}
+
+// 投稿関連ページ全体
+.post-page{
+  border-radius: 20px;
+  color: white;
+  background-color: #EE827d;
+}
+.post-title{
+  color: white;
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
+}

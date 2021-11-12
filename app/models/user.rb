@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :entries, dependent: :destroy
   has_many :messages, dependent: :destroy
+  has_many :contacts, dependent: :destroy
   # favoritesテーブルを通していいねをした投稿記事を探す
   has_many :favorited_posts, through: :favorites, source: :post
 

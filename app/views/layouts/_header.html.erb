@@ -17,30 +17,40 @@
         <% end %>
       </li>
       <li class="nav-item active mr-4">
+        <%= link_to admin_contacts_path, class: "nav-link mr-3" do %>
+        お問い合わせ一覧 <i class="fas fa-envelope"></i>
+        <% end %>
+      </li>
+      <li class="nav-item active mr-4">
         <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link mr-5" do %>
         ログアウト <i class="fas fa-sign-out-alt"></i>
         <% end %>
       </li>
     <% elsif user_signed_in? %>
-      <li class="nav-item active mr-4">
+      <li class="nav-item active mr-2">
         <%= link_to user_path(current_user.id), class: "nav-link" do %>
         マイページ <i class="fas fa-user"></i>
         <% end %>
       </li>
-      <li class="nav-item active mr-4">
+      <li class="nav-item active mr-2">
         <%= link_to new_post_path, class: "nav-link" do %>
         新規投稿 <i class="fas fa-paw"></i>
         <% end %>
       </li>
-      <li class="nav-item active mr-4">
+      <li class="nav-item active mr-2">
         <%= link_to posts_path, class: "nav-link" do %>
         投稿一覧 <i class="fas fa-dog"></i>
         <% end %>
       </li>
-      <li class="nav-item active mr-4">
+      <li class="nav-item active mr-2">
         <%= render "user/notifications/circle" %>
       </li>
-      <li class="nav-item active mr-4">
+      <li class="nav-item active mr-2">
+        <%= link_to new_contact_path, class: "nav-link" do %>
+        お問い合わせ <i class="fas fa-envelope"></i>
+        <% end %>
+      </li>
+      <li class="nav-item active mr-2">
         <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
         ログアウト <i class="fas fa-sign-out-alt"></i>
         <% end %>

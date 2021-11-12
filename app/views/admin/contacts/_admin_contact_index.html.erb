@@ -1,0 +1,28 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="admin-th">会員ID</th>
+      <th class="admin-th">ニックネーム</th>
+      <th class="admin-th">問い合わせタイトル</th>
+      <th class="admin-th">受信日</th>
+      <th class="admin-th"></th>
+      <th class="admin-th"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% contacts.each do |contact| %>
+      <tr>
+        <td class="admin-th"><%= contact.user.id %></td>
+        <td class="admin-th">
+          <%= link_to admin_user_path(contact.user.id), class: "admin-link" do %>
+            <%= contact.user.name %>さん
+          <% end %>
+        </td>
+        <td class="admin-th"><%= contact.title %></td>
+        <td class="admin-th"><%= contact.created_at.strftime("%Y年%m月%d日 ") %></td>
+        <td><%= link_to "返信", edit_admin_contact_path(contact.id), class: "admin-link" %></td>
+        <td><%= link_to "削除", admin_contact_path(contact.id), method: :delete, class: "admin-link", data: { confirm: '本当に削除しますか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
