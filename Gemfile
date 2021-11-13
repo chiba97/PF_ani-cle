@@ -73,3 +73,7 @@ gem 'font-awesome-sass', '~> 5.13'
 gem 'dotenv-rails'
 gem 'devise-i18n'
 gem 'impressionist', '~>1.6.1'
+
+group :production do
+  gem 'mysql2'
+end
