@@ -53,33 +53,6 @@ class User < ApplicationRecord
     passive_relationships.find_by(following_id: user.id).present?
   end
 
-  # 以下フォローフォロワー一覧からDMルームへいく為のメソッドーStart
-  # もしも指定したユーザー同士が既にルームを作っていたらtrueを返す
-  def exists_room_by?(user)
-    entries.each do |entry|
-      user.entries.each do |user_entry|
-        if entry.room_id == user_entry.room_id
-          return true
-        end
-      end
-    end
-    false
-  end
-
-  # 指定のユーザーが入っているルームを検索する
-  def room_by(user)
-    room = nil
-    entries.each do |entry|
-      user.entries.each do |user_entry|
-        if entry.room_id == user_entry.room_id
-          room = Room.find(entry.room_id)
-        end
-      end
-    end
-    room
-  end
-  # ーFinish
-
   # ユーザー検索機能分岐
   def self.looks(search, word)
     if search == "perfect_match"

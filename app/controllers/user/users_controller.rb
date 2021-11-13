@@ -61,15 +61,11 @@ class User::UsersController < ApplicationController
   def follows
     @user = User.find(params[:id])
     @users = @user.followings.page(params[:page]).per(8)
-    @room = Room.new
-    @entry = Entry.new
   end
 
   def followers
     @user = User.find(params[:id])
     @users = @user.followers.page(params[:page]).per(8)
-    @room = Room.new
-    @entry = Entry.new
   end
 
   private

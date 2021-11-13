@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   # デバイスUser側
   devise_for :users, skip: [:passwords], controllers: {
     registrations: "user/registrations",
