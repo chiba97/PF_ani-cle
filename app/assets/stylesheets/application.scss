@@ -123,7 +123,6 @@ footer{
 // kaminariを用いたページネーションカスタマイズ
 .pagination{
   margin: auto;
-  width: 50%;
   display: flex;
   justify-content: center;
 }
@@ -227,4 +226,32 @@ footer{
   color: white;
   letter-spacing: .2rem;
   font-family: 'Shippori Mincho B1', serif;
+}
+
+
+// タブレットサイズ（768px以下設定）
+@media screen and (max-width:768px) {
+.about-top-title{
+  font-size: 50px;
+}
+.about-new-btn{
+  width: 80%;
+}
+}
+
+
+// スマートフォンサイズ（425px以下）
+@media screen and (max-width:425px) {
+.post-title{
+  font-size: 1.4rem;
+}
+.about-top-title{
+  font-size: 60px;
+}
+.about-top-left{
+  padding-bottom: 30px;
+}
+.about-new-btn{
+  width: 80%;
+}
 }
