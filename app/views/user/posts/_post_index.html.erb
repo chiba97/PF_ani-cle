@@ -1,7 +1,7 @@
 <% posts.each do |post| %>
   <div class="col-sm-3 mt-5">
     <div class="card index-card">
-      <%= attachment_image_tag post, :post_image, class: "post-index-img" %>
+      <%= attachment_image_tag post, :post_image, format: 'jpeg', class: "post-index-img" %>
       <div class="card-body">
         <div class="row justify-content-center">
           <%= link_to user_path(post.user.id) do %>
