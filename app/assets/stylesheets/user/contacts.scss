@@ -1,3 +1,12 @@
 // Place all the styles related to the user/contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.contact-title{
+  color: white;
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
+}
+.contact-wrap{
+  padding-bottom: 48px;
+  padding-top: 48px;
+}
