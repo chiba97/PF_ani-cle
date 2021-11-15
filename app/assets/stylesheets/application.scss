@@ -362,6 +362,16 @@ img{
 .post-contents{
   padding-top: 3px;
 }
+// 投稿詳細ページ
+.post-show-profile{
+  display: none;
+}
+.post-show-top{
+  margin-top: 30px;
+}
+.post-show-title-wrap{
+  padding-top: 3px;
+}
 
 }
 
@@ -410,5 +420,8 @@ img{
   // 投稿一覧ページ
   .post-title{
     font-size: 17px;
+  }
+  .post-edit-form{
+    margin-bottom: 60px;
   }
 }

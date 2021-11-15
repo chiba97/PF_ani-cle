@@ -6,6 +6,12 @@
 .post-show-text{
   font-size: 18px;
 }
+.post-show-top{
+  margin-top: 48px;
+}
+.post-show-title-wrap{
+  padding-top: 24px;
+}
 
 
 // 投稿詳細ページの画像
@@ -113,4 +119,10 @@
 }
 .comment-link:hover{
   color: #EE827d;
+}
+// 投稿編集ページ
+.post-edit-title{
+  color: white;
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
 }
