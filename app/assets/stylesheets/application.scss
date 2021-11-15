@@ -372,6 +372,11 @@ img{
 .post-show-title-wrap{
   padding-top: 3px;
 }
+// 新規投稿ページ
+.post-new-wrap{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 
 }
 
@@ -423,5 +428,8 @@ img{
   }
   .post-edit-form{
     margin-bottom: 60px;
+  }
+  .post-new-title{
+    font-size: 23px;
   }
 }
