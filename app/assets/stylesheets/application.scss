@@ -232,6 +232,20 @@ footer{
 
 // タブレットサイズ（768px以下設定）
 @media screen and (max-width:768px) {
+// トップページ
+.top-title{
+  font-size: 135px;
+}
+.top-text{
+  font-size: 25px;
+}
+.top-page-btn {
+  margin-top: 190px;
+}
+.top-login-btn {
+  margin-top: 300px;
+}
+// アバウトページ
 .about-top-title{
   font-size: 50px;
 }
@@ -261,10 +275,25 @@ footer{
 
 // スマートフォンサイズ（425px以下）
 @media screen and (max-width:425px) {
+// トップページ
+.top-title{
+  font-size: 69px;
+}
+.top-text{
+  font-size: 14px;
+}
+.top-page-btn{
+  margin-top: 180px;
+}
+.top-login-btn {
+  margin-top: 250px;
+}
+// ヘッダーアイコン
 img{
   width: 80px;
   height: 80px;
 }
+// 新規登録ログインページ
 .new-forms{
   width: 90%;
 }
@@ -284,6 +313,7 @@ img{
 .post-title{
   font-size: 1.4rem;
 }
+// アバウトページ
 .about-top-title{
   font-size: 60px;
 }
@@ -327,11 +357,27 @@ img{
 
 }
 
+// スマートフォンサイズ（320px以下）
 @media screen and (max-width:320px){
+  // ヘッダーアイコン
   img{
     width: 70px;
     height: 70px;
   }
+  // トップページ
+  .top-title{
+  font-size: 50px;
+  }
+  .top-text{
+    font-size: 12px;
+  }
+  .top-page-btn {
+    margin-top: 200px;
+  }
+  .top-login-btn {
+    margin-top: 300px;
+  }
+  // アバウトページ
   .about-top-title{
     font-size: 48px;
   }
