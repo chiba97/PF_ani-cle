@@ -354,6 +354,14 @@ img{
 .about-third-title{
   font-size: 23px;
 }
+// 投稿一覧ページ
+.index-cards{
+  margin-top: 20px;
+  width: 90%;
+}
+.post-contents{
+  padding-top: 3px;
+}
 
 }
 
@@ -398,5 +406,9 @@ img{
   }
   .about-third-text{
     font-size: 15px;
+  }
+  // 投稿一覧ページ
+  .post-title{
+    font-size: 17px;
   }
 }
