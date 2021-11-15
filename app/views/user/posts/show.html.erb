@@ -15,23 +15,30 @@
           <%= attachment_image_tag @post.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image" %>
         <% end %>
       </div>
-      <div class="row justify-content-center text-center mt-3">
-        <%= link_to user_path(@post.user.id), class: "profile-link-show" do %>
-          <% if @post.user == current_user %>
-            《 投稿者 》<br>
+      <%= link_to user_path(@post.user.id), class: "profile-link-show" do %>
+        <div class="row justify-content-center text-center mt-3">
+          《 投稿者 》
+        </div>
+        <% if @post.user == current_user %>
+          <div class="row justify-content-center text-center">
             あなたが<%= @post.created_at.to_s(:datetime_jp) %>に投稿
-          <% else %>
-            《 投稿者 》<br>
+          </div>
+        <% else %>
+          <div class="row justify-content-center text-center">
             <%= @post.user.name %>さんが<%= @post.created_at.to_s(:datetime_jp) %>に投稿
-          <% end %>
+          </div>
         <% end %>
-      </div>
+      <% end %>
       <div class="row justify-content-center text-center mt-3">
-        《 ペットの種類 》<br>
+        《 ペットの種類 》
+      </div>
+      <div class="row justify-content-center text-center">
         <%= @post.pet %>
       </div>
       <div class="row justify-content-center text-center mt-3">
-        《 投稿内容 》<br>
+        《 投稿内容 》
+      </div>
+      <div class="row justify-content-center text-center">
         <%= @post.body %>
       </div>
       <div class="row justify-content-center text-center mt-3">
