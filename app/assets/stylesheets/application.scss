@@ -261,6 +261,10 @@ footer{
 
 // スマートフォンサイズ（425px以下）
 @media screen and (max-width:425px) {
+img{
+  width: 80px;
+  height: 80px;
+}
 .new-content{
   margin-top: 10px;
 }
@@ -324,6 +328,10 @@ footer{
 }
 
 @media screen and (max-width:320px){
+  img{
+    width: 70px;
+    height: 70px;
+  }
   .about-top-title{
     font-size: 48px;
   }
