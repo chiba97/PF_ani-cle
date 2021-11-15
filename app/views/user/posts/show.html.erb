@@ -11,39 +11,57 @@
     </div>
     <div class="col-sm-6 post-show-text">
       <div class="row justify-content-center text-center mt-2">
-        <%= link_to user_path(@post.user.id) do %>
-          <%= attachment_image_tag @post.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image" %>
-        <% end %>
+        <div class="col-12">
+          <%= link_to user_path(@post.user.id) do %>
+            <%= attachment_image_tag @post.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image" %>
+          <% end %>
+        </div>
       </div>
       <%= link_to user_path(@post.user.id), class: "profile-link-show" do %>
         <div class="row justify-content-center text-center mt-3">
-          《 投稿者 》
+          <div class="col-12">
+            《 投稿者 》
+          </div>
         </div>
         <% if @post.user == current_user %>
           <div class="row justify-content-center text-center">
-            あなたが<%= @post.created_at.to_s(:datetime_jp) %>に投稿
+            <div class="col-12">
+              あなたが<%= @post.created_at.to_s(:datetime_jp) %>に投稿
+            </div>
           </div>
         <% else %>
           <div class="row justify-content-center text-center">
-            <%= @post.user.name %>さんが<%= @post.created_at.to_s(:datetime_jp) %>に投稿
+            <div class="col-12">
+              <%= @post.user.name %>さんが<%= @post.created_at.to_s(:datetime_jp) %>に投稿
+            </div>
           </div>
         <% end %>
       <% end %>
       <div class="row justify-content-center text-center mt-3">
-        《 ペットの種類 》
+        <div class="col-12">
+          《 ペットの種類 》
+        </div>
       </div>
       <div class="row justify-content-center text-center">
-        <%= @post.pet %>
+        <div class="col-12">
+          <%= @post.pet %>
+        </div>
       </div>
       <div class="row justify-content-center text-center mt-3">
-        《 投稿内容 》
+        <div class="col-12">
+          《 投稿内容 》
+        </div>
       </div>
       <div class="row justify-content-center text-center">
-        <%= @post.body %>
+        <div class="col-12">
+          <%= @post.body %>
+        </div>
       </div>
       <div class="row justify-content-center text-center mt-3">
-        <div id="favorite_count_<%= @post.id %>">
-          <%= render "user/favorites/favorite_count", post: @post %>
+        <div class="col-12">
+          <div id="favorite_count_<%= @post.id %>">
+            <%= render "user/favorites/favorite_count", post: @post %>
+          </div>
         </div>
       </div>
       <div class="row justify-content-center text-center mt-4">
