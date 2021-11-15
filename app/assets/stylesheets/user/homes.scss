@@ -197,6 +197,8 @@
   background-color: #c8976f;
   padding-bottom: 20px;
   color: black;
+  margin-top: 16px;
+  padding-top: 48px;
 }
 .about-second-title{
   font-size: 120px;
@@ -205,8 +207,15 @@
 }
 
 // アバウトページ３段目
+.about-third-content{
+  margin-top: 16px;
+}
 .about-third-right{
   background-color: #ffe3b8;
+  padding-top: 48px;
+}
+.about-third-text{
+  padding-top: 48px;
 }
 
 // アバウトページの新規登録ログインボタン

@@ -36,7 +36,8 @@ body{
 
 // デバイスエラーメッセージ
 #error_explanation{
- color: #F44336;
+  padding: 0 20px;
+  color: #EE827d;
 }
 
 // 新規登録ログイン画面のボタン
@@ -235,23 +236,113 @@ footer{
   font-size: 50px;
 }
 .about-new-btn{
-  width: 80%;
+  width: 90%;
+}
+.about-second-content{
+  padding-top: 20px;
+}
+.about-second-title{
+  font-size: 80px;
+}
+.about-third-right{
+  padding-top: 35px;
+}
+.about-third-text{
+  padding-top: 25px;
+}
+.about-btns{
+  margin-top: 20px;
+}
+.about-third-title{
+  font-size: 25px;
 }
 }
 
 
 // スマートフォンサイズ（425px以下）
 @media screen and (max-width:425px) {
+.new-content{
+  margin-top: 10px;
+}
+.new-content-text{
+  margin-top: 55px;
+  font-size: 15px;
+}
+.new_user{
+  margin-top: 40px;
+}
+.new_admin{
+  margin-top: 40px;
+}
+.new-btn{
+  font-size: 20px;
+}
 .post-title{
   font-size: 1.4rem;
 }
 .about-top-title{
   font-size: 60px;
 }
+.about-top-subtitle{
+  font-size: 19px;
+}
 .about-top-left{
+  margin-top: 25px;
   padding-bottom: 30px;
+  margin: 15px 15px 5px;
 }
 .about-new-btn{
   width: 80%;
 }
+.about-image{
+  height: auto;
+}
+.about-second-content{
+  margin: 5px 1px 0px;
+  padding-top: 23px;
+}
+.about-second-title{
+  font-size: 45px;
+}
+.about-second-text{
+  font-size: 15px;
+}
+.about-third-content{
+  margin-top: 5px;
+}
+.about-third-right{
+  margin: 5px 17px 0px;
+}
+.about-third-text{
+  font-size: 15px;
+  padding: 15px 0;
+}
+.about-third-title{
+  font-size: 23px;
+}
+
+}
+
+@media screen and (max-width:320px){
+  .about-top-title{
+    font-size: 48px;
+  }
+  .about-top-subtitle{
+  font-size: 16px;
+}
+  .about-new-btn{
+    width: 90%;
+  }
+  .about-second-title{
+    font-size: 38px;
+  }
+  .about-second-text{
+    font-size: 13px;
+  }
+  .about-third-title{
+    font-size: 18px;
+  }
+  .about-third-text{
+    font-size: 15px;
+  }
 }
