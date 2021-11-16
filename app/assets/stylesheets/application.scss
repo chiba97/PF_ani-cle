@@ -289,6 +289,12 @@ footer{
 .unsubscribe-text{
   font-size: 20px;
 }
+.room-title{
+  font-size: 40px;
+}
+.message{
+  font-size: 19px;
+}
 }
 
 
@@ -437,6 +443,15 @@ img{
   font-size: 23px;
   padding-top: 30px;
 }
+.user-room-title{
+  padding-top: 30px;
+}
+.room-title{
+  font-size: 25px;
+}
+.message{
+  font-size: 11px;
+}
 }
 
 // スマートフォンサイズ（320px以下）
@@ -521,5 +536,11 @@ img{
   }
   .user-favorites-title{
   font-size: 19px;
+  }
+  .room-title{
+    font-size: 20px;
+  }
+  .message{
+    font-size: 10px;
   }
 }

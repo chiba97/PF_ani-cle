@@ -1,14 +1,13 @@
 <div class="container room-page">
   <div class="row justify-content-center">
     <div class="col-sm-12">
-      <div class="text-center user-room-title pt-5">
-        <h2>
-          <i class="far fa-comments"></i>
-            <%= link_to user_path(@user.id), class: "back-link" do %>
-            <%= @user.name %>さん
-            <% end %>
-            とのチャットルーム
-          <i class="far fa-comments"></i>
+      <div class="text-center user-room-title">
+        <h2 class="room-title">
+          <%= link_to user_path(@user.id), class: "back-link" do %>
+          <%= @user.name %>さん
+          <% end %>
+          との<br>
+          <i class="far fa-comments"></i> チャットルーム <i class="far fa-comments"></i>
         </h2>
       </div>
     </div>
