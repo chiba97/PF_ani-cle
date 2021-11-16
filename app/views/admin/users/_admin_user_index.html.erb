@@ -1,30 +1,32 @@
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th class="admin-th">会員ID</th>
-      <th class="admin-th">ニックネーム</th>
-      <th class="admin-th">メールアドレス</th>
-      <th class="admin-th">退会ステータス</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% users.each do |user| %>
+<div class="table-responsive">
+  <table class="table text-nowrap table-hover">
+    <thead>
       <tr>
-        <td class="admin-th"><%= user.id %></td>
-        <td class="admin-th">
-          <%= link_to admin_user_path(user.id), class: "admin-link" do %>
-            <%= user.name %>さん
-          <% end %>
-        </td>
-        <td class="admin-th"><%= user.email %></td>
-        <td class="admin-th">
-          <% if user.is_deleted == false %>
-            有効
-          <% else %>
-            退会
-          <% end %>
-        </td>
+        <th class="admin-th">会員ID</th>
+        <th class="admin-th">ニックネーム</th>
+        <th class="admin-th">メールアドレス</th>
+        <th class="admin-th">退会ステータス</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% users.each do |user| %>
+        <tr>
+          <td class="admin-th"><%= user.id %></td>
+          <td class="admin-th">
+            <%= link_to admin_user_path(user.id), class: "admin-link" do %>
+              <%= user.name %>さん
+            <% end %>
+          </td>
+          <td class="admin-th"><%= user.email %></td>
+          <td class="admin-th">
+            <% if user.is_deleted == false %>
+              有効
+            <% else %>
+              退会
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

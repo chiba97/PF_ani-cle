@@ -295,6 +295,9 @@ footer{
 .message{
   font-size: 19px;
 }
+.no-search-title{
+  font-size: 25px;
+}
 }
 
 
@@ -459,13 +462,28 @@ img{
   font-size: 18px;
 }
 .follow-th{
-  font-size: 14px;
+  font-size: 15px;
 }
 .follow-wrap{
   padding-top: 20px;
 }
 .no-present-title{
   font-size: 20px;
+}
+.no-search-title{
+  font-size: 17px;
+}
+.user-search-title{
+  font-size: 21px;
+}
+.post-search-title{
+  font-size: 21px;
+}
+.admin-title{
+  font-size: 21px;
+}
+.admin-th{
+  font-size: 15px;
 }
 }
 
@@ -562,9 +580,24 @@ img{
   font-size: 15px;
   }
   .follow-th{
-    font-size: 12px;
+    font-size: 13px;
   }
   .no-present-title{
   font-size: 16px;
+  }
+  .no-search-title{
+  font-size: 13px;
+  }
+  .user-search-title{
+    font-size: 17px;
+  }
+  .post-search-title{
+    font-size: 17px;
+  }
+  .admin-title{
+    font-size: 17px;
+  }
+  .admin-th{
+    font-size: 13px;
   }
 }
