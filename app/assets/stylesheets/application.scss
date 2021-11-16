@@ -119,6 +119,8 @@ footer{
 // プロフィール画像を円形に設定
 .profile-image{
  border-radius: 50%;
+ width: 100px;
+ height: 100px;
 }
 
 // kaminariを用いたページネーションカスタマイズ
@@ -270,6 +272,16 @@ footer{
 .about-third-title{
   font-size: 25px;
 }
+// マイページ
+.user-show-post-title{
+  font-size: 30px;
+}
+.user-show-th{
+  font-size: 13px;
+}
+.user-show-btns{
+  font-size: 13px;
+}
 }
 
 
@@ -290,8 +302,12 @@ footer{
 }
 // ヘッダーアイコン
 img{
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
+}
+.profile-image{
+  width: 85px;
+  height: 85px;
 }
 // 新規登録ログインページ
 .new-forms{
@@ -385,14 +401,28 @@ img{
 .contact-title{
   font-size: 23px;
 }
+// マイページ
+.user-show-post-title{
+  font-size: 28px;
+}
+.user-show-th{
+  font-size: 14px;
+}
+.user-show-btns{
+  font-size: 10px;
+}
 }
 
 // スマートフォンサイズ（320px以下）
 @media screen and (max-width:320px){
   // ヘッダーアイコン
   img{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
+  }
+  .profile-image{
+  width: 75px;
+  height: 75px;
   }
   // トップページ
   .top-title{
@@ -442,5 +472,12 @@ img{
   // お問い合わせフォーム
   .contact-title{
   font-size: 19px;
+  }
+  // マイページ
+  .user-show-post-title{
+    font-size: 23px;
+  }
+  .user-show-th{
+    font-size: 12px;
   }
 }

@@ -1,11 +1,11 @@
 <div class="container user-page">
   <p class="text-center pt-2"><%= notice %></p>
 
-  <div class="text-center user-show-title pt-4">
+  <div class="text-center pt-4">
     <% if @user == current_user %>
-      <h2><i class="fas fa-paw"></i> マイページ <i class="fas fa-paw"></i></h2>
+      <h2 class="user-show-post-title"><i class="fas fa-paw"></i> マイページ <i class="fas fa-paw"></i></h2>
     <% else %>
-      <h2><i class="fas fa-paw"></i> <%= @user.name %>さんのマイページ <i class="fas fa-paw"></i></h2>
+      <h2 class="user-show-post-title"><i class="fas fa-paw"></i> <%= @user.name %>さん <i class="fas fa-paw"></i><br>のマイページ </h2>
     <% end %>
   </div>
 
@@ -41,57 +41,57 @@
         </tbody>
       </table>
       <div class="row mb-4 justify-content-center">
-        <div class="col-sm-4">
-          <%= link_to follows_user_path(@user.id), class: "btn user-show-btn" do %>
+        <div class="col-4">
+          <%= link_to follows_user_path(@user.id), class: "btn user-show-btns" do %>
             フォロー <%= @user.followings.count %>人
           <% end %>
         </div>
-        <div class="col-sm-4">
-          <%= link_to followers_user_path(@user.id), class: "btn user-show-btn" do %>
+        <div class="col-4">
+          <%= link_to followers_user_path(@user.id), class: "btn user-show-btns" do %>
             フォロワー <%= @user.followers.count %>人
           <% end %>
         </div>
-        <div class="col-sm-4">
-          <%= link_to favorites_user_path(@user.id), class: "btn user-show-btn" do %>
+        <div class="col-4">
+          <%= link_to favorites_user_path(@user.id), class: "btn user-show-btns" do %>
             お気に入り <%= @user.favorites.count %>件
           <% end %>
         </div>
       </div>
       <div class="row justify-content-center">
           <% if @user.id == current_user.id %>
-            <div class="col-sm-6">
-              <%= link_to  edit_user_path(@user.id), class: "btn user-show-btn mr-3" do %>
+            <div class="col-6">
+              <%= link_to  edit_user_path(@user.id), class: "btn user-show-btns mr-3" do %>
                 編集 <i class="fas fa-user-cog"></i>
               <% end %>
             </div>
           <% else %>
             <% if @user.followed_by?(current_user) %>
-              <div class="col-sm-6">
-                <%= link_to user_relationships_path(@user.id), method: :delete, class: "btn user-show-btn mr-3" do %>
+              <div class="col-6">
+                <%= link_to user_relationships_path(@user.id), method: :delete, class: "btn user-show-btns mr-3" do %>
                   フォロー解除 <i class="fas fa-user-minus"></i>
                 <% end %>
               </div>
             <% else %>
-              <div class="col-sm-6">
-                <%= link_to user_relationships_path(@user.id), method: :post, class: "btn user-show-btn mr-3" do %>
+              <div class="col-6">
+                <%= link_to user_relationships_path(@user.id), method: :post, class: "btn user-show-btns mr-3" do %>
                   フォローする <i class="fas fa-user-plus"></i>
                 <% end %>
               </div>
             <% end %>
             <% if (current_user.followed_by? @user) && (@user.followed_by? current_user) %>
               <% if @is_room == true %>
-                <div class="col-sm-6">
-                  <%= link_to room_path(@room_id, user_id: @user.id), class: "btn user-show-btn" do %>
+                <div class="col-6">
+                  <%= link_to room_path(@room_id, user_id: @user.id), class: "btn user-show-btns" do %>
                     チャットを始める <i class="far fa-comments"></i>
                   <% end %>
                 </div>
               <% else %>
-                <div class="col-sm-6">
+                <div class="col-6">
                   <%= form_with model: @room, local: true do |f| %>
                     <%= fields_for @entry do |e| %>
                       <%= e.hidden_field :user_id, value: @user.id %>
                     <% end %>
-                    <%= button_tag type: "submit", class: "btn user-show-btn" do %>
+                    <%= button_tag type: "submit", class: "btn user-show-btns" do %>
                       チャットを始めよう <i class="far fa-comments"></i>
                     <% end %>
                   <% end %>
@@ -103,7 +103,7 @@
     </div>
   </div>
 
-  <h2 class="text-center mt-5 user-show-title"><i class="fas fa-paw"></i> 投稿した記事一覧 <i class="fas fa-paw"></i></h2>
+  <h2 class="text-center mt-5 user-show-post-title"><i class="fas fa-paw"></i> 投稿した記事一覧 <i class="fas fa-paw"></i></h2>
   <% if @user.posts.present? %>
     <div class="row justify-content-center">
       <%= render "user/posts/post_index", posts: @posts %>

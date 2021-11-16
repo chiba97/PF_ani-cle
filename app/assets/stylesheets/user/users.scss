@@ -14,7 +14,10 @@
   letter-spacing: .2rem;
   font-family: 'Shippori Mincho B1', serif;
 }
-
+.user-show-post-title{
+  letter-spacing: .2rem;
+  font-family: 'Shippori Mincho B1', serif;
+}
 // マイページtable設定
 .user-show-th{
   font-size: 18px;
@@ -60,4 +63,15 @@
 }
 .follow-link:hover{
   color: #EE827d;
+}
+// マイページボタン5種
+.user-show-btns{
+  border: 1px solid #EE827d!important;
+  border-radius: 100px!important;
+  background-color: #EE827d!important;
+  color: white!important;
+}
+.user-show-btns:hover{
+  background-color: white!important;
+  color: #EE827d!important;
 }
