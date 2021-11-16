@@ -433,6 +433,10 @@ img{
 .unsubscribe-text{
   font-size: 15px;
 }
+.user-favorites-title{
+  font-size: 23px;
+  padding-top: 30px;
+}
 }
 
 // スマートフォンサイズ（320px以下）
@@ -514,5 +518,8 @@ img{
   }
   .unsubscribe-text{
     font-size: 13px;
+  }
+  .user-favorites-title{
+  font-size: 19px;
   }
 }
