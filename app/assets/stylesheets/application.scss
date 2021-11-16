@@ -319,8 +319,8 @@ img{
   height: 70px;
 }
 .profile-image{
-  width: 85px;
-  height: 85px;
+  width: 75px;
+  height: 75px;
 }
 // 新規登録ログインページ
 .new-forms{
@@ -452,6 +452,9 @@ img{
 .message{
   font-size: 11px;
 }
+.room-message-form{
+  padding-bottom: 0;
+}
 }
 
 // スマートフォンサイズ（320px以下）
@@ -462,8 +465,8 @@ img{
     height: 60px;
   }
   .profile-image{
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   }
   // トップページ
   .top-title{

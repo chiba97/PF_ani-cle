@@ -21,7 +21,7 @@
     </div>
   </div>
 
-  <div class="row pt-3 pb-5">
+  <div class="row room-message-form pt-3">
     <div class="col-sm-6 ml-auto">
       <%= form_with model: @message do |f| %>
       <div class="form-group">
@@ -32,7 +32,9 @@
         <%= button_tag type: "submit", class: "btn message-btn" do %>
         送信 <i class="far fa-paper-plane"></i>
         <% end %>
-        <%= link_to "戻る", user_path(@user.id), class: "btn message-btn" %>
+        <%= link_to user_path(@user.id), class: "btn message-btn" do %>
+        戻る <i class="fas fa-undo-alt"></i>
+        <% end %>
         </div>
       <% end %>
     </div>
