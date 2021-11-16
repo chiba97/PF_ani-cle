@@ -25,13 +25,13 @@
 }
 
 body{
- font-family: 'Sawarabi Gothic', sans-serif;
- width: 100%;
+  font-family: 'Sawarabi Gothic', sans-serif;
+  width: 100%;
 }
 
 // 各viewのコンテナーの高さを指定
 .container{
- min-height: 73vh;
+  min-height: 73vh;
 }
 
 // デバイスエラーメッセージ
@@ -42,85 +42,85 @@ body{
 
 // 新規登録ログイン画面のボタン
 .new-btn{
- border: 1px solid #EE827d;
- border-radius: 100px;
- background-color: #EE827d;
- color: white;
- width: 100%;
- height: 50px;
+  border: 1px solid #EE827d;
+  border-radius: 100px;
+  background-color: #EE827d;
+  color: white;
+  width: 100%;
+  height: 50px;
 }
 .new-btn:hover{
- background-color: white;
- color: #EE827d;
- border: 1px solid black;
+  background-color: white;
+  color: #EE827d;
+  border: 1px solid black;
 }
 
 // 新規登録ログイン画面の画面遷移リンク
 .new-link{
- color: #EE827d;
+  color: #EE827d;
 }
 .new-link:hover{
- color: #EE827d;
+  color: #EE827d;
 }
 
 // 新規登録ログイン画面のタイトル
 .new-title{
- border-bottom: 3px solid black;
+  border-bottom: 3px solid black;
 }
 
 // 新規登録ログイン画面の入力欄
 .new-field{
- border-radius: 5px;
- height: 40px;
- border: 1px solid gray;
+  border-radius: 5px;
+  height: 40px;
+  border: 1px solid gray;
 }
 .new-field:hover{
- border: 1px solid black;
+  border: 1px solid black;
 }
 .new-field:focus{
- border: 2px solid #EE827d;
- outline: 0;
+  border: 2px solid #EE827d;
+  outline: 0;
 }
 
 // ヘッダー検索ボタン
 .header-search-btn{
- border: 1px solid #EE827d;
- background-color: #EE827d;
- color: white;
+  border: 1px solid #EE827d;
+  background-color: #EE827d;
+  color: white;
 }
 .header-search-btn:hover{
- border: 1px solid #EE827d;
- background-color: white;
- color: #EE827d;
+  border: 1px solid #EE827d;
+  background-color: white;
+  color: #EE827d;
 }
 
 // ヘッダー部分
 .navbar{
- background-color: white;
- width: 100%;
+  background-color: white;
+  width: 100%;
 }
 // ヘッダーリンク先
 .nav-link{
- color: #EE827d!important;
- letter-spacing: .08em;
+  color: #EE827d!important;
+  letter-spacing: .08em;
 }
 .nav-link:hover{
- color: #F4AEAB!important;
+  color: #F4AEAB!important;
 }
 
 footer{
- width: 100%;
- height: 100px;
+  width: 100%;
+  height: 100px;
 }
 .footer-text{
- line-height: 100px;
+  line-height: 100px;
 }
 
 // プロフィール画像を円形に設定
 .profile-image{
- border-radius: 50%;
- width: 100px;
- height: 100px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
 
 // kaminariを用いたページネーションカスタマイズ
@@ -154,36 +154,36 @@ footer{
 
 // ナビバーデザイン
 .navbar-toggler{
- border-color: #EE827d!important;
+  border-color: #EE827d!important;
 }
 
 // 検索窓のデザイン
 #word{
- padding: 2px 5px;
- border-radius: 5px;
- border: 1px #EE827d solid;
+  padding: 2px 5px;
+  border-radius: 5px;
+  border: 1px #EE827d solid;
 }
 #word:focus{
- outline: 0;
+  outline: 0;
 }
 #range, #search{
- border-color: #EE827d;
- border-radius: 5px;
- color: #EE827d;
+  border-color: #EE827d;
+  border-radius: 5px;
+  color: #EE827d;
 }
 #search:hover{
- background-color: #EE827d;
- color: white;
+  background-color: #EE827d;
+  color: white;
 }
 #range:hover{
- background-color: #EE827d;
- color: white;
+  background-color: #EE827d;
+  color: white;
 }
 
 // 画像アップロードボタンデザイン
 // 記事投稿側
 .image-input-btn{
- display: block;
+  display: block;
   background-color: white;
   width: 180px;
   height: 30px;
@@ -195,7 +195,7 @@ footer{
 }
 // アイコン側
 .user-image-input-btn{
- display: block;
+  display: block;
   background-color: #EE827d;
   width: 180px;
   height: 30px;
@@ -234,275 +234,275 @@ footer{
 
 // タブレットサイズ（768px以下設定）
 @media screen and (max-width:768px) {
-// トップページ
-.top-title{
-  font-size: 135px;
-}
-.top-text{
-  font-size: 25px;
-}
-.top-page-btn {
-  margin-top: 190px;
-}
-.top-login-btn {
-  margin-top: 300px;
-}
-// アバウトページ
-.about-top-title{
-  font-size: 50px;
-}
-.about-new-btn{
-  width: 90%;
-}
-.about-second-content{
-  padding-top: 20px;
-}
-.about-second-title{
-  font-size: 80px;
-}
-.about-third-right{
-  padding-top: 35px;
-}
-.about-third-text{
-  padding-top: 25px;
-}
-.about-btns{
-  margin-top: 20px;
-}
-.about-third-title{
-  font-size: 25px;
-}
-// マイページ
-.user-show-post-title{
-  font-size: 30px;
-}
-.user-show-th{
-  font-size: 13px;
-}
-.user-show-btns{
-  font-size: 13px;
-}
-.unsubscribe-title{
-  padding-top: 80px;
-  font-size: 40px;
-}
-.unsubscribe-text{
-  font-size: 20px;
-}
-.room-title{
-  font-size: 40px;
-}
-.message{
-  font-size: 19px;
-}
-.no-search-title{
-  font-size: 25px;
-}
-.admin-title{
-  font-size: 30px;
-}
-.admin-reply-title{
-  font-size: 30px;
-}
+  // トップページ
+  .top-title{
+    font-size: 135px;
+  }
+  .top-text{
+    font-size: 25px;
+  }
+  .top-page-btn {
+    margin-top: 190px;
+  }
+  .top-login-btn {
+    margin-top: 300px;
+  }
+  // アバウトページ
+  .about-top-title{
+    font-size: 50px;
+  }
+  .about-new-btn{
+    width: 90%;
+  }
+  .about-second-content{
+    padding-top: 20px;
+  }
+  .about-second-title{
+    font-size: 80px;
+  }
+  .about-third-right{
+    padding-top: 35px;
+  }
+  .about-third-text{
+    padding-top: 25px;
+  }
+  .about-btns{
+    margin-top: 20px;
+  }
+  .about-third-title{
+    font-size: 25px;
+  }
+  // マイページ
+  .user-show-post-title{
+    font-size: 30px;
+  }
+  .user-show-th{
+    font-size: 13px;
+  }
+  .user-show-btns{
+    font-size: 13px;
+  }
+  .unsubscribe-title{
+    padding-top: 80px;
+    font-size: 40px;
+  }
+  .unsubscribe-text{
+    font-size: 20px;
+  }
+  .room-title{
+    font-size: 40px;
+  }
+  .message{
+    font-size: 19px;
+  }
+  .no-search-title{
+    font-size: 25px;
+  }
+  .admin-title{
+    font-size: 30px;
+  }
+  .admin-reply-title{
+    font-size: 30px;
+  }
 }
 
 
 // スマートフォンサイズ（425px以下）
 @media screen and (max-width:425px) {
-// トップページ
-.top-title{
-  font-size: 69px;
-}
-.top-text{
-  font-size: 14px;
-}
-.top-page-btn{
-  margin-top: 180px;
-}
-.top-login-btn {
-  margin-top: 250px;
-}
-// ヘッダーアイコン
-img{
-  width: 70px;
-  height: 70px;
-}
-.profile-image{
-  width: 75px;
-  height: 75px;
-}
-// 新規登録ログインページ
-.new-forms{
-  width: 90%;
-}
-.new-content{
-  margin-top: 10px;
-}
-.new-content-text{
-  margin-top: 55px;
-  font-size: 15px;
-}
-.new_user{
-  margin-top: 40px;
-}
-.new_admin{
-  margin-top: 40px;
-}
-.post-title{
-  font-size: 1.4rem;
-}
-// アバウトページ
-.about-top-title{
-  font-size: 60px;
-}
-.about-top-subtitle{
-  font-size: 19px;
-}
-.about-top-left{
-  margin-top: 25px;
-  padding-bottom: 30px;
-  margin: 15px 15px 5px;
-}
-.about-new-btn{
-  width: 80%;
-}
-.about-image{
-  height: auto;
-}
-.about-second-content{
-  margin: 5px 1px 0px;
-  padding-top: 23px;
-}
-.about-second-title{
-  font-size: 45px;
-}
-.about-second-text{
-  font-size: 15px;
-}
-.about-third-content{
-  margin-top: 5px;
-}
-.about-third-right{
-  margin: 5px 17px 0px;
-}
-.about-third-text{
-  font-size: 15px;
-  padding: 15px 0;
-}
-.about-third-title{
-  font-size: 23px;
-}
-// 投稿一覧ページ
-.index-cards{
-  margin-top: 20px;
-  width: 90%;
-}
-.post-contents{
-  padding-top: 3px;
-}
-// 投稿詳細ページ
-.post-show-profile{
-  display: none;
-}
-.post-show-top{
-  margin-top: 30px;
-}
-.post-show-title-wrap{
-  padding-top: 3px;
-}
-// 新規投稿ページ
-.post-new-wrap{
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-// 通知一覧ページ
-.notification-card{
-  font-size: 11px;
-}
-// お問い合わせページ
-.contact-title{
-  font-size: 23px;
-}
-// マイページ
-.user-show-post-title{
-  font-size: 28px;
-}
-.user-show-th{
-  font-size: 14px;
-}
-.user-show-btn{
-  font-size: 15px;
-}
-.user-show-btns{
-  font-size: 10px;
-}
-.user-edit-wrap{
-  padding-top: 20px;
-  padding-bottom: 50px;
-  font-size: 15px;
-}
-.unsubscribe-title{
-  padding-top: 60px;
-  font-size: 28px;
-}
-.unsubscribe-text{
-  font-size: 15px;
-}
-.user-favorites-title{
-  font-size: 23px;
-  padding-top: 30px;
-}
-.user-room-title{
-  padding-top: 30px;
-}
-.room-title{
-  font-size: 25px;
-}
-.message{
-  font-size: 11px;
-}
-.room-message-form{
-  padding-bottom: 0;
-}
-.user-follow-title{
-  font-size: 18px;
-}
-.follow-th{
-  font-size: 15px;
-}
-.follow-wrap{
-  padding-top: 20px;
-}
-.no-present-title{
-  font-size: 20px;
-}
-.no-search-title{
-  font-size: 17px;
-}
-.user-search-title{
-  font-size: 21px;
-}
-.post-search-title{
-  font-size: 21px;
-}
-.admin-title{
-  font-size: 21px;
-}
-.admin-reply-title{
-  font-size: 21px;
-}
-.admin-th{
-  font-size: 15px;
-}
-.admin-contact-form{
-  padding-top: 40px;
-}
-.admin-contact-title{
-  font-size: 15px;
-}
-.admin-contact-text{
-  font-size: 14px;
-}
+  // トップページ
+  .top-title{
+    font-size: 69px;
+  }
+  .top-text{
+    font-size: 14px;
+  }
+  .top-page-btn{
+    margin-top: 180px;
+  }
+  .top-login-btn {
+    margin-top: 250px;
+  }
+  // ヘッダーアイコン
+  img{
+    width: 70px;
+    height: 70px;
+  }
+  .profile-image{
+    width: 75px;
+    height: 75px;
+  }
+  // 新規登録ログインページ
+  .new-forms{
+    width: 90%;
+  }
+  .new-content{
+    margin-top: 10px;
+  }
+  .new-content-text{
+    margin-top: 55px;
+    font-size: 15px;
+  }
+  .new_user{
+    margin-top: 40px;
+  }
+  .new_admin{
+    margin-top: 40px;
+  }
+  .post-title{
+    font-size: 1.4rem;
+  }
+  // アバウトページ
+  .about-top-title{
+    font-size: 60px;
+  }
+  .about-top-subtitle{
+    font-size: 19px;
+  }
+  .about-top-left{
+    margin-top: 25px;
+    padding-bottom: 30px;
+    margin: 15px 15px 5px;
+  }
+  .about-new-btn{
+    width: 80%;
+  }
+  .about-image{
+    height: auto;
+  }
+  .about-second-content{
+    margin: 5px 1px 0px;
+    padding-top: 23px;
+  }
+  .about-second-title{
+    font-size: 45px;
+  }
+  .about-second-text{
+    font-size: 15px;
+  }
+  .about-third-content{
+    margin-top: 5px;
+  }
+  .about-third-right{
+    margin: 5px 17px 0px;
+  }
+  .about-third-text{
+    font-size: 15px;
+    padding: 15px 0;
+  }
+  .about-third-title{
+    font-size: 23px;
+  }
+  // 投稿一覧ページ
+  .index-cards{
+    margin-top: 20px;
+    width: 90%;
+  }
+  .post-contents{
+    padding-top: 3px;
+  }
+  // 投稿詳細ページ
+  .post-show-profile{
+    display: none;
+  }
+  .post-show-top{
+    margin-top: 30px;
+  }
+  .post-show-title-wrap{
+    padding-top: 3px;
+  }
+  // 新規投稿ページ
+  .post-new-wrap{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  // 通知一覧ページ
+  .notification-card{
+    font-size: 11px;
+  }
+  // お問い合わせページ
+  .contact-title{
+    font-size: 23px;
+  }
+  // マイページ
+  .user-show-post-title{
+    font-size: 28px;
+  }
+  .user-show-th{
+    font-size: 14px;
+  }
+  .user-show-btn{
+    font-size: 15px;
+  }
+  .user-show-btns{
+    font-size: 10px;
+  }
+  .user-edit-wrap{
+    padding-top: 20px;
+    padding-bottom: 50px;
+    font-size: 15px;
+  }
+  .unsubscribe-title{
+    padding-top: 60px;
+    font-size: 28px;
+  }
+  .unsubscribe-text{
+    font-size: 15px;
+  }
+  .user-favorites-title{
+    font-size: 23px;
+    padding-top: 30px;
+  }
+  .user-room-title{
+    padding-top: 30px;
+  }
+  .room-title{
+    font-size: 25px;
+  }
+  .message{
+    font-size: 11px;
+  }
+  .room-message-form{
+    padding-bottom: 0;
+  }
+  .user-follow-title{
+    font-size: 18px;
+  }
+  .follow-th{
+    font-size: 15px;
+  }
+  .follow-wrap{
+    padding-top: 20px;
+  }
+  .no-present-title{
+    font-size: 20px;
+  }
+  .no-search-title{
+    font-size: 17px;
+  }
+  .user-search-title{
+    font-size: 21px;
+  }
+  .post-search-title{
+    font-size: 21px;
+  }
+  .admin-title{
+    font-size: 21px;
+  }
+  .admin-reply-title{
+    font-size: 21px;
+  }
+  .admin-th{
+    font-size: 15px;
+  }
+  .admin-contact-form{
+    padding-top: 40px;
+  }
+  .admin-contact-title{
+    font-size: 15px;
+  }
+  .admin-contact-text{
+    font-size: 14px;
+  }
 }
 
 // スマートフォンサイズ（320px以下）
@@ -513,12 +513,12 @@ img{
     height: 60px;
   }
   .profile-image{
-  width: 65px;
-  height: 65px;
+    width: 65px;
+    height: 65px;
   }
   // トップページ
   .top-title{
-  font-size: 50px;
+    font-size: 50px;
   }
   .top-text{
     font-size: 12px;
@@ -534,8 +534,8 @@ img{
     font-size: 48px;
   }
   .about-top-subtitle{
-  font-size: 16px;
-}
+    font-size: 16px;
+  }
   .about-new-btn{
     width: 90%;
   }
@@ -563,7 +563,7 @@ img{
   }
   // お問い合わせフォーム
   .contact-title{
-  font-size: 19px;
+    font-size: 19px;
   }
   // マイページ
   .user-show-post-title{
@@ -579,14 +579,14 @@ img{
     font-size: 13px;
   }
   .unsubscribe-title{
-  padding-top: 30px;
-  font-size: 23px;
+    padding-top: 30px;
+    font-size: 23px;
   }
   .unsubscribe-text{
     font-size: 13px;
   }
   .user-favorites-title{
-  font-size: 19px;
+    font-size: 19px;
   }
   .room-title{
     font-size: 20px;
@@ -595,16 +595,16 @@ img{
     font-size: 10px;
   }
   .user-follow-title{
-  font-size: 15px;
+    font-size: 15px;
   }
   .follow-th{
     font-size: 13px;
   }
   .no-present-title{
-  font-size: 16px;
+    font-size: 16px;
   }
   .no-search-title{
-  font-size: 13px;
+    font-size: 13px;
   }
   .user-search-title{
     font-size: 17px;
