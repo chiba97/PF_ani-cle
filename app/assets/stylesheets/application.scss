@@ -464,6 +464,9 @@ img{
 .follow-wrap{
   padding-top: 20px;
 }
+.no-present-title{
+  font-size: 20px;
+}
 }
 
 // スマートフォンサイズ（320px以下）
@@ -560,5 +563,8 @@ img{
   }
   .follow-th{
     font-size: 12px;
+  }
+  .no-present-title{
+  font-size: 16px;
   }
 }

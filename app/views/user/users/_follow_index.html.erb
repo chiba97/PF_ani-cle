@@ -28,7 +28,7 @@
             <% if user != current_user %>
               <% if user.followed_by?(current_user) %>
                 <%= link_to user_relationships_path(user.id), method: :delete, class: "btn user-show-btn mr-3" do %>
-                  <i class="fas fa-user-minus"> フォロー解除</i>
+                  フォロー解除 <i class="fas fa-user-minus"></i>
                 <% end %>
               <% else %>
                 <%= link_to user_relationships_path(user.id), method: :post, class: "btn user-show-btn mr-3" do %>
