@@ -408,8 +408,16 @@ img{
 .user-show-th{
   font-size: 14px;
 }
+.user-show-btn{
+  font-size: 15px;
+}
 .user-show-btns{
   font-size: 10px;
+}
+.user-edit-wrap{
+  padding-top: 20px;
+  padding-bottom: 50px;
+  font-size: 15px;
 }
 }
 
@@ -479,5 +487,11 @@ img{
   }
   .user-show-th{
     font-size: 12px;
+  }
+  .user-show-btn{
+    font-size: 12px;
+  }
+  .user-edit-wrap{
+    font-size: 13px;
   }
 }
