@@ -407,6 +407,9 @@ footer{
   .post-show-top{
     margin-top: 30px;
   }
+  .post-show-text{
+    font-size: 15px;
+  }
   .post-show-title-wrap{
     padding-top: 3px;
   }
@@ -564,6 +567,10 @@ footer{
   // お問い合わせフォーム
   .contact-title{
     font-size: 19px;
+  }
+  // 通知一覧ページ
+  .notification-card{
+    font-size: 9px;
   }
   // マイページ
   .user-show-post-title{
