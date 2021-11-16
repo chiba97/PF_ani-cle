@@ -455,6 +455,15 @@ img{
 .room-message-form{
   padding-bottom: 0;
 }
+.user-follow-title{
+  font-size: 18px;
+}
+.follow-th{
+  font-size: 14px;
+}
+.follow-wrap{
+  padding-top: 20px;
+}
 }
 
 // スマートフォンサイズ（320px以下）
@@ -545,5 +554,11 @@ img{
   }
   .message{
     font-size: 10px;
+  }
+  .user-follow-title{
+  font-size: 15px;
+  }
+  .follow-th{
+    font-size: 12px;
   }
 }

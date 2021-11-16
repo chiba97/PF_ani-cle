@@ -1,4 +1,4 @@
-<div class="table-responsive-lg">
+<div class="table-responsive">
   <table class="table text-nowrap table-hover">
     <thead>
       <tr>
@@ -28,7 +28,7 @@
             <% if user != current_user %>
               <% if user.followed_by?(current_user) %>
                 <%= link_to user_relationships_path(user.id), method: :delete, class: "btn user-show-btn mr-3" do %>
-                  フォロー解除 <i class="fas fa-user-minus"></i>
+                  <i class="fas fa-user-minus"> フォロー解除</i>
                 <% end %>
               <% else %>
                 <%= link_to user_relationships_path(user.id), method: :post, class: "btn user-show-btn mr-3" do %>
