@@ -2,7 +2,9 @@
   <%= render "user/posts/error", user: @user %>
   <div class="row justify-content-center pt-4">
     <div class="col-sm-6">
-      <h2 class="admin-title text-center"><i class="fas fa-user"></i>  <%= @user.name %>さんの会員情報の編集 <i class="fas fa-user"></i> </h2>
+      <h2 class="admin-title text-center">
+        <%= @user.name %>さんの<br><i class="fas fa-user"></i> 会員情報の編集 <i class="fas fa-user"></i>
+      </h2>
       <%= form_with model: @user, url: admin_user_path(@user), method: :patch, local:true do |f| %>
       <div class="form-group mt-5">
         <i class="fas fa-paw"></i> アイコン <i class="fas fa-paw"></i>
