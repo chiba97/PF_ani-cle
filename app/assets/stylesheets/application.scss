@@ -282,6 +282,13 @@ footer{
 .user-show-btns{
   font-size: 13px;
 }
+.unsubscribe-title{
+  padding-top: 80px;
+  font-size: 40px;
+}
+.unsubscribe-text{
+  font-size: 20px;
+}
 }
 
 
@@ -419,6 +426,13 @@ img{
   padding-bottom: 50px;
   font-size: 15px;
 }
+.unsubscribe-title{
+  padding-top: 60px;
+  font-size: 28px;
+}
+.unsubscribe-text{
+  font-size: 15px;
+}
 }
 
 // スマートフォンサイズ（320px以下）
@@ -492,6 +506,13 @@ img{
     font-size: 12px;
   }
   .user-edit-wrap{
+    font-size: 13px;
+  }
+  .unsubscribe-title{
+  padding-top: 30px;
+  font-size: 23px;
+  }
+  .unsubscribe-text{
     font-size: 13px;
   }
 }
