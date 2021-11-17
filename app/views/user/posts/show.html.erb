@@ -66,12 +66,16 @@
       </div>
       <div class="row justify-content-center text-center mt-4">
         <% if @post.user.id == current_user.id %>
-          <%= link_to " 編集", edit_post_path(@post.id), class: "btn post-show-btn fas fa-edit" %>
-          <%= link_to " 削除", post_path(@post.id),method: :delete, class: "btn post-show-btn ml-3 fas fa-trash-alt", data: { confirm: '本当に削除しますか？' } %>
+          <%= link_to edit_post_path(@post.id), class: "btn post-show-btn" do %>
+            <i class="fas fa-edit"> 編集</i>
+          <% end %>
+          <%= link_to post_path(@post.id),method: :delete, class: "btn post-show-btn ml-3", data: { confirm: '本当に削除しますか？' } do %>
+            <i class="fas fa-trash-alt"> 削除</i>
+          <% end %>
         <% end %>
-        <span id="favorites_btn_<%= @post.id %>">
+        <div id="favorites_btn_<%= @post.id %>">
           <%= render "user/favorites/favorite_btn", post: @post %>
-        </span>
+        </div>
       </div>
     </div>
   </div>
