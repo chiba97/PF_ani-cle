@@ -12,9 +12,7 @@
           <%= render "user/notifications/notification", notification: notification %>
         <% end %>
         <div class="text-center mt-5">
-          <%= link_to destroy_all_notifications_path, method: :delete, class: "btn notification-btn", data: { confirm: '本当に削除しますか？' } do %>
-            全ての通知を削除 <i class="fas fa-trash-alt"></i>
-          <% end %>
+          <%= link_to " 全ての通知を削除", destroy_all_notifications_path, method: :delete, class: "btn notification-btn fas fa-trash-alt", data: { confirm: '本当に削除しますか？' } %>
         </div>
       <% else %>
         <h3 class="notification-no-title no-present-title text-center pt-3 pb-5">※現在通知はありません</h3>
