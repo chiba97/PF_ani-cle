@@ -16,11 +16,7 @@
   </div>
 
   <div class="row justify-content-center mt-5">
-    <%= link_to user_path(@user.id), class: "btn user-show-btn mr-1" do %>
-      退会しない <i class="fas fa-undo-alt"></i>
-    <% end %>
-    <%= link_to withdraw_user_path(@user.id), method: :patch, data: { confirm: '本当に退会しますか？' }, class: "btn user-show-btn ml-1" do %>
-      退会する <i class="fas fa-exclamation-triangle"></i>
-    <% end %>
+    <%= link_to " 退会する", withdraw_user_path(@user.id), method: :patch, data: { confirm: '本当に退会しますか？' }, class: "btn user-show-btn mr-1 fas fa-exclamation-triangle" %>
+    <%= link_to " 戻る", user_path(@user.id), class: "btn user-show-btn ml-1 fas fa-undo-alt" %>
   </div>
 </div>

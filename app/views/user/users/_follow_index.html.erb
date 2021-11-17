@@ -27,13 +27,9 @@
           <td class="follow-th">
             <% if user != current_user %>
               <% if user.followed_by?(current_user) %>
-                <%= link_to user_relationships_path(user.id), method: :delete, class: "btn user-show-btn mr-3" do %>
-                  フォロー解除 <i class="fas fa-user-minus"></i>
-                <% end %>
+                <%= link_to " フォロー解除", user_relationships_path(user.id), method: :delete, class: "btn user-show-btn mr-3 fas fa-user-minus" %>
               <% else %>
-                <%= link_to user_relationships_path(user.id), method: :post, class: "btn user-show-btn mr-3" do %>
-                  フォローする <i class="fas fa-user-plus"></i>
-                <% end %>
+                <%= link_to " フォローする", user_relationships_path(user.id), method: :post, class: "btn user-show-btn mr-3 fas fa-user-plus" %>
               <% end %>
             <% end %>
           </td>

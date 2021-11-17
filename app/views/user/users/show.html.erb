@@ -77,9 +77,7 @@
                     <%= fields_for @entry do |e| %>
                       <%= e.hidden_field :user_id, value: @user.id %>
                     <% end %>
-                    <%= button_tag type: "submit", class: "btn user-show-btns" do %>
-                      チャットを始めよう <i class="far fa-comments"></i>
-                    <% end %>
+                    <%= button_tag " チャットを始めよう", type: "submit", class: "btn user-show-btns far fa-comments" %>
                   <% end %>
                 </div>
               <% end %>
