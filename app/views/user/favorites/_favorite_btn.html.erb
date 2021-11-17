@@ -1,5 +1,5 @@
 <% if post.favorited_by?(current_user) %>
-  <%= link_to " いいね解除", post_favorites_path(post), class: "btn post-show-btn ml-3 fas fa-heart", method: :delete, remote: true %>
+  <%= link_to " お気に入り解除", post_favorites_path(post), class: "btn post-show-btn ml-3 fas fa-heart", method: :delete, remote: true %>
 <% else %>
-  <%= link_to " いいね登録", post_favorites_path(post), class: "btn post-show-btn ml-3 far fa-heart", method: :post, remote: true %>
+  <%= link_to " お気に入り登録", post_favorites_path(post), class: "btn post-show-btn ml-3 far fa-heart", method: :post, remote: true %>
 <% end %>
