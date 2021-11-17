@@ -8,12 +8,12 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
         <div class="field mb-3">
-          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.label :email, "メールアドレス" %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email",:placeholder => "example@gmail.com", class: "col-sm-12 new-field pl-2" %>
         </div>
 
         <div class="field mb-4">
-          <%= f.label :password, "パスワード" %><br />
+          <%= f.label :password, "パスワード" %>
           <%= f.password_field :password, autocomplete: "current-password", class: "col-sm-12 new-field" %>
         </div>
 

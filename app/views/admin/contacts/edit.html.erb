@@ -1,5 +1,4 @@
 <div class="container admin-page">
-  <%= render "user/posts/error", user: @contact %>
   <div class="row admin-contact-form justify-content-center">
     <div class="col-sm-8">
       <h2 class="admin-reply-title text-center">
@@ -7,11 +6,11 @@
       </h2>
       <%= form_with model: @contact, url: admin_contact_path(@contact.id), method: :patch, local:true do |f| %>
       <div class="pt-3">
-        <h5 class="admin-contact-title"><i class="fas fa-paw"></i> お問い合わせ日 <i class="fas fa-paw"></i></h5>
+        <h5 class="admin-contact-title"><i class="fas fa-paw"></i> 受信日 <i class="fas fa-paw"></i></h5>
         <p class="admin-contact-text"><%= @contact.created_at.strftime("%Y年%m月%d日 ") %></p>
       </div>
       <div class="pt-3">
-        <h5 class="admin-contact-title"><i class="fas fa-paw"></i> タイトル <i class="fas fa-paw"></i></h5>
+        <h5 class="admin-contact-title"><i class="fas fa-paw"></i> お問い合わせタイトル <i class="fas fa-paw"></i></h5>
         <p class="admin-contact-text"><%= @contact.title %></P>
       </div>
       <div class="pt-3">

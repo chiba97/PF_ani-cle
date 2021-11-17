@@ -4,7 +4,7 @@
       <tr>
         <th class="admin-th">会員ID</th>
         <th class="admin-th">ニックネーム</th>
-        <th class="admin-th">問い合わせタイトル</th>
+        <th class="admin-th">お問い合わせタイトル</th>
         <th class="admin-th">受信日</th>
         <th class="admin-th"></th>
         <th class="admin-th"></th>
@@ -16,7 +16,7 @@
           <td class="admin-th"><%= contact.user.id %></td>
           <td class="admin-th">
             <%= link_to admin_user_path(contact.user.id), class: "admin-link" do %>
-              <%= contact.user.name %>さん
+              <%= contact.user.name %>
             <% end %>
           </td>
           <td class="admin-th"><%= contact.title %></td>
