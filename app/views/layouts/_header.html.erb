@@ -11,17 +11,17 @@
     <ul class="navbar-nav ml-auto">
     <% if admin_signed_in? %>
       <li class="nav-item active mr-4">
-        <%= link_to admin_users_path, class: "nav-link mr-3" do %>
+        <%= link_to admin_users_path, class: "nav-link nav-items-l" do %>
         会員一覧 <i class="fas fa-users"></i>
         <% end %>
       </li>
       <li class="nav-item active mr-4">
-        <%= link_to admin_contacts_path, class: "nav-link mr-3" do %>
+        <%= link_to admin_contacts_path, class: "nav-link nav-items-l" do %>
         お問い合わせ一覧 <i class="fas fa-envelope"></i>
         <% end %>
       </li>
       <li class="nav-item active mr-4">
-        <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link mr-5" do %>
+        <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link nav-items-r" do %>
         ログアウト <i class="fas fa-sign-out-alt"></i>
         <% end %>
       </li>
@@ -56,12 +56,12 @@
       </li>
     <% else %>
       <li class="nav-item active mr-4">
-        <%= link_to about_path, class: "nav-link mr-3" do %>
+        <%= link_to about_path, class: "nav-link nav-items-l" do %>
         About ANI-CLE <i class="fas fa-building"></i>
         <% end %>
       </li>
       <li class="nav-item active mr-4">
-        <%= link_to posts_path, class: "nav-link mr-5" do %>
+        <%= link_to posts_path, class: "nav-link nav-items-r" do %>
         投稿一覧 <i class="fas fa-dog"></i>
         <% end %>
       </li>

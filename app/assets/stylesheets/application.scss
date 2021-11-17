@@ -107,7 +107,12 @@ body{
 .nav-link:hover{
   color: #F4AEAB!important;
 }
-
+.nav-items-r{
+  margin-right: 48px;
+}
+.nav-items-l{
+  margin-right: 16px;
+}
 footer{
   width: 100%;
   height: 100px;
@@ -234,6 +239,19 @@ footer{
 
 // タブレットサイズ（768px以下設定）
 @media screen and (max-width:768px) {
+  // ハンバーガーメニュー
+  .navbar-nav{
+    text-align: center;
+  }
+  .nav-items-r{
+    margin-right: 0;
+  }
+  .nav-items-l{
+    margin-right: 0;
+  }
+  .search-form{
+    text-align: center;
+  }
   // トップページ
   .top-title{
     font-size: 135px;
@@ -309,6 +327,16 @@ footer{
 
 // スマートフォンサイズ（425px以下）
 @media screen and (max-width:425px) {
+  // ハンバーガーメニュー
+  #word{
+    width: 40%;
+  }
+  #range{
+    width: 20%;
+  }
+  #search{
+    width: 20%;
+  }
   // トップページ
   .top-title{
     font-size: 69px;
