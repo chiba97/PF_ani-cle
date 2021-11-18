@@ -7,7 +7,7 @@ class User::SearchesController < ApplicationController
       @word = params[:word]
     else
       @posts = Post.looks(params[:search], params[:word])
-      @posts = @posts.page(params[:page]).per(8)
+      @posts = @posts.includes(:user).page(params[:page]).per(8)
       @word = params[:word]
     end
   end

@@ -28,7 +28,7 @@ class User::PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    @comments = @post.comments
+    @comments = @post.comments.includes(:user)
     impressionist(@post, nil, unique: [:session_hash.to_s])
   end
 
