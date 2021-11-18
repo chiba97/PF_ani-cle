@@ -1,6 +1,6 @@
 class Admin::ContactsController < ApplicationController
   def index
-    @contacts = Contact.page(params[:page]).order(created_at: :desc).per(10)
+    @contacts = Contact.includes(:user).page(params[:page]).order(created_at: :desc).per(10)
   end
 
   def edit
