@@ -21,6 +21,7 @@
 //= require_tree .
 
 // トップページのスライドショー
+/*global $*/
 $(document).on('turbolinks:load', function (){
   $("#theTarget").skippr({
     // スライドショーの変化 ("fade" or "slide")
