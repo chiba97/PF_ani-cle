@@ -74,6 +74,7 @@ gem 'font-awesome-sass', '~> 5.13'
 gem 'dotenv-rails'
 gem 'devise-i18n'
 gem 'impressionist', '~>1.6.1'
+gem 'social-share-button'
 
 group :production do
   gem 'mysql2'

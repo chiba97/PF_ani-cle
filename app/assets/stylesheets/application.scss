@@ -10,12 +10,16 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require social-share-button
  *= require_tree .
  *= require_self
  */
+ @import "social-share-button";
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+
+ $size: 40px;
 
 // ブラウザ特有のCSSを解除するためリセットCSS
  * {
@@ -234,6 +238,18 @@ footer{
   color: white;
   letter-spacing: .2rem;
   font-family: 'Shippori Mincho B1', serif;
+}
+
+// 投稿詳細SNS共有アイコン
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+  .ssb-twitter{
+    margin-right: 5px;
+  }
 }
 
 
