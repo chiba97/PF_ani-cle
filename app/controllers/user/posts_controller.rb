@@ -18,9 +18,9 @@ class User::PostsController < ApplicationController
   end
 
   def index
-    @post_all = Post.all
+    @post_all = Post.includes(:user).all
     # いいねの多い順に並べる
-    posts = Post.includes(:favorited_users).
+    posts = Post.includes(:favorited_users, :user).
       sort { |a, b| b.favorited_users.size <=> a.favorited_users.size }
     @posts = Kaminari.paginate_array(posts).page(params[:page]).per(8)
   end

@@ -54,7 +54,7 @@ class User::UsersController < ApplicationController
   def favorites
     @user = User.find(params[:id])
     favorites = Favorite.where(user_id: @user.id).pluck(:post_id)
-    posts = Post.find(favorites)
+    posts = Post.includes(:user).find(favorites)
     @favorite_posts = Kaminari.paginate_array(posts).page(params[:page]).per(8)
   end
 
