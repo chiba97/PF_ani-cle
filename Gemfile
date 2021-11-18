@@ -76,6 +76,5 @@ gem 'devise-i18n'
 gem 'impressionist', '~>1.6.1'
 
 group :production do
-  gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'mysql2'
 end
