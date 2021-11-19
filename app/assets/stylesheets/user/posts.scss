@@ -83,6 +83,7 @@
 // 投稿一覧ページのカード
 .index-card{
  border-radius: 20px!important;
+ overflow: hidden;
 }
 .index-cards{
   margin-top: 48px;
@@ -91,6 +92,13 @@
  border-radius: 20px;
  width: 100%;
  height: 100%;
+}
+.post-index-img{
+ transition: 1s all;
+}
+.post-index-img:hover{
+  transform: scale(1.2,1.2);
+  transition: 1s all;
 }
 
 // コメントの欄設定
