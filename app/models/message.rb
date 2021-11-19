@@ -3,5 +3,5 @@ class Message < ApplicationRecord
   belongs_to :user
   has_many :notifications, dependent: :destroy
 
-  validates :content, presence: true
+  validates :content, presence: true, length: { maximum: 50 }
 end
