@@ -35,7 +35,6 @@ RSpec.describe 'Userモデルのテスト', type: :model do
         is_expected.to eq false
       end
     end
-    
     context 'petカラム' do
       it '２０文字以下であること：２０文字は○' do
         user.pet = Faker::Lorem.characters(number: 20) do
@@ -48,7 +47,6 @@ RSpec.describe 'Userモデルのテスト', type: :model do
         end
       end
     end
-
     context 'introductionカラム' do
       it '５０文字以下であること：５０文字は○' do
         user.introduction = Faker::Lorem.characters(number: 50) do
