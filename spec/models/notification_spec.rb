@@ -4,12 +4,6 @@ require 'rails_helper'
 
 RSpec.describe 'Notificationモデルのテスト', type: :model do
   
-  describe "モデルのテスト" do
-    it "有効なNotificationの場合は保存されるか" do
-      expect(build(:notification)).to be_valid
-    end
-  end
-  
   describe 'アソシエーションのテスト' do
     context 'Postモデルとの関係' do
       it '1対Nとなっているか' do

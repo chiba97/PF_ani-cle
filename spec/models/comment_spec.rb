@@ -3,12 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Commentモデルのテスト', type: :model do
-  
+
    describe 'バリデーションのテスト' do
     subject { comment.valid? }
-    let(:user) { create(:user) }
-    let(:post) { build(:post, user_id: user.id) }
-    let!(:comment) { build(:comment, user_id: user.id, post_id: post.id) }
+    let!(:user) { create(:user) }
+    let!(:post) { create(:post, user_id: user.id) }
+    let(:comment) { build(:comment, user_id: user.id, post_id: post.id) }
 
     context 'commentのカラム' do
       it '空欄でないこと' do
@@ -25,7 +25,7 @@ RSpec.describe 'Commentモデルのテスト', type: :model do
       end
     end
   end
-  
+
   describe 'アソシエーションのテスト' do
     context 'Userモデルとの関係' do
       it '1対Nとなっている' do
