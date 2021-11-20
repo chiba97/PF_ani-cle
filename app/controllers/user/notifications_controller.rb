@@ -2,7 +2,7 @@ class User::NotificationsController < ApplicationController
   def index
     @notifications = current_user.
       passive_notifications.
-      includes(:visitor, :visited, :post, :room).
+      includes(:visitor, :visited, {post: [:user]}, :room).
       page(params[:page]).
       per(10)
     @notifications.where(checked: false).each do |notification|
