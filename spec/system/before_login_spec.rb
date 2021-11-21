@@ -271,9 +271,7 @@ describe 'ユーザーログイン前のテスト' do
       fill_in 'user[email]', with: user.email
       fill_in 'user[password]', with: user.password
       click_button 'ログイン'
-      sign_out_link = find_all('a')[6].native.inner_text
-      sign_out_link = sign_out_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-      click_link sign_out_link
+      click_link 'ログアウト'
     end
     
     context 'ログアウト機能のテスト' do
