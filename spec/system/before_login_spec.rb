@@ -213,6 +213,18 @@ describe 'ユーザーログイン前のテスト' do
         expect(current_path).to eq '/'
       end
     end
+    
+    context 'ログイン失敗のテスト' do
+      before do
+        fill_in 'user[email]', with: ''
+        fill_in 'user[password]', with: ''
+        click_button 'ログイン'
+      end
+      
+      it 'ログインに失敗し、ログイン画面にリダイレクトされる' do
+        expect(current_path).to eq '/users/sign_in'
+      end
+    end
   end
   
   describe 'ヘッダーのテスト：ログインしている場合' do
