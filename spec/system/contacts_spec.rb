@@ -55,4 +55,5 @@ describe 'お問い合わせ機能のテスト' do
       end
     end
   end
+  
 end

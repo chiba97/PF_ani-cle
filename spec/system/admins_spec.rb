@@ -241,46 +241,47 @@ describe '管理者側テスト' do
   end
   
   describe 'お問い合わせ返信フォームテスト' do
-      let!(:user) { create(:user) }
-      let!(:contact) { create(:contact, user_id: user.id) }
+    let!(:user) { create(:user) }
+    let!(:contact) { create(:contact, user_id: user.id) }
+    before do
+      fill_in 'admin[email]', with: admin.email
+      fill_in 'admin[password]', with: admin.password
+      click_button 'ログイン'
+      visit edit_admin_contact_path(user.id)
+    end
+    context '表示内容の確認' do
+      it 'URLは正しい' do
+        expect(current_path).to eq '/admin/contacts/' + user.id.to_s + '/edit'
+      end
+      it 'お問合せタイトルが表示されている' do
+        expect(page).to have_content contact.title
+      end
+      it 'お問い合わせ内容が表示されている' do
+        expect(page).to have_content contact.body
+      end
+      it '返信フォームが表示されている' do
+        expect(page).to have_field 'contact[reply]'
+      end
+      it 'お問い合わせ返信リンクが表示されている' do
+        expect(page).to have_button '返信'
+      end
+      it 'お問い合わせ一覧に戻るリンクが表示されている' do
+        expect(page).to have_link '戻る'
+      end
+    end
+    context '返信内容送信の成功テスト' do
       before do
-        fill_in 'admin[email]', with: admin.email
-        fill_in 'admin[password]', with: admin.password
-        click_button 'ログイン'
-        visit edit_admin_contact_path(user.id)
+        @contact_old_reply = contact.reply
+        fill_in 'contact[reply]', with: Faker::Lorem.characters(number: 5)
+        click_button '返信'
       end
-      context '表示内容の確認' do
-        it 'URLは正しい' do
-          expect(current_path).to eq '/admin/contacts/' + user.id.to_s + '/edit'
-        end
-        it 'お問合せタイトルが表示されている' do
-          expect(page).to have_content contact.title
-        end
-        it 'お問い合わせ内容が表示されている' do
-          expect(page).to have_content contact.body
-        end
-        it '返信フォームが表示されている' do
-          expect(page).to have_field 'contact[reply]'
-        end
-        it 'お問い合わせ返信リンクが表示されている' do
-          expect(page).to have_button '返信'
-        end
-        it 'お問い合わせ一覧に戻るリンクが表示されている' do
-          expect(page).to have_link '戻る'
-        end
+      it '送信が成功している(返信内容の更新が成功している)' do
+        expect(contact.reload.reply).not_to eq @contact_old_reply
       end
-      context '返信内容送信の成功テスト' do
-        before do
-          @contact_old_reply = contact.reply
-          fill_in 'contact[reply]', with: Faker::Lorem.characters(number: 5)
-          click_button '返信'
-        end
-        it '送信が成功している(返信内容の更新が成功している)' do
-          expect(contact.reload.reply).not_to eq @contact_old_reply
-        end
-        it 'リダイレクト先がお問い合わせ一覧ページ' do
-          expect(current_path).to eq '/admin/contacts'
-        end
+      it 'リダイレクト先がお問い合わせ一覧ページ' do
+        expect(current_path).to eq '/admin/contacts'
       end
+    end
   end
+  
 end
