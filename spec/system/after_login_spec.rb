@@ -3,18 +3,19 @@
 require 'rails_helper'
 
 describe 'ユーザーログイン後のテスト' do
-  
   let(:user) { create(:user) }
+
   before do
     visit new_user_session_path
     fill_in 'user[email]', with: user.email
     fill_in 'user[password]', with: user.password
     click_button 'ログイン'
   end
-  
+
   describe 'ヘッダーのテスト：ログインしている場合' do
     context 'リンクの内容確認' do
       subject { current_path }
+
       it 'アイコンリンクを押すとトップ画面に遷移する' do
         icon_link = find_all('a')[0].native.inner_text
         click_link icon_link
@@ -46,5 +47,4 @@ describe 'ユーザーログイン後のテスト' do
       end
     end
   end
-  
 end

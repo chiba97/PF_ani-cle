@@ -3,19 +3,20 @@
 require 'rails_helper'
 
 describe 'Userテスト' do
-  
   let(:user) { create(:user) }
+
   before do
     visit new_user_session_path
     fill_in 'user[email]', with: user.email
     fill_in 'user[password]', with: user.password
     click_button 'ログイン'
   end
-  
-   describe "ユーザー詳細画面のテスト" do
+
+  describe "ユーザー詳細画面のテスト" do
     before do
       visit user_path(user.id)
     end
+
     context '表示の確認' do
       it 'URLが正しい' do
         expect(current_path).to eq '/users/' + user.id.to_s
@@ -46,11 +47,12 @@ describe 'Userテスト' do
       end
     end
   end
-  
+
   describe 'マイページ編集画面のテスト' do
     before do
       visit edit_user_path(user.id)
     end
+
     context '表示の確認' do
       it 'URLが正しいか' do
         expect(current_path).to eq '/users/' + user.id.to_s + '/edit'
@@ -80,6 +82,7 @@ describe 'Userテスト' do
         expect(page).to have_link '退会する'
       end
     end
+
     context '更新成功のテスト' do
       before do
         @user_old_name = user.name
@@ -88,6 +91,7 @@ describe 'Userテスト' do
         fill_in 'user[introduction]', with: Faker::Lorem.characters(number: 10)
         click_button '保存'
       end
+
       it 'namaが正しく保存される' do
         expect(user.reload.name).not_to eq @user_old_name
       end
@@ -98,11 +102,12 @@ describe 'Userテスト' do
         expect(current_path).to eq '/users/' + user.id.to_s
       end
     end
-    
+
     describe '退会画面のテスト' do
       before do
         visit unsubscribe_user_path(user.id)
       end
+
       context '表示内容の確認' do
         it 'URLが正しい' do
           expect(current_path).to eq '/users/' + user.id.to_s + '/unsubscribe'
@@ -120,5 +125,4 @@ describe 'Userテスト' do
       end
     end
   end
-  
 end

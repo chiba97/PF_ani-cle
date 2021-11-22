@@ -3,11 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Contactモデルのテスト', type: :model do
-  
   describe 'バリデーションのテスト' do
     subject { contact.valid? }
-    let(:user) {create(:user)}
-    let!(:contact) {build(:contact, user_id: user.id)}
+
+    let(:user) { create(:user) }
+    let!(:contact) { build(:contact, user_id: user.id) }
 
     context 'titleカラム' do
       it '空欄ではないこと' do
@@ -23,6 +23,7 @@ RSpec.describe 'Contactモデルのテスト', type: :model do
         is_expected.to eq false
       end
     end
+
     context 'bodyカラム' do
       it '空欄ではないこと' do
         contact.body = ''

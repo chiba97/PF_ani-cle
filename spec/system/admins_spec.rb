@@ -4,6 +4,7 @@ require 'rails_helper'
 
 describe '管理者側テスト' do
   let(:admin) { create(:admin) }
+
   before do
     visit new_admin_session_path
   end
@@ -26,22 +27,26 @@ describe '管理者側テスト' do
         expect(page).to have_button 'ログイン'
       end
     end
+
     context 'ログイン成功のテスト' do
       before do
         fill_in 'admin[email]', with: admin.email
         fill_in 'admin[password]', with: admin.password
         click_button 'ログイン'
       end
+
       it 'ログイン後のリダイレクト先が会員一覧になっている' do
         expect(current_path).to eq '/admin/users'
       end
     end
+
     context 'ログイン失敗のテスト' do
       before do
         fill_in 'admin[email]', with: ''
         fill_in 'admin[password]', with: ''
         click_button 'ログイン'
       end
+
       it 'ログインに失敗し、ログイン画面にリダイレクトされる' do
         expect(current_path).to eq '/admin/sign_in'
       end
@@ -54,6 +59,7 @@ describe '管理者側テスト' do
       fill_in 'admin[password]', with: admin.password
       click_button 'ログイン'
     end
+
     context 'ヘッダーの表示の確認' do
       it '会員一覧リンクが表示される：左側から一番目のリンク' do
         admin_index_link = find_all('a')[1].native.inner_text
@@ -77,6 +83,7 @@ describe '管理者側テスト' do
       click_button 'ログイン'
       click_link 'ログアウト'
     end
+
     context 'ログアウト機能のテスト' do
       it '正しくログアウトできている：ログアウト後のリダイレクト先においてAboutリンクが存在する' do
         expect(page).to have_link '', href: '/about'
@@ -89,11 +96,13 @@ describe '管理者側テスト' do
 
   describe '会員一覧のテスト' do
     let!(:user) { create(:user) }
+
     before do
       fill_in 'admin[email]', with: admin.email
       fill_in 'admin[password]', with: admin.password
       click_button 'ログイン'
     end
+
     context '会員一覧ページ表示の確認' do
       it 'URLは正しいか' do
         expect(current_path).to eq '/admin/users'
@@ -118,12 +127,14 @@ describe '管理者側テスト' do
 
   describe '会員詳細のテスト' do
     let!(:user) { create(:user) }
+
     before do
       fill_in 'admin[email]', with: admin.email
       fill_in 'admin[password]', with: admin.password
       click_button 'ログイン'
       click_link user.name
     end
+
     context '編集リンクのテスト' do
       it 'URLが正しいか' do
         expect(current_path).to eq '/admin/users/' + user.id.to_s
@@ -137,12 +148,14 @@ describe '管理者側テスト' do
 
   describe '会員情報編集のテスト' do
     let!(:user) { create(:user) }
+
     before do
       fill_in 'admin[email]', with: admin.email
       fill_in 'admin[password]', with: admin.password
       click_button 'ログイン'
       visit edit_admin_user_path(user.id)
     end
+
     context '表示の確認' do
       it 'URLが正しい' do
         expect(current_path).to eq '/admin/users/' + user.id.to_s + '/edit'
@@ -175,6 +188,7 @@ describe '管理者側テスト' do
         expect(page).to have_link '戻る', href: admin_user_path(user.id)
       end
     end
+
     context '編集成功のテスト' do
       before do
         @user_old_name = user.name
@@ -183,6 +197,7 @@ describe '管理者側テスト' do
         fill_in 'user[introduction]', with: Faker::Lorem.characters(number: 20)
         click_button '保存'
       end
+
       it 'ユーザーのニックネームが正しく更新される' do
         expect(user.reload.name).not_to eq @user_old_name
       end
@@ -194,12 +209,14 @@ describe '管理者側テスト' do
         expect(page).to have_content '会員情報詳細'
       end
     end
+
     context '編集の失敗のテスト' do
       before do
         fill_in 'user[name]', with: ''
         fill_in 'user[introduction]', with: ''
         click_button '保存'
       end
+
       it '編集に失敗して、編集ページにリダイレクトする' do
         expect(current_path).to eq '/admin/users/' + user.id.to_s
       end
@@ -208,16 +225,18 @@ describe '管理者側テスト' do
       end
     end
   end
-  
+
   describe 'お問い合わせ一覧テスト' do
     let!(:user) { create(:user) }
     let!(:contact) { create(:contact, user_id: user.id) }
+
     before do
       fill_in 'admin[email]', with: admin.email
       fill_in 'admin[password]', with: admin.password
       click_button 'ログイン'
       visit admin_contacts_path
     end
+
     context '表示の確認' do
       it 'URLは正しい' do
         expect(current_path).to eq '/admin/contacts'
@@ -239,16 +258,18 @@ describe '管理者側テスト' do
       end
     end
   end
-  
+
   describe 'お問い合わせ返信フォームテスト' do
     let!(:user) { create(:user) }
     let!(:contact) { create(:contact, user_id: user.id) }
+
     before do
       fill_in 'admin[email]', with: admin.email
       fill_in 'admin[password]', with: admin.password
       click_button 'ログイン'
       visit edit_admin_contact_path(user.id)
     end
+
     context '表示内容の確認' do
       it 'URLは正しい' do
         expect(current_path).to eq '/admin/contacts/' + user.id.to_s + '/edit'
@@ -269,12 +290,14 @@ describe '管理者側テスト' do
         expect(page).to have_link '戻る'
       end
     end
+
     context '返信内容送信の成功テスト' do
       before do
         @contact_old_reply = contact.reply
         fill_in 'contact[reply]', with: Faker::Lorem.characters(number: 5)
         click_button '返信'
       end
+
       it '送信が成功している(返信内容の更新が成功している)' do
         expect(contact.reload.reply).not_to eq @contact_old_reply
       end
@@ -283,5 +306,4 @@ describe '管理者側テスト' do
       end
     end
   end
-  
 end

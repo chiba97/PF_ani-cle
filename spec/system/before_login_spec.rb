@@ -3,11 +3,11 @@
 require 'rails_helper'
 
 describe 'ユーザーログイン前のテスト' do
-  
   describe 'トップ画面のテスト' do
     before do
       visit root_path
     end
+
     context '表示内容の確認' do
       it 'URLが正しいか' do
         expect(current_path).to eq '/'
@@ -43,6 +43,7 @@ describe 'ユーザーログイン前のテスト' do
     before do
       visit about_path
     end
+
     context '表示内容の確認' do
       it 'URLが正しいか' do
         expect(current_path).to eq '/about'
@@ -78,6 +79,7 @@ describe 'ユーザーログイン前のテスト' do
     before do
       visit root_path
     end
+
     context '表示内容の確認' do
       it 'アイコンリンクの内容が正しい:左から一番目の画像アイコン' do
         home_link = find_all('a')[0].native.inner_text
@@ -92,8 +94,10 @@ describe 'ユーザーログイン前のテスト' do
         expect(post_index_link).to match(/投稿一覧/)
       end
     end
+
     context 'リンクの内容を確認' do
       subject { current_path }
+
       it 'アイコンリンクを押すと、トップ画面に遷移する' do
         home_link = find_all('a')[0].native.inner_text
         click_link home_link
@@ -109,11 +113,12 @@ describe 'ユーザーログイン前のテスト' do
       end
     end
   end
-  
+
   describe 'ユーザー新規登録のテスト' do
-    before do 
+    before do
       visit new_user_registration_path
     end
+
     context '表示内容の確認' do
       it 'URLが正しいか' do
         expect(current_path).to eq '/users/sign_up'
@@ -153,6 +158,7 @@ describe 'ユーザーログイン前のテスト' do
         expect(page).to have_link guest_log_in_link, href: user_guest_sign_in_path
       end
     end
+
     context '新規登録成功のテスト' do
       before do
         fill_in 'user[name]', with: Faker::Lorem.characters(number: 10)
@@ -160,6 +166,7 @@ describe 'ユーザーログイン前のテスト' do
         fill_in 'user[password]', with: 'password'
         fill_in 'user[password_confirmation]', with: 'password'
       end
+
       it '正しく新規登録される' do
         expect { click_button '新規登録' }.to change(User.all, :count).by(1)
       end
@@ -169,12 +176,14 @@ describe 'ユーザーログイン前のテスト' do
       end
     end
   end
-  
+
   describe 'ユーザログインのテスト' do
     let(:user) { create(:user) }
+
     before do
       visit new_user_session_path
     end
+
     context '表示内容の確認' do
       it 'URLが正しい' do
         expect(current_path).to eq '/users/sign_in'
@@ -195,36 +204,42 @@ describe 'ユーザーログイン前のテスト' do
         expect(page).to have_button 'ログイン'
       end
     end
+
     context 'ログイン成功のテスト' do
       before do
         fill_in 'user[email]', with: user.email
         fill_in 'user[password]', with: user.password
         click_button 'ログイン'
       end
+
       it 'ログイン後のリダイレクト先がトップページになっている' do
         expect(current_path).to eq '/'
       end
     end
+
     context 'ログイン失敗のテスト' do
       before do
         fill_in 'user[email]', with: ''
         fill_in 'user[password]', with: ''
         click_button 'ログイン'
       end
+
       it 'ログインに失敗し、ログイン画面にリダイレクトされる' do
         expect(current_path).to eq '/users/sign_in'
       end
     end
   end
-  
+
   describe 'ヘッダーのテスト：ログインしている場合' do
     let(:user) { create(:user) }
+
     before do
       visit new_user_session_path
       fill_in 'user[email]', with: user.email
       fill_in 'user[password]', with: user.password
       click_button 'ログイン'
     end
+
     context 'ヘッダーの表示の確認' do
       it 'マイページリンクが表示される：左側から一番目のリンク' do
         mypage_link = find_all('a')[1].native.inner_text
@@ -252,9 +267,10 @@ describe 'ユーザーログイン前のテスト' do
       end
     end
   end
-  
+
   describe 'ユーザーログアウトのテスト' do
     let(:user) { create(:user) }
+
     before do
       visit new_user_session_path
       fill_in 'user[email]', with: user.email
@@ -262,6 +278,7 @@ describe 'ユーザーログイン前のテスト' do
       click_button 'ログイン'
       click_link 'ログアウト'
     end
+
     context 'ログアウト機能のテスト' do
       it '正しくログアウトできている：ログアウト後のリダイレクト先においてAbout画面へのリンクが存在する' do
         expect(page).to have_link '', href: '/about'
@@ -271,5 +288,4 @@ describe 'ユーザーログイン前のテスト' do
       end
     end
   end
-  
 end

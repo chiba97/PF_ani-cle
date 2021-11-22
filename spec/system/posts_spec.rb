@@ -3,11 +3,11 @@
 require 'rails_helper'
 
 describe '投稿機能テスト' do
-
   let(:user) { create(:user) }
   let!(:other_user) { create(:user) }
   let!(:post) { create(:post, user_id: user.id) }
   let!(:other_post) { create(:post, user_id: other_user.id) }
+
   before do
     visit new_user_session_path
     fill_in 'user[email]', with: user.email
@@ -19,6 +19,7 @@ describe '投稿機能テスト' do
     before do
       visit posts_path
     end
+
     context '表示内容の確認' do
       it 'URLが正しいか' do
         expect(current_path).to eq '/posts'
@@ -49,6 +50,7 @@ describe '投稿機能テスト' do
       fill_in 'post[pet]', with: Faker::Lorem.characters(number: 10)
       fill_in 'post[body]', with: Faker::Lorem.characters(number: 20)
     end
+
     context '表示の内容の確認' do
       it 'URLが正しいか' do
         expect(current_path).to eq '/posts/new'
@@ -66,6 +68,7 @@ describe '投稿機能テスト' do
         expect(page).to have_button '投稿する'
       end
     end
+
     context '投稿成功のテスト' do
       it '自分の新しい投稿が保存されるか' do
         expect { click_button '投稿する' }.to change(user.posts, :count).by(1)
@@ -75,6 +78,7 @@ describe '投稿機能テスト' do
         expect(current_path).to eq '/posts/' + Post.last.id.to_s
       end
     end
+
     context '投稿失敗のテスト' do
       it '投稿に失敗する' do
         fill_in 'post[pet]', with: ''
@@ -89,6 +93,7 @@ describe '投稿機能テスト' do
     before do
       visit post_path(post.id)
     end
+
     context '表示内容の確認' do
       it 'URLが正しいか' do
         expect(current_path).to eq '/posts/' + post.id.to_s
@@ -127,16 +132,19 @@ describe '投稿機能テスト' do
         expect(page).to have_button 'コメント送信'
       end
     end
+
     context '編集リンクのテスト' do
       it '編集画面に遷移する' do
         click_link '編集'
         expect(current_path).to eq '/posts/' + post.id.to_s + '/edit'
       end
     end
+
     context '削除リンクのテスト' do
       before do
         click_link '削除'
       end
+
       it '正しく削除される' do
         expect(Post.where(id: post.id).count).to eq 0
       end
@@ -150,6 +158,7 @@ describe '投稿機能テスト' do
     before do
       visit edit_post_path(post.id)
     end
+
     context '表示の確認' do
       it 'URLが正しいか' do
         expect(current_path).to eq '/posts/' + post.id.to_s + '/edit'
@@ -173,6 +182,7 @@ describe '投稿機能テスト' do
         expect(page).to have_link '戻る'
       end
     end
+
     context '編集成功のテスト' do
       before do
         @post_old_pet = post.pet
@@ -181,6 +191,7 @@ describe '投稿機能テスト' do
         fill_in 'post[body]', with: Faker::Lorem.characters(number: 10)
         click_button '保存'
       end
+
       it 'ペットの種類が正しく更新される' do
         expect(post.reload.pet).not_to eq @post_old_pet
       end
@@ -192,12 +203,14 @@ describe '投稿機能テスト' do
         expect(page).to have_content '投稿内容の詳細'
       end
     end
+
     context '編集の失敗のテスト' do
       before do
         fill_in 'post[pet]', with: ''
         fill_in 'post[body]', with: ''
         click_button '保存'
       end
+
       it '編集に失敗して、編集ページにリダイレクトする' do
         expect(current_path).to eq '/posts/' + post.id.to_s
       end
@@ -206,5 +219,4 @@ describe '投稿機能テスト' do
       end
     end
   end
-
 end

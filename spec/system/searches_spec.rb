@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 describe '検索機能テスト' do
-  
   let!(:user) { create(:user) }
   let!(:post) { create(:post, user_id: user.id) }
+
   before do
     visit new_user_session_path
     fill_in 'user[email]', with: user.email
@@ -13,7 +13,7 @@ describe '検索機能テスト' do
     click_button 'ログイン'
     visit root_path
   end
-  
+
   describe 'ユーザー検索のテスト:ヒットした場合' do
     before do
       fill_in 'word', with: user.name
@@ -21,6 +21,7 @@ describe '検索機能テスト' do
       select "完全一致", from: "search"
       find('.header-search-btn').click
     end
+
     context "検索したユーザーにヒットした場合の表示の確認" do
       it '検索した結果が表示されている' do
         expect(page).to have_content '検索した結果はこちら'
@@ -39,19 +40,20 @@ describe '検索機能テスト' do
       end
     end
   end
-  
+
   describe 'ユーザー検索のテスト:ヒットしなかった場合' do
     before do
       fill_in 'word', with: ''
       find('.header-search-btn').click
     end
+
     context '検索したユーザーにヒットしなかった場合の表示の確認' do
       it '見つかりませんでしたと表示されている' do
         expect(page).to have_content '該当するユーザーは見つかりませんでした'
       end
     end
   end
-  
+
   describe '投稿記事検索のテスト：ヒットした場合' do
     before do
       fill_in 'word', with: post.pet
@@ -59,10 +61,8 @@ describe '検索機能テスト' do
       select "完全一致", from: "search"
       find('.header-search-btn').click
     end
+
     context '検索した投稿記事にヒットした場合の表示の確認' do
-      it '検索した結果が表示されている' do
-        expect(page).to have_content post.pet
-      end
       it '検索した記事が表示されている' do
         expect(page).to have_content post.pet
       end
@@ -71,7 +71,7 @@ describe '検索機能テスト' do
       end
     end
   end
-  
+
   describe '投稿記事検索のテスト：ヒットしなかった場合' do
     before do
       fill_in 'word', with: ''
@@ -79,11 +79,11 @@ describe '検索機能テスト' do
       select "完全一致", from: "search"
       find('.header-search-btn').click
     end
+
     context '検索した記事がヒットしなかった場合の表示の確認' do
       it '見つかりませんでしたと表示される' do
         expect(page).to have_content '該当する投稿記事は見つかりませんでした'
       end
     end
   end
-  
 end

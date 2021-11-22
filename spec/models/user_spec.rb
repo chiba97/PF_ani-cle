@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe 'Userモデルのテスト', type: :model do
-
   describe 'バリデーションのテスト' do
     subject { user.valid? }
+
     let!(:other_user) { create(:user) }
     let(:user) { build(:user) }
 
@@ -35,6 +35,7 @@ RSpec.describe 'Userモデルのテスト', type: :model do
         is_expected.to eq false
       end
     end
+
     context 'petカラム' do
       it '２０文字以下であること：２０文字は○' do
         user.pet = Faker::Lorem.characters(number: 20) do
@@ -47,10 +48,11 @@ RSpec.describe 'Userモデルのテスト', type: :model do
         end
       end
     end
+
     context 'introductionカラム' do
       it '５０文字以下であること：５０文字は○' do
         user.introduction = Faker::Lorem.characters(number: 50) do
-        is_expected.to eq true
+          is_expected.to eq true
         end
       end
       it '５０文字以下であること：５１文字は×' do
@@ -67,34 +69,38 @@ RSpec.describe 'Userモデルのテスト', type: :model do
         expect(User.reflect_on_association(:posts).macro).to eq :has_many
       end
     end
+
     context 'Commentモデルのテスト' do
       it '1対Nとなっているか' do
         expect(User.reflect_on_association(:comments).macro).to eq :has_many
       end
     end
+
     context 'Favoriteモデルのテスト' do
       it '1対Nとなっているか' do
         expect(User.reflect_on_association(:favorites).macro).to eq :has_many
-      end
-      it '1対Nとなっているか' do
         expect(User.reflect_on_association(:favorited_posts).macro).to eq :has_many
       end
     end
+
     context 'Entryモデルのテスト' do
       it '1対Nとなっているか' do
         expect(User.reflect_on_association(:entries).macro).to eq :has_many
       end
     end
+
     context 'Messageモデルのテスト' do
       it '1対Nとなっているか' do
         expect(User.reflect_on_association(:messages).macro).to eq :has_many
       end
     end
+
     context 'Contactモデルのテスト' do
       it '1対Nとなっているか' do
         expect(User.reflect_on_association(:contacts).macro).to eq :has_many
       end
     end
+
     context 'Notificationモデルのテスト' do
       it '通知を送るユーザーと1対Nとなっているか' do
         expect(User.reflect_on_association(:active_notifications).macro).to eq :has_many
@@ -103,6 +109,7 @@ RSpec.describe 'Userモデルのテスト', type: :model do
         expect(User.reflect_on_association(:passive_notifications).macro).to eq :has_many
       end
     end
+
     context 'Relationshipモデルのテスト' do
       it 'フォローモデルと1対Nになっているか' do
         expect(User.reflect_on_association(:active_relationships).macro).to eq :has_many
