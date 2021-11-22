@@ -75,6 +75,14 @@ describe '投稿機能テスト' do
         expect(current_path).to eq '/posts/' + Post.last.id.to_s
       end
     end
+    context '投稿失敗のテスト' do
+      it '投稿に失敗する' do
+        fill_in 'post[pet]', with: ''
+        fill_in 'post[body]', with: ''
+        click_button '投稿する'
+        expect(page).to have_content '未入力です'
+      end
+    end
   end
   
   describe '投稿詳細画面のテスト' do
