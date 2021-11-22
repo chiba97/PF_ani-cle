@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe '投稿機能テスト' do
-  
+
   let(:user) { create(:user) }
   let!(:other_user) { create(:user) }
   let!(:post) { create(:post, user_id: user.id) }
@@ -14,7 +14,7 @@ describe '投稿機能テスト' do
     fill_in 'user[password]', with: user.password
     click_button 'ログイン'
   end
-  
+
   describe '投稿一覧画面のテスト' do
     before do
       visit posts_path
@@ -41,9 +41,9 @@ describe '投稿機能テスト' do
       end
     end
   end
-  
+
   describe '新規投稿画面のテスト' do
-    before do 
+    before do
       visit new_post_path
       attach_file 'post[post_image]', "#{Rails.root}/app/assets/images/no_image.jpg"
       fill_in 'post[pet]', with: Faker::Lorem.characters(number: 10)
@@ -84,7 +84,7 @@ describe '投稿機能テスト' do
       end
     end
   end
-  
+
   describe '投稿詳細画面のテスト' do
     before do
       visit post_path(post.id)
@@ -145,7 +145,7 @@ describe '投稿機能テスト' do
       end
     end
   end
-  
+
   describe '投稿編集画面のテスト' do
     before do
       visit edit_post_path(post.id)
@@ -192,6 +192,19 @@ describe '投稿機能テスト' do
         expect(page).to have_content '投稿内容の詳細'
       end
     end
+    context '編集の失敗のテスト' do
+      before do
+        fill_in 'post[pet]', with: ''
+        fill_in 'post[body]', with: ''
+        click_button '保存'
+      end
+      it '編集に失敗して、編集ページにリダイレクトする' do
+        expect(current_path).to eq '/posts/' + post.id.to_s
+      end
+      it '未入力欄に対して警告が出る' do
+        expect(page).to have_content '未入力です'
+      end
+    end
   end
-  
+
 end
