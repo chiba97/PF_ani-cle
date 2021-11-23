@@ -22,7 +22,7 @@ class User::PostsController < ApplicationController
     # お気に入りの多い順・投稿日時の早い順に並べる
     if params[:sort_favorite]
       posts = Post.includes(:user).
-      sort { |a, b| b.favorited_users.size <=> a.favorited_users.size }
+        sort { |a, b| b.favorited_users.size <=> a.favorited_users.size }
     elsif params[:sort_early]
       posts = Post.early
     else

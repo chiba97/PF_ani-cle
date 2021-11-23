@@ -14,9 +14,9 @@ class Post < ApplicationRecord
   validates :post_image, presence: true
 
   attachment :post_image
-  
+
   # 投稿日時の早い順に並び替え
-  scope :early, -> {order(created_at: :desc)}
+  scope :early, -> { order(created_at: :desc) }
 
   # 自分がお気に入りに登録しているか確認
   def favorited_by?(user)
