@@ -445,6 +445,9 @@ footer{
   .post-contents{
     padding-top: 3px;
   }
+  .sort-link{
+    font-size: 15px;
+  }
   // 投稿詳細ページ
   .post-show-profile{
     display: none;
@@ -605,6 +608,9 @@ footer{
   // 投稿一覧ページ
   .post-title{
     font-size: 17px;
+  }
+  .sort-link{
+    font-size: 13px;
   }
   .post-edit-form{
     margin-bottom: 60px;

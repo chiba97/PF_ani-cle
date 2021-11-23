@@ -6,6 +6,9 @@
         投稿された記事 全<%= @post_all.count %>件
       <i class="fas fa-cat"></i>
     </h3>
+    <%= link_to 'お気に入りの多い順', posts_path(sort_favorite: "true"), class: "sort-link" %>
+    ｜
+    <%= link_to '投稿日時の早い順', posts_path(sort_early: "true"), class: "sort-link" %>
   </div>
   <div class="row justify-content-center">
     <%= render "user/posts/post_index", posts: @posts %>

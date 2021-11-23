@@ -78,6 +78,7 @@
 }
 .post-contents{
   padding-top: 24px;
+  color: white;
 }
 
 // 投稿一覧ページのカード
@@ -99,6 +100,12 @@
 .post-index-img:hover{
   transform: scale(1.2,1.2);
   transition: 1s all;
+}
+.sort-link{
+  color: white;
+}
+.sort-link:hover{
+  color: white;
 }
 
 // コメントの欄設定
