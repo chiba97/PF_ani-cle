@@ -24,9 +24,9 @@ class User::PostsController < ApplicationController
       posts = Post.includes(:user).
         sort { |a, b| b.favorited_users.size <=> a.favorited_users.size }
     elsif params[:sort_early]
-      posts = Post.early
+      posts = Post.includes(:user).early
     else
-      posts = Post.all
+      posts = Post.includes(:user).all
     end
     @posts = Kaminari.paginate_array(posts).page(params[:page]).per(8)
   end
