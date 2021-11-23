@@ -4,7 +4,7 @@
     <div class="col-sm-10">
 
       <h2 class="admin-title text-center pt-4 mb-5" >
-        <%= @user.name %>さんの<br><i class="fas fa-user"></i> 会員情報詳細 <i class="fas fa-user"></i>
+        <%= @user.name %>さんの<br><i class="far fa-user"></i> 会員情報詳細 <i class="far fa-user"></i>
       </h2>
       <div class="table-responsive">
         <table class="table text-nowrap table-hover">
@@ -38,7 +38,7 @@
       <%= link_to " 編集", edit_admin_user_path(@user.id), class: "btn post-index-btn fas fa-user-cog" %>
 
       <h2 class="text-center mt-5 admin-title">
-        <%= @user.name %>さんが<br><i class="fas fa-paw"></i> 投稿した記事一覧 <i class="fas fa-paw"></i>
+        <%= @user.name %>さんが<br><i class="fas fa-dog"></i> 投稿した記事一覧 <i class="fas fa-cat"></i>
       </h2>
         <% if @user.posts.present? %>
           <div class="row justify-content-center">
@@ -54,12 +54,12 @@
                       </div>
                     <div class="row text-center justify-content-center user-show-index pt-2">
                       <div class="col-12">
-                        <p>ペットの種類<br><i class="fas fa-paw"></i> <%= post.pet %> <i class="fas fa-paw"></i></p>
+                        <p><i class="far fa-flag"></i> ペットの種類 <i class="far fa-flag"></i><br><%= post.pet %></p>
                       </div>
                     </div>
                     <div class="row text-center justify-content-center user-show-index">
                       <div class="col-12">
-                        <p>投稿内容<br><i class="fas fa-user"></i> <%= post.body %> <i class="fas fa-user"></i></p>
+                        <p><i class="far fa-file-alt"></i> 投稿内容 <i class="far fa-file-alt"></i><br><%= post.body %></p>
                       </div>
                     </div>
                   </div>

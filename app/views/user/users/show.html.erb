@@ -3,9 +3,9 @@
 
   <div class="text-center pt-4">
     <% if @user == current_user %>
-      <h2 class="user-show-post-title"><i class="fas fa-paw"></i> マイページ <i class="fas fa-paw"></i></h2>
+      <h2 class="user-show-post-title"><i class="far fa-user"></i> マイページ <i class="far fa-user"></i></h2>
     <% else %>
-      <h2 class="user-show-post-title"><i class="fas fa-paw"></i> <%= @user.name %>さん <i class="fas fa-paw"></i><br>のマイページ </h2>
+      <h2 class="user-show-post-title"><i class="fas fa-user"></i> <%= @user.name %>さん <i class="fas fa-user"></i><br>のマイページ </h2>
     <% end %>
   </div>
 
@@ -42,13 +42,13 @@
       </table>
       <div class="row mb-4 justify-content-center">
         <div class="col-4">
-          <%= link_to "フォロー #{ @user.followings.count }人", follows_user_path(@user.id), class: "btn user-show-btns" %>
+          <%= link_to " フォロー #{ @user.followings.count }", follows_user_path(@user.id), class: "btn user-show-btns fas fa-user-friends" %>
         </div>
         <div class="col-4">
-          <%= link_to "フォロワー #{ @user.followers.count }人", followers_user_path(@user.id), class: "btn user-show-btns" %>
+          <%= link_to " フォロワー #{ @user.followers.count }", followers_user_path(@user.id), class: "btn user-show-btns fas fa-user-friends" %>
         </div>
         <div class="col-4">
-          <%= link_to "お気に入り #{ @user.favorites.count }件", favorites_user_path(@user.id), class: "btn user-show-btns" %>
+          <%= link_to " お気に入り #{ @user.favorites.count }", favorites_user_path(@user.id), class: "btn user-show-btns fas fa-bookmark" %>
         </div>
       </div>
       <div class="row justify-content-center">
@@ -63,13 +63,13 @@
               </div>
             <% else %>
               <div class="col-6">
-                <%= link_to "フォローする", user_relationships_path(@user.id), method: :post, class: "btn user-show-btns mr-3 fas fa-user-plus" %>
+                <%= link_to " フォローする", user_relationships_path(@user.id), method: :post, class: "btn user-show-btns mr-3 fas fa-user-plus" %>
               </div>
             <% end %>
             <% if (current_user.followed_by? @user) && (@user.followed_by? current_user) %>
               <% if @is_room == true %>
                 <div class="col-6">
-                  <%= link_to " チャットを始める", room_path(@room_id, user_id: @user.id), class: "btn user-show-btns far fa-comments" %>
+                  <%= link_to " チャットを始める", room_path(@room_id, user_id: @user.id), class: "btn user-show-btns fas fa-comments" %>
                 </div>
               <% else %>
                 <div class="col-6">
@@ -77,7 +77,7 @@
                     <%= fields_for @entry do |e| %>
                       <%= e.hidden_field :user_id, value: @user.id %>
                     <% end %>
-                    <%= button_tag " チャットを始めよう", type: "submit", class: "btn user-show-btns far fa-comments" %>
+                    <%= button_tag " チャットを始めよう", type: "submit", class: "btn user-show-btns fas fa-comments" %>
                   <% end %>
                 </div>
               <% end %>
@@ -87,7 +87,7 @@
     </div>
   </div>
 
-  <h2 class="text-center mt-5 user-show-post-title"><i class="fas fa-paw"></i> 投稿した記事一覧 <i class="fas fa-paw"></i></h2>
+  <h2 class="text-center mt-5 user-show-post-title"><i class="fas fa-dog"></i> 投稿した記事一覧 <i class="fas fa-cat"></i></h2>
   <% if @user.posts.present? %>
     <div class="row justify-content-center">
       <%= render "user/posts/post_index", posts: @posts %>

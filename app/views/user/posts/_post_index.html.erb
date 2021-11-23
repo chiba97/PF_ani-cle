@@ -8,10 +8,10 @@
             <%= attachment_image_tag post.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "profile-image" %>
           <% end %>
         </div>
-        <div class="row justify-content-center mt-2">
+        <div class="row justify-content-center mt-3">
           <div class="col-12">
             <%= link_to user_path(post.user.id),class: "text-center profile-link mt-3" do %>
-              <p>投稿者<br><i class="fas fa-user"></i>
+              <p><i class="far fa-user"></i> 投稿者 <i class="far fa-user"></i><br>
                 <% if user_signed_in? %>
                   <% if post.user.id == current_user.id %>
                     あなた
@@ -21,13 +21,13 @@
                 <% else %>
                   <%= post.user.name %>さん
                 <% end %>
-              <i class="fas fa-user"></i></p>
+              </p>
             <% end %>
           </div>
         </div>
         <div class="text-center row justify-content-center user-show-index">
           <div class="col-12">
-            <p>ペットの種類<br><i class="fas fa-paw"></i> <%= post.pet %> <i class="fas fa-paw"></i></p>
+            <p><i class="far fa-flag"></i> 種類 <i class="far fa-flag"></i><br><%= post.pet %></p>
           </div>
         </div>
         <div class="row text-center justify-content-center user-show-index">
