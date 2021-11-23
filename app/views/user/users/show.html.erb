@@ -15,11 +15,11 @@
       <table class="table">
         <tbody>
           <tr>
-            <th class="user-show-th user-th-1">ニックネーム <i class="far fa-user-circle"></i></th>
+            <th class="user-show-th user-th-1"><i class="far fa-user-circle"></i> ニックネーム</th>
             <th class="user-show-th user-th-1"><%= @user.name %></th>
           </tr>
           <tr>
-            <th class="user-show-th user-th-1">飼っているペット <i class="fas fa-dog"></i></th>
+            <th class="user-show-th user-th-1"><i class="fas fa-dog"></i> 飼っているペット</th>
             <th class="user-show-th user-th-1">
               <% if @user.pet.present? %>
                 <%= @user.pet %>
@@ -29,7 +29,7 @@
             </th>
           </tr>
           <tr>
-            <th class="user-show-th user-th-1">自己紹介 <i class="far fa-address-book"></i></th>
+            <th class="user-show-th user-th-1"><i class="far fa-address-book"></i> 自己紹介</th>
             <th class="user-show-th user-th-1">
               <% if @user.introduction.present? %>
                 <%= @user.introduction %>
