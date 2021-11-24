@@ -78,7 +78,7 @@ https://ani-cle.com
 * ソート機能
   - 投稿一覧ページをお気に入りの多い順・投稿日時の新しい順に並び替え可能
 * レスポンシブデザイン
-  - スマートフォン（max-width:425px）(max-width:320px)
+  - スマートフォン（max-width:425px）（max-width:320px）
   - タブレット（max-width:768px）
 * コード解析（Rubocop）
 * N＋１問題（bullet）
@@ -106,7 +106,7 @@ https://ani-cle.com
 * Rails 5.2.5
 
 ### 開発環境
-* OS：Linux(CentOS)
+* OS：Linux（CentOS）
 * 言語：HTML,CSS,JavaScript,Ruby,SQL
 * フレームワーク：Ruby on Rails
 * JSライブラリ：jQuery
