@@ -1,6 +1,5 @@
 # 『ANI-CLE』
 
-<img width="1440" alt="パソコンサイズ表示画面" src="https://user-images.githubusercontent.com/88390294/143163883-d500d031-1f80-43eb-a728-895e87a9de1e.png">
 <img width="1440" alt="パソコンサイズ表示画面" src="https://user-images.githubusercontent.com/88390294/143214085-36b60bd6-28ac-4ecd-83e8-4c58d29df1aa.png">
 
 <img width="344" alt="スマートフォンサイズ表示画像" src="https://user-images.githubusercontent.com/88390294/143186627-0e852363-47e1-4261-bbb0-9ffc219ea141.png">　　　<img width="409" alt="タブレットサイズ表示画像" src="https://user-images.githubusercontent.com/88390294/143186979-01204063-7bb2-4585-9bf2-fd55c5b93299.png">
