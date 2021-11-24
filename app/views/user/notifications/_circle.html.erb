@@ -1,11 +1,11 @@
 <!--未確認の通知がある場合はヘッダーのアイコンの上にマークをつける処理-->
 <%= link_to  notifications_path, class: "nav-link" do %>
   <% if unchecked_notifications.any? %>
-  通知<span class="fa-stack">
-        <i class="fas fa-bell fa-stack-2x"></i>
-        <i class="fas fa-circle n-circle fa-stack-1x"></i>
-      </span>
+    <span class="fa-stack">
+      <i class="fas fa-bell fa-stack-2x"></i>
+      <i class="fas fa-circle n-circle fa-stack-1x"></i>
+    </span> 通知
   <% else %>
-  通知 <i class="fas fa-bell"></i>
+    <i class="fas fa-bell"></i> 通知
   <% end %>
 <% end %>

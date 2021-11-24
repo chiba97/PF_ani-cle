@@ -12,33 +12,33 @@
     <% if admin_signed_in? %>
       <li class="nav-item active mr-4">
         <%= link_to admin_users_path, class: "nav-link nav-items-l" do %>
-        会員一覧 <i class="fas fa-users"></i>
+        <i class="fas fa-users"></i> 会員一覧
         <% end %>
       </li>
       <li class="nav-item active mr-4">
         <%= link_to admin_contacts_path, class: "nav-link nav-items-l" do %>
-        お問い合わせ一覧 <i class="fas fa-envelope"></i>
+        <i class="fas fa-envelope"></i> お問い合わせ一覧
         <% end %>
       </li>
       <li class="nav-item active mr-4">
         <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link nav-items-r" do %>
-        ログアウト <i class="fas fa-sign-out-alt"></i>
+        <i class="fas fa-sign-out-alt"></i> ログアウト
         <% end %>
       </li>
     <% elsif user_signed_in? %>
       <li class="nav-item active mr-2">
         <%= link_to user_path(current_user.id), class: "nav-link" do %>
-        マイページ <i class="fas fa-user"></i>
+        <i class="fas fa-user"></i> マイページ
         <% end %>
       </li>
       <li class="nav-item active mr-2">
         <%= link_to new_post_path, class: "nav-link" do %>
-        新規投稿 <i class="fas fa-paw"></i>
+        <i class="fas fa-paw"></i> 新規投稿
         <% end %>
       </li>
       <li class="nav-item active mr-2">
         <%= link_to posts_path, class: "nav-link" do %>
-        投稿一覧 <i class="fas fa-dog"></i>
+        <i class="fas fa-dog"></i> 投稿一覧
         <% end %>
       </li>
       <li class="nav-item active mr-2">
@@ -46,23 +46,23 @@
       </li>
       <li class="nav-item active mr-2">
         <%= link_to new_contact_path, class: "nav-link" do %>
-        お問い合わせ <i class="fas fa-envelope"></i>
+        <i class="fas fa-envelope"></i> お問い合わせ
         <% end %>
       </li>
       <li class="nav-item active mr-2">
         <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
-        ログアウト <i class="fas fa-sign-out-alt"></i>
+        <i class="fas fa-sign-out-alt"></i> ログアウト
         <% end %>
       </li>
     <% else %>
       <li class="nav-item active mr-4">
         <%= link_to about_path, class: "nav-link nav-items-l" do %>
-        About ANI-CLE <i class="fas fa-building"></i>
+        <i class="fas fa-building"></i> About ANI-CLE
         <% end %>
       </li>
       <li class="nav-item active mr-4">
         <%= link_to posts_path, class: "nav-link nav-items-r" do %>
-        投稿一覧 <i class="fas fa-dog"></i>
+        <i class="fas fa-dog"></i> 投稿一覧
         <% end %>
       </li>
     <% end %>
