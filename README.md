@@ -64,7 +64,7 @@ https://ani-cle.com
 * 通知機能 
   - 自分の投稿した記事がお気に入り登録された時、フォローされた時、相互フォロー関係にあるユーザーからDMが送られたとき、自分がコメントした投稿にコメントが投稿されたときに通知が入る
   - 通知が入った際に、通知一覧リンクにマークが付く
-* DM機能 
+* DM機能（Ajax）
   - 相互フォローの関係にあるユーザー同士はDMチャットが可能
 * 検索機能
   - ログイン前（投稿記事のみキーワードから検索可）
@@ -113,17 +113,17 @@ https://ani-cle.com
 * IDE：Cloud9
 
 ### 本番環境
-* AWS (EC2、RDS for MySQL、Route53)
-* Nginx、 Puma
+* AWS(EC2、RDS for MySQL、Route53)
+* Nginx、Puma
 
 ### テスト
-* Rspec (単体／結合）一部 項目数：計250以上
+* Rspec(単体／結合）一部 項目数：計250以上
 
 ### その他使用技術
-* 非同期通信 (お気に入り登録、コメント、DM)
-* Action Mailer
-* Rubocop-airbnb
-* HTTPS接続 (Certbot)
+* 非同期通信(お気に入り登録、コメント、DMチャット)
+* Action Mailer（お問い合わせ機能）
+* Rubocop-airbnb（コード解析）
+* HTTPS接続(Certbot)
 * N＋１問題（bullet）
 
 ### 使用素材
