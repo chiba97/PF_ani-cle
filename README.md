@@ -71,7 +71,7 @@ https://ani-cle.com
   - 会員ログイン後（ユーザー・投稿記事をキーワードから検索可）
   - 管理者ログイン後（ユーザーのみキーワードから検索可）
 * フォロー機能 
-* 問い合わせ機能(Action Mailer)
+* 問い合わせ機能（Action Mailer）
   - ユーザーから問い合わせを受け取り、管理者よりお問い合わせ内容の確認とユーザーの登録メールアドレスに返信可能
 * ページネーション機能（kaminari）
   - 投稿・フォロー・フォロワー・お気に入り・会員・お問い合わせ等の一覧ページに実装
@@ -113,17 +113,17 @@ https://ani-cle.com
 * IDE：Cloud9
 
 ### 本番環境
-* AWS(EC2、RDS for MySQL、Route53)
+* AWS（EC2、RDS for MySQL、Route53）
 * Nginx、Puma
 
 ### テスト
-* Rspec(単体／結合）一部 項目数：計250以上
+* Rspec（単体／結合）一部 項目数：計250以上
 
 ### その他使用技術
-* 非同期通信(お気に入り登録、コメント、DMチャット)
+* 非同期通信（お気に入り登録、コメント、DMチャット）
 * Action Mailer（お問い合わせ機能）
 * Rubocop-airbnb（コード解析）
-* HTTPS接続(Certbot)
+* HTTPS接続（Certbot）
 * N＋１問題（bullet）
 
 ### 使用素材
