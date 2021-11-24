@@ -125,6 +125,7 @@ https://ani-cle.com
 * Rubocop-airbnb（コード解析）
 * HTTPS接続（Certbot）
 * N＋１問題（bullet）
+* デバック（pry-byebug）
 
 ### 使用素材
 * [O-DAN](https://o-dan.net/ja/)
