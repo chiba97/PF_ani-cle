@@ -129,7 +129,7 @@ describe '投稿機能テスト' do
         expect(find_field('comment[comment]').text).to be_blank
       end
       it 'コメント送信ボタンが表示されている' do
-        expect(page).to have_button 'コメント送信'
+        expect(page).to have_button 'コメントを送信'
       end
     end
 

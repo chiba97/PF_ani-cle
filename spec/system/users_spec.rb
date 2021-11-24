@@ -57,8 +57,8 @@ describe 'Userテスト' do
       it 'URLが正しいか' do
         expect(current_path).to eq '/users/' + user.id.to_s + '/edit'
       end
-      it 'マイページの編集と表示されているか' do
-        expect(page).to have_content 'マイページの編集'
+      it 'マイページ編集と表示されているか' do
+        expect(page).to have_content 'マイページ編集'
       end
       it 'プロフィール写真編集フォームが表示されているか' do
         expect(page).to have_field 'user[profile_image]'
