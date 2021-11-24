@@ -83,9 +83,6 @@ https://ani-cle.com
 * コード解析（Rubocop）
 * N＋１問題（bullet）
 
-詳細は下記よりご確認ください。
-* [機能詳細](https://docs.google.com/spreadsheets/d/1LbGVL06nWAO9izmFYdmhg0EM_rQjFq1YAbzYYbgV_I8/edit?usp=sharing)
-
 ## ER図
 
 <img width="779" alt="ER図画像" src="https://user-images.githubusercontent.com/88390294/143163850-36f05ed5-3ff3-4221-ba24-de14d70daed2.png">
