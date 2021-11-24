@@ -18,11 +18,11 @@ https://ani-cle.com
 
 ```
 【会員テストアカウント】
-メールアドレス： user@gmail.com
+メールアドレス： user@test.com
 パスワード： 111111
 
 【管理者テストアカウント】
-メールアドレス： admin@gmail.com
+メールアドレス： admin@test.com
 パスワード： 111111
 
 【ゲストログイン】
