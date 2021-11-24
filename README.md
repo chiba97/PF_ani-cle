@@ -85,7 +85,7 @@ https://ani-cle.com
 
 ## ER図
 
-<img width="779" alt="ER図画像" src="https://user-images.githubusercontent.com/88390294/143163850-36f05ed5-3ff3-4221-ba24-de14d70daed2.png">
+<img width="811" alt="ER図表示画像" src="https://user-images.githubusercontent.com/88390294/143231272-f722217b-54a1-4f3c-88e6-a01a15161b47.png">
 
 ### その他設計図
 * [画面遷移図](https://drive.google.com/file/d/1sfJhcJPOFZLujdjkCWaLLuEKNDAoziW4/view?usp=sharing)
