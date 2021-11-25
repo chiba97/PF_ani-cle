@@ -15,7 +15,7 @@
 
 ## URL
 
-https://ani-cle.com
+https://ani-cle.com/
 
 ```
 【会員テストアカウント】
