@@ -252,6 +252,14 @@ footer{
   }
 }
 
+// 前画面へ戻るリンク
+.back-link{
+  color: white;
+}
+.back-link:hover{
+  color: #EE827d;
+}
+
 
 // タブレットサイズ（768px以下設定）
 @media screen and (max-width:768px) {

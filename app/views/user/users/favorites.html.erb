@@ -2,7 +2,11 @@
   <div class="row justify-content-center">
     <div class="col-sm-12 mb-5">
       <h2 class="text-center user-favorites-title">
-        <%= @user.name %>さんが<br><i class="far fa-bookmark"></i> お気に入りした投稿 <i class="far fa-bookmark"></i>
+        <%= link_to user_path(@user.id), class: "back-link" do %>
+          <%= @user.name %>さん
+        <% end %>
+        が<br>
+        <i class="far fa-bookmark"></i> お気に入りした投稿 <i class="far fa-bookmark"></i>
       </h2>
         <% if @favorite_posts.present? %>
           <div class="row justify-content-center">
