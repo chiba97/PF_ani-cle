@@ -6,11 +6,11 @@
       <%= form_with model: @contact, local:true do |f| %>
         <div class="form-group mt-5">
           <i class="fas fa-paw"></i> タイトル <i class="fas fa-paw"></i>
-          <%= f.text_field :title, class: "form-control", :placeholder => "追加機能について" %>
+          <%= f.text_field :title, class: "form-control", :placeholder => "※ 入力は必須になります" %>
         </div>
         <div class="form-group mt-4">
           <i class="fas fa-paw"></i> お問い合わせ内容 <i class="fas fa-paw"></i>
-          <%= f.text_area :body, class: "form-control", :placeholder => "今後追加を考えている機能はありますか？ペットとの予定を組めるカレンダーのような機能があればいいなと思っています。" %>
+          <%= f.text_area :body, class: "form-control", :placeholder => "※ 入力は必須になります" %>
         </div>
         <div class="form-group mt-5">
           <%= button_tag type: "submit", class: "btn post-btn" do %>
