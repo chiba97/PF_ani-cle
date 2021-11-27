@@ -5,26 +5,26 @@
         <%= @contact.user.name %>さんの<br><i class="fas fa-envelope-open-text"></i> お問い合わせ内容 <i class="fas fa-envelope-open-text"></i>
       </h2>
       <%= form_with model: @contact, url: admin_contact_path(@contact.id), method: :patch, local:true do |f| %>
-      <div class="pt-3">
-        <h5 class="admin-contact-title"><i class="fas fa-paw"></i> 受信日 <i class="fas fa-paw"></i></h5>
-        <p class="admin-contact-text"><%= @contact.created_at.strftime("%Y年%m月%d日 ") %></p>
-      </div>
-      <div class="pt-3">
-        <h5 class="admin-contact-title"><i class="fas fa-paw"></i> お問い合わせタイトル <i class="fas fa-paw"></i></h5>
-        <p class="admin-contact-text"><%= @contact.title %></P>
-      </div>
-      <div class="pt-3">
-        <h5 class="admin-contact-title"><i class="fas fa-paw"></i> お問い合わせ内容 <i class="fas fa-paw"></i></h5>
-        <p class="admin-contact-text"><%= @contact.body %></P>
-      </div>
-      <div class="form-group mt-4">
-        <h5 class="admin-contact-title"><i class="fas fa-paw"></i> <%= f.label :reply, "返信内容" %> <i class="fas fa-paw"></i></h5>
-        <%= f.text_area :reply, class: "form-control", :placeholder => "※ まだ返信をしていません" %>
-      </div>
-      <div class="form-group mt-4 mb-5">
-        <%= button_tag " 返信する", type: "submit", class: "btn user-show-btn fas fa-paper-plane" %>
-        <%= link_to " 戻る", admin_contacts_path, class: "btn user-show-btn ml-3 fas fa-undo-alt" %>
-      </div>
+        <div class="pt-3">
+          <h5 class="admin-contact-title"><i class="fas fa-paw"></i> 受信日 <i class="fas fa-paw"></i></h5>
+          <p class="admin-contact-text"><%= @contact.created_at.strftime("%Y年%m月%d日 ") %></p>
+        </div>
+        <div class="pt-3">
+          <h5 class="admin-contact-title"><i class="fas fa-paw"></i> お問い合わせタイトル <i class="fas fa-paw"></i></h5>
+          <p class="admin-contact-text"><%= @contact.title %></P>
+        </div>
+        <div class="pt-3">
+          <h5 class="admin-contact-title"><i class="fas fa-paw"></i> お問い合わせ内容 <i class="fas fa-paw"></i></h5>
+          <p class="admin-contact-text"><%= @contact.body %></P>
+        </div>
+        <div class="form-group mt-4">
+          <h5 class="admin-contact-title"><i class="fas fa-paw"></i> <%= f.label :reply, "返信内容" %> <i class="fas fa-paw"></i></h5>
+          <%= f.text_area :reply, class: "form-control", :placeholder => "※ まだ返信をしていません" %>
+        </div>
+        <div class="form-group mt-4 mb-5">
+          <%= button_tag " 返信する", type: "submit", class: "btn user-show-btn fas fa-paper-plane" %>
+          <%= link_to " 戻る", admin_contacts_path, class: "btn user-show-btn ml-3 fas fa-undo-alt" %>
+        </div>
       <% end %>
     </div>
   </div>

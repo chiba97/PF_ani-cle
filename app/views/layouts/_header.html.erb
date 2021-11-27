@@ -1,71 +1,68 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-
   <%= link_to image_tag("logo.png", size: "100x100"), root_path, class: "mt-2 ml-1 navbar-brand" %>
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse mt-2" id="navbarSupportedContent">
     <%= render "layouts/search" %>
     <ul class="navbar-nav ml-auto">
-    <% if admin_signed_in? %>
-      <li class="nav-item active mr-4">
-        <%= link_to admin_users_path, class: "nav-link nav-items-l" do %>
-        <i class="fas fa-users"></i> 会員一覧
-        <% end %>
-      </li>
-      <li class="nav-item active mr-4">
-        <%= link_to admin_contacts_path, class: "nav-link nav-items-l" do %>
-        <i class="fas fa-envelope"></i> お問い合わせ一覧
-        <% end %>
-      </li>
-      <li class="nav-item active mr-4">
-        <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link nav-items-r" do %>
-        <i class="fas fa-sign-out-alt"></i> ログアウト
-        <% end %>
-      </li>
-    <% elsif user_signed_in? %>
-      <li class="nav-item active mr-2">
-        <%= link_to user_path(current_user.id), class: "nav-link" do %>
-        <i class="fas fa-user"></i> マイページ
-        <% end %>
-      </li>
-      <li class="nav-item active mr-2">
-        <%= link_to new_post_path, class: "nav-link" do %>
-        <i class="fas fa-paw"></i> 新規投稿
-        <% end %>
-      </li>
-      <li class="nav-item active mr-2">
-        <%= link_to posts_path, class: "nav-link" do %>
-        <i class="fas fa-dog"></i> 投稿一覧
-        <% end %>
-      </li>
-      <li class="nav-item active mr-2">
-        <%= render "user/notifications/circle" %>
-      </li>
-      <li class="nav-item active mr-2">
-        <%= link_to new_contact_path, class: "nav-link" do %>
-        <i class="fas fa-envelope"></i> お問い合わせ
-        <% end %>
-      </li>
-      <li class="nav-item active mr-2">
-        <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
-        <i class="fas fa-sign-out-alt"></i> ログアウト
-        <% end %>
-      </li>
-    <% else %>
-      <li class="nav-item active mr-4">
-        <%= link_to about_path, class: "nav-link nav-items-l" do %>
-        <i class="fas fa-building"></i> About ANI-CLE
-        <% end %>
-      </li>
-      <li class="nav-item active mr-4">
-        <%= link_to posts_path, class: "nav-link nav-items-r" do %>
-        <i class="fas fa-dog"></i> 投稿一覧
-        <% end %>
-      </li>
-    <% end %>
+      <% if admin_signed_in? %>
+        <li class="nav-item active mr-4">
+          <%= link_to admin_users_path, class: "nav-link nav-items-l" do %>
+            <i class="fas fa-users"></i> 会員一覧
+          <% end %>
+        </li>
+        <li class="nav-item active mr-4">
+          <%= link_to admin_contacts_path, class: "nav-link nav-items-l" do %>
+            <i class="fas fa-envelope"></i> お問い合わせ一覧
+          <% end %>
+        </li>
+        <li class="nav-item active mr-4">
+          <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link nav-items-r" do %>
+            <i class="fas fa-sign-out-alt"></i> ログアウト
+          <% end %>
+        </li>
+      <% elsif user_signed_in? %>
+        <li class="nav-item active mr-2">
+          <%= link_to user_path(current_user.id), class: "nav-link" do %>
+            <i class="fas fa-user"></i> マイページ
+          <% end %>
+        </li>
+        <li class="nav-item active mr-2">
+          <%= link_to new_post_path, class: "nav-link" do %>
+            <i class="fas fa-paw"></i> 新規投稿
+          <% end %>
+        </li>
+        <li class="nav-item active mr-2">
+          <%= link_to posts_path, class: "nav-link" do %>
+            <i class="fas fa-dog"></i> 投稿一覧
+          <% end %>
+        </li>
+        <li class="nav-item active mr-2">
+          <%= render "user/notifications/circle" %>
+        </li>
+        <li class="nav-item active mr-2">
+          <%= link_to new_contact_path, class: "nav-link" do %>
+            <i class="fas fa-envelope"></i> お問い合わせ
+          <% end %>
+        </li>
+        <li class="nav-item active mr-2">
+          <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+            <i class="fas fa-sign-out-alt"></i> ログアウト
+          <% end %>
+        </li>
+      <% else %>
+        <li class="nav-item active mr-4">
+          <%= link_to about_path, class: "nav-link nav-items-l" do %>
+            <i class="fas fa-building"></i> About ANI-CLE
+          <% end %>
+        </li>
+        <li class="nav-item active mr-4">
+          <%= link_to posts_path, class: "nav-link nav-items-r" do %>
+            <i class="fas fa-dog"></i> 投稿一覧
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>

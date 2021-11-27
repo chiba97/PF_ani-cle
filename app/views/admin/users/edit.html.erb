@@ -6,40 +6,40 @@
         <%= @user.name %>さんの<br><i class="far fa-user"></i> 会員情報の編集 <i class="far fa-user"></i>
       </h2>
       <%= form_with model: @user, url: admin_user_path(@user), method: :patch, local:true do |f| %>
-      <div class="form-group mt-5">
-        <i class="fas fa-paw"></i> アイコン <i class="fas fa-paw"></i>
-        <%= f.label :profile_image, "写真を選択", class: "user-image-input-btn" %>
-        <%= f.attachment_field :profile_image, class: "d-none"%>
-      </div>
-      <div class="form-group mt-4">
-        <i class="fas fa-paw"></i> ニックネーム <i class="fas fa-paw"></i>
-        <%= f.text_field :name, class: "form-control", :placeholder => "※ 入力は必須になります" %>
-      </div>
-      <div class="form-group mt-4">
-        <i class="fas fa-paw"></i> メールアドレス <i class="fas fa-paw"></i>
-        <%= f.text_field :email, class: "form-control", :placeholder => "※ 入力は必須になります" %>
-      </div>
-      <div class="form-group mt-4">
-        <i class="fas fa-paw"></i> 飼っているペット <i class="fas fa-paw"></i>
-        <%= f.text_field :pet, class: "form-control", :placeholder => "未設定" %>
-      </div>
-      <div class="form-group mt-4">
-        <i class="fas fa-paw"></i> 自己紹介 <i class="fas fa-paw"></i>
-        <%= f.text_area :introduction, class: "form-control", :placeholder => "未設定" %>
-      </div>
-      <div class="form-group mt-4">
-        <i class="fas fa-paw"></i> <%= f.label :is_deleted, "退会ステータス" %> <i class="fas fa-paw"></i>
-        <div>
-          <%= f.radio_button :is_deleted, :false %>
-          <%= f.label :is_deleted, "有効", {value: :false, style: "display: inline-block;"} %>
-          <%= f.radio_button :is_deleted, :true %>
-          <%= f.label :is_deleted, "退会", {value: :true, style: "display: inline-block;"} %>
+        <div class="form-group mt-5">
+          <i class="fas fa-paw"></i> アイコン <i class="fas fa-paw"></i>
+          <%= f.label :profile_image, "写真を選択", class: "user-image-input-btn" %>
+          <%= f.attachment_field :profile_image, class: "d-none"%>
         </div>
-      </div>
-      <div class="form-group mt-4 mb-5">
-        <%= button_tag " 保存する", type: "submit", class: "btn user-show-btn fas fa-save" %>
-        <%= link_to " 戻る", admin_user_path(@user.id), class: "btn user-show-btn ml-3 fas fa-undo-alt" %>
-      </div>
+        <div class="form-group mt-4">
+          <i class="fas fa-paw"></i> ニックネーム <i class="fas fa-paw"></i>
+          <%= f.text_field :name, class: "form-control", :placeholder => "※ 入力は必須になります" %>
+        </div>
+        <div class="form-group mt-4">
+          <i class="fas fa-paw"></i> メールアドレス <i class="fas fa-paw"></i>
+          <%= f.text_field :email, class: "form-control", :placeholder => "※ 入力は必須になります" %>
+        </div>
+        <div class="form-group mt-4">
+          <i class="fas fa-paw"></i> 飼っているペット <i class="fas fa-paw"></i>
+          <%= f.text_field :pet, class: "form-control", :placeholder => "未設定" %>
+        </div>
+        <div class="form-group mt-4">
+          <i class="fas fa-paw"></i> 自己紹介 <i class="fas fa-paw"></i>
+          <%= f.text_area :introduction, class: "form-control", :placeholder => "未設定" %>
+        </div>
+        <div class="form-group mt-4">
+          <i class="fas fa-paw"></i> <%= f.label :is_deleted, "退会ステータス" %> <i class="fas fa-paw"></i>
+          <div>
+            <%= f.radio_button :is_deleted, :false %>
+            <%= f.label :is_deleted, "有効", {value: :false, style: "display: inline-block;"} %>
+            <%= f.radio_button :is_deleted, :true %>
+            <%= f.label :is_deleted, "退会", {value: :true, style: "display: inline-block;"} %>
+          </div>
+        </div>
+        <div class="form-group mt-4 mb-5">
+          <%= button_tag " 保存する", type: "submit", class: "btn user-show-btn fas fa-save" %>
+          <%= link_to " 戻る", admin_user_path(@user.id), class: "btn user-show-btn ml-3 fas fa-undo-alt" %>
+        </div>
       <% end %>
     </div>
   </div>
