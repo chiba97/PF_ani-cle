@@ -20,7 +20,7 @@
           <%= m.content %><br>
          （<%= time_ago_in_words(m.created_at).upcase %>前）
           <%= link_to  message_path(m.id),  method: :delete, remote: true, class: "message-delete-btn" do %>
-          <i class="fas fa-trash-alt"></i>
+            <i class="fas fa-trash-alt"></i>
           <% end %>
         </p>
       </div>

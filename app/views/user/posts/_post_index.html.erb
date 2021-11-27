@@ -11,7 +11,8 @@
         <div class="row justify-content-center mt-3">
           <div class="col-12">
             <%= link_to user_path(post.user.id),class: "text-center profile-link mt-3" do %>
-              <p><i class="far fa-user"></i> 投稿者 <i class="far fa-user"></i><br>
+              <p>
+                <i class="far fa-user"></i> 投稿者 <i class="far fa-user"></i><br>
                 <% if user_signed_in? %>
                   <% if post.user.id == current_user.id %>
                     あなた
