@@ -8,12 +8,11 @@
         が<br>
         <i class="fas fa-users"></i> フォローしているユーザー <i class="fas fa-users"></i>
       </h2>
-        <% if @users.present? %>
-          <%= render "user/users/follow_index", users: @users %>
-        <% else %>
-          <h3 class="text-center no-present-title pt-3 pb-5">※まだフォローしていません</h3>
-        <% end %>
-    </div>
+      <% if @users.present? %>
+        <%= render "user/users/follow_index", users: @users %>
+      <% else %>
+        <h3 class="text-center no-present-title pt-3 pb-5">※まだフォローしていません</h3>
+      <% end %>
     </div>
   </div>
   <div class="pt-3 pb-3">
