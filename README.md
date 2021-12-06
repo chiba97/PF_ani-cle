@@ -23,6 +23,7 @@ https://ani-cle.com/
 パスワード： 111111
 
 【管理者テストアカウント】
+URL： https://ani-cle.com/admin/sign_in
 メールアドレス： admin@test.com
 パスワード： 111111
 
@@ -56,7 +57,7 @@ https://ani-cle.com/
   - ゲストログイン
 * 管理者機能
   - 会員退会機能（論理削除）
-* 投稿機能（CRUD）
+* 投稿機能
   - 画像投稿（refile,refile-mini_magick）
   - いいね機能（Ajax）
   - コメント機能（Ajax）
@@ -91,7 +92,7 @@ https://ani-cle.com/
 ### その他設計図
 * [画面遷移図](https://drive.google.com/file/d/1sfJhcJPOFZLujdjkCWaLLuEKNDAoziW4/view?usp=sharing)
 * [テーブル定義書](https://docs.google.com/spreadsheets/d/1VUUy4AjLwR3eZ5YZ91Y1tatjix_wty2iFpsmh_4BxT8/edit?usp=sharing)
-* [詳細設計](https://docs.google.com/spreadsheets/d/1K721vfDDCjR2Yf8OEywzR8lVk8aEUcr2iLVZeSEw1UM/edit?usp=sharing)
+* [アプリケーション詳細設計](https://docs.google.com/spreadsheets/d/1K721vfDDCjR2Yf8OEywzR8lVk8aEUcr2iLVZeSEw1UM/edit?usp=sharing)
 
 ## 環境・使用技術
 
@@ -115,7 +116,7 @@ https://ani-cle.com/
 * Nginx、Puma
 
 ### テスト
-* Rspec（単体／結合） 項目数：計250以上
+* Rspec（単体／結合）
 
 ### その他使用技術
 * 非同期通信（お気に入り登録、コメント、DMチャット）
